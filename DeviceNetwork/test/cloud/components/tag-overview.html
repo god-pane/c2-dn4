@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        <meta http-equiv="description" content="this is my page">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="/cloud/base/loader.js"></script>
+    </head>
+    <script type="text/javascript">
+        
+		
+        require(["cloud/components/tag-overview", "cloud/service/business-service"], function(TagOverview, businessService){
+			
+			var resourceType = businessService.getResourceType("role");
+            var tagOverview = new TagOverview({
+				type: "role",
+				events: {
+					click: function(tag){
+						tag.loadResourcesData(function(a){
+							console.log(a);
+						});
+					}
+				},
+				selector: "#tag-overview"
+            });
+			
+			
+        });
+    </script>
+    <body>
+        <div id="tag-overview" style="width:230px; height: 100%;"></div>
+    </body>
+</html>

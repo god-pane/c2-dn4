@@ -1,0 +1,16 @@
+.tag-overview-form .cloud-button{
+	margin-left: 10px;
+}
+
+.content-overview-itembox .itembox-container{
+	margin-left: 19px;
+}
+
+.tag-overview .itembox-container{
+	margin: 0 auto;
+}
+
+.tag-overview-form input, .tag-overview-form label{
+	margin-left: 3px;
+	height: 17px;
+}

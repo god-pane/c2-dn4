@@ -1,0 +1,77 @@
+.ui-window {
+	z-index :1000;
+	display :block;
+}
+.window-modal {
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	filter: Alpha(opacity = 60);
+	background: #333;
+	background: rgba(0, 0, 0, 0.6)
+}
+
+.ui-window-body {
+	border: 1px solid rgb(204, 204, 204);
+	z-index :1000;
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: 200px;
+	top: 200px;
+	background: #fff;
+}
+
+.ui-window-title {
+	cursor:move;
+	position: relative;
+	height: 30px;
+	background: #fcfcfc;
+}
+
+.ui-window-title-name {
+	float: left;
+	position: relative;
+	top: 7px;
+	left: 10px;
+	font-weight: 700;
+	font-size: 127%;
+}
+
+.ui-window-title-close {
+	cursor:pointer;
+	position: relative;
+	width: 16px;
+	height: 16px;
+	float: right;
+	top: 8px;
+	right: 9px;
+	background: url("../images/ui-icon-no1.png") ;
+}
+.ui-window-title-close-active {
+	cursor:pointer;
+	position: relative;
+	width: 16px;
+	height: 16px;
+	float: right;
+	top: 8px;
+	right: 9px;
+	background: url("../images/ui-icon-no.png") ;
+}
+
+.ui-window-content {
+	overflow:overflow;
+}
+
+.ui-window-body-resize {
+	cursor: se-resize;
+	background:url("../images/ui-icon-pull.png");
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	float: right;
+	right: -0.1px;
+	bottom: -0.1px;
+}

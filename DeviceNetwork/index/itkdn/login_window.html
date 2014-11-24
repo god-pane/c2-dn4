@@ -1,0 +1,53 @@
+  	<div class="login" id="login-window">
+  		<div class="login-common">
+  		<form id="login-window-form" class="login-window-form">
+                  <ul>
+                      <li class="login-row-title">
+                          <span lang="text:email"></span>
+                      </li>
+                      <li class="login-row-input">
+                          <input id="input-email" class="validate[required,custom[email],funcCall[cloudInput]] login-row-input-email" type="text" />
+                      </li>
+                  </ul>
+                  <ul>
+                      <li class="login-row-title">
+                          <span lang="text:password"></span>
+                      </li>
+                      <li class="login-row-input">
+                          <input id="input-password-text" class="login-row-input-pwd-text" type="text" lang="value:case_sensitive"/>
+						  <input id="input-password-password" style="display:none" class="validate[required,minSize[0],maxSize[12],funcCall[cloudInput]] login-row-input-pwd-password" type="password"/>
+				      </li>
+                  </ul>
+                  <ul>
+                      <li class="login-row-title">
+                          <span lang="text:security_code"></span>
+                      </li>
+                      <li class="login-row-input1">
+                         <input id="input-vercode-default" class="login-row-input-vercode-default" type="text" lang="value:case_insensitive"/>
+						 <input id="input-vercode-custom" style="display:none;" class="validate[custom[systemAuthcode],required,funcCall[cloudInput]] login-row-input-vercode-custom" type="text" />
+                      </li>
+                	  <a><li id="winvercode" class="login-row-vercode">
+                      <img lang="title:click_to_change" style="border: 1px solid #ddd"  src="" />
+                  	  </li></a>
+				  	 <li id="refresh" class="login-row-refresh" style="display:none;margin:3px 0 0 0;"><a href="javascript:void(0)"><span lang="text:vague"  style="margin:3px 0 0 10px"></span></a></li>
+             	  </ul>
+				  <ul>
+				  	<li class="login-row-title"></li>
+					<li>
+						<div class="login-row-button">
+                 			<a><input id="input-submit" class="login-row-input-submit" lang="{value:sign_in,title:sign_in}" value="" type="button" /></a><a><span id="login-window-forget" style="margin:3px 0 0 10px" lang="text:forgot_pwd"></span></a>
+             			</div>
+			 			<input id="login-input-hide" type="hidden" value="login" />
+					</li>
+				  </ul>
+              
+  		</form>
+  		</div>
+		<div class="login-bottom">
+			<div class="login-bottom-div">
+				<p><a href="./register.html" lang="text:registration" style="margin:3px 0 0 10px"></a></p>
+				<p><span lang="text:donot_have_account+?"></span></p>
+			</div>
+ 	    </div>
+  	</div>
+

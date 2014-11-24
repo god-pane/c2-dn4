@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test</title>
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+<script type="text/javascript">
+	var temp = null;
+	require(["cloud/components/input-suggest", "cloud/components/input-suggest.css", , "cloud/resources/css/default.css", "cloud/lib/plugin/jquery-ui"], function (InputSuggest) {
+		temp = new InputSuggest({
+ 			//container: $("#inputbox"),
+ 			selector: "#inputbox",
+ 			width: 220,
+			height: 20,
+			prompt: "请输入现场名称",
+			event:{search:function(obj) {
+				alert(obj.name);
+			}},
+			dataProperty: "name",
+			data: [
+			    //{id:"1", name: "现场名称111"},
+			    {id:"1", name: "现场名称1"},
+			    {id:"1", name: "现场名称2"},
+			    {id:"1", name: "现场名称3"},
+			    {id:"1", name: "现场名称4"},
+			    {id:"1", name: "现场名称5"},
+			    {id:"1", name: "现场名称6"},
+			    {id:"1", name: "现场名称7"},
+			    {id:"1", name: "现场名称8"},
+			    {id:"1", name: "现场名称9"},
+			    {id:"1", name: "现场名称10"},
+			    {id:"1", name: "现场名称11"},
+			    {id:"1", name: "现场名称12"},
+			    {id:"1", name: "现场名称13"},
+			    {id:"1", name: "现场名称14"},
+			    {id:"1", name: "现场名称15"},
+			    {id:"1", name: "现场名称16"},
+			    {id:"1", name: "现场名称17"},
+			    {id:"1", name: "现场名称18"},
+			    {id:"1", name: "现场名称19"},
+			    {id:"1", name: "现场名称20"},
+			    {id:"1", name: "现场名称21"},
+			    {id:"1", name: "现场名称22"},
+			    {id:"1", name: "现场名称23"},
+			    {id:"1", name: "现场名称24"},
+			    {id:"1", name: "现场名称25"},
+			    {id:"1", name: "现场名称26"},
+			    {id:"1", name: "现场名称27"},
+			    {id:"1", name: "现场名称28"},
+			    {id:"1", name: "现场名称29"},
+			    {id:"1", name: "现场名称30"},
+			    {id:"1", name: "现场名称31"},
+			    {id:"1", name: "现场名称32"},
+			    {id:"1", name: "现场名称33"},
+			    {id:"1", name: "现场名称34"},
+			    {id:"1", name: "现场名称35"},
+			    {id:"1", name: "现场名称36"},
+			    {id:"1", name: "现场名称37"},
+			],
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="inputbox" style="border:0px solid black; width:500px;height:50px;margin:auto;margin-top:350px;">现场名称:</div>
+</body>
+</html>

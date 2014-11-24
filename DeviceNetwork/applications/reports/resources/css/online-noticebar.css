@@ -1,0 +1,74 @@
+.notice-bar{
+	overflow:hidden;
+	height:28px;
+	line-height:28px;
+}
+.notice-bar-state{
+	float:left;
+}
+.notice-bar-state-title{
+	float:left;
+	margin-left:20px;	
+}
+.notice-bar-state-online,.notice-bar-state-offline{
+	float:left;
+}
+.notice-bar-state-online{
+	margin-left:6px;
+}
+.notice-bar-state-offline{
+	margin-left:16px;
+}
+.notice-bar-state-online p,.notice-bar-state-offline p{
+	float:left;
+}
+.notice-bar-state-input{
+	float:left;
+	margin:9px 0 0 0;
+}
+.notice-bar-state-text{
+	float:left;
+	margin-left:5px;
+}
+.notice-bar-state-count{
+	float:left;
+	margin-left:5px;
+}
+.notice-bar-calendar{
+	float:left;
+	margin-left:20px;
+}
+.notice-bar-calendar img{
+	float:left;
+	margin:5px 0 0 3px;
+}
+
+.notice-bar-calendar-text ,.notice-bar-search-text{
+	float:left;
+	margin:0px 10px;
+}
+.notice-bar-calendar-input{
+	float:left;
+	margin-top:4px;
+	width:85px;
+	height:15px;
+	border:1px solid #000;
+}
+.notice-bar-calendar-button{
+	float:left;
+	margin:3px 0 0 5px;
+	line-height:20px;
+}
+.notice-bar-calendar-icon{
+	float:left;
+	margin:5px 0 0 3px;
+	width:16px;
+	height:16px;
+	background:url("../images/calendar.gif") no-repeat;
+}
+.notice-bar-calendar .notice-bar-search-input,.notice-bar-search-input{
+    float: left;
+    margin: 5px 0 0 3px;
+    height: 17px;
+    width: 166px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+<script type="text/javascript">
+	require(["cloud/components/_table"], function(Table){
+		var table = new Table({
+			selector:"#abc",
+			columns:[
+				 {
+				     "title": "username",
+				     "field": "username",
+				     "width": "10%",
+				 },
+				 {
+				     "title": "_id",
+				     "field": "_id",
+				     "width": "40%",
+				     "process":function(data){
+				    	return data;
+				     }
+				 }
+			],
+			request:function(cursor,limit,callback){
+				Model.task({
+					method:"query_list",
+					param:{
+						verbose:100,
+						cursor:cursor,
+						limit:limit
+					},
+					success:function(data){
+						callback(data);
+					}
+				});
+			}
+		})
+	});
+</script>
+</head>
+<body>
+<div id="abc" style="width:1000px;height:300px"></div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+.gis-control {
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	background-color: rgb(239,239,241);
+	width: 180px;
+	border: 1px solid #aaa;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 2px #aaa;
+	-moz-box-shadow: 0px 0px 2px #aaa;
+	box-shadow: 0px 0px 2px #aaa;
+}
+
+.gis-toolbar .cloud-toolbar-container{
+	background-color: transparent;
+}
+
+.gis-toolbar .cloud-toolbar-rightcontainer{
+	margin-left: 0;
+}
+
+.gis-toolbar{
+	margin-left: 20px;
+	margin-top: 30px;
+}
+
+.gis-toolbar .cloud-toolbar-rightcontainer::before{
+	border-left: 1px solid #555;
+	height: 20px;
+	content: "";
+	float: left;
+	margin-right: 10px;
+}
+
+.gis-legend{
+	margin: 20px 0 0 20px;
+	padding: 7px 0px 2px 0px;
+}
+
+.gis-legend .cloud-button-text{
+	margin-left: 11px;
+}
+
+.gis-legend .gis-legend-row{
+	margin: 0 30px 0 10px;
+}
+
+.gis-legend .cloud-button-body-main div{
+	top: 2px;
+}
+
+.gis-legend .gis-legend-online .cloud-button-text::before{
+	background-color: green;
+}
+
+.gis-legend .gis-legend-offline .cloud-button-text::before{
+	background-color: gray;
+}
+
+.gis-legend .gis-legend-warn .cloud-button-text::before{
+	background-color: yellow;
+}
+
+.gis-legend .gis-legend-breakdown .cloud-button-text::before{
+	background-color: red;
+}
+
+.gis-legend .gis-legend-repair .cloud-button-text::before{
+	background-color: gray;
+}
+
+.gis-legend .gis-legend-normal .cloud-button-text::before{
+	background-color: green;
+}
+
+.gis-legend .cloud-button-text::before{
+	content: "";
+	width: 15px;
+	height: 15px;
+	border: 1px solid transparent;
+	float: left;
+	margin-right: 10px;
+	margin-top: -2px;
+	-webkit-box-shadow: 1px 1px 1px #777;
+	-moz-box-shadow: 1px 1px 1px #777;
+	box-shadow: 1px 1px 1px #777;
+}
+
+.gis-legend .info {
+	float: right;
+	margin: 4px 24px 0px 0px;
+}
+
+#gis-tag-overview{
+	width: 176px;
+	height: 300px;
+}
+
+.device-info{
+	height: 100%;
+	overflow: auto;
+}

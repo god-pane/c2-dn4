@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=gb2312" />
+		<meta name='robots' content='noindex,nofollow'/>
+		<script type="text/javascript" src="../import.js"></script>
+		<!-- <script type="text/javascript" src="lang_pack/Chinese.res"></script>
+		<script type="text/javascript" src="js/misc.js"></script>
+		<script type="text/javascript" src="js/mix.js"></script> -->
+		<link type="text/css" rel="stylesheet" href="css/inhand.css" />
+		<title>IR300配置界面示例</title>
+
+
+<script type='text/javascript'>
+
+
+// 重新加载配置方案（放弃修改）
+// TODO: 需要修改为应用实际选择的配置方案
+function reloadPage()
+{
+	updateScheme(current_scheme);
+}
+
+// 提交配置：对当前配置进行校验，生成待提交的内容
+function submitPage()
+{	
+	var scheme = savePage();
+	
+	if (scheme==null) return;
+
+	// TODO: 这里需要提交scheme并保存	
+	alert(scheme);
+	//var fom = E('_fom');
+	
+	//form.submit('_fom', 1);
+}
+
+</script>
+</head>
+<body>
+<form id='_fom' method='post' action='apply.cgi'>
+
+<script type='text/javascript'>
+	setDeviceType("IR319CT01");
+	createPage();
+	updateScheme(default_scheme);
+	setDeviceNum(1);
+</script>
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        <meta http-equiv="description" content="this is my page">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="/cloud/base/loader.js"></script>
+    </head>
+	<style type="text/css">
+		.content-overview{
+			height: 100%;
+		}
+		
+	</style>
+    <script type="text/javascript">
+        
+        require(["cloud/components/content-overview"], function(ContentOverview, businessService){
+            var overview = new ContentOverview({
+				type: "role",
+				selector: "#111"
+            });
+			var ids = ["512D1043421AA93FAD000017", "512D1045421AA93FAD000018"];
+			overview.render(ids);
+        });
+    </script>
+    <body>
+    	<div id="111"></div>
+    </body>
+</html>

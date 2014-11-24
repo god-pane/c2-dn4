@@ -1,0 +1,96 @@
+  	.login{
+  		position:relative;
+		height:268px;
+		width:413px;
+		border:1px solid #f2f2f2;
+		padding:0 20px 0 20px;
+		background:#ffffff;
+  	}
+	.login-common{
+		position: relative;
+		padding:15px 0 0 0;
+		height: 223px;
+		width: auto;
+		top: -16px;
+		border-bottom: 2px solid #f2f2f2;
+	}
+	.login ul{
+		height:28px;
+		width:auto;
+		margin:15px 0 0 0;
+		
+	}
+	.login ul li {
+		float: left;
+		display: inline;
+		height: 28px;
+		line-height: 25px;
+		border:0;
+	}
+	.login ul li.login-common-form-title {
+		width: 294px;
+	}
+	.login ul li.login-common-form-title1 {
+		width: 95px;
+	}
+	
+	.login-common-form-input-email,.login-common-form-input-pwd {
+		width: 294px;
+		height: 30px;
+		line-height: 23px;
+		text-indent: 5px;
+		background:#fff;
+		border: 1px solid #ddd;
+	}
+	.login-common-form-input-vercode {
+		width: 95px;
+		height: 28px;
+		line-height: 23px;
+		text-indent: 5px;
+		background:#fff;
+		border: 1px solid #ddd;
+	}
+	.login ul li.login-common-form-vercode {
+		margin:0 10px 0 10px;
+		width: 75px;
+		height: 28px;
+		background: #fff;
+		border: 1px solid #ccc;
+	}
+	.login ul li.login-common-form-element {
+		margin-right: 9px;
+		width: 70px;
+		height: 23px;
+		text-align: right;
+	}
+	.login-common-form-button{
+		position: relative;
+		margin: 15px 0 0 78px;
+	}
+	.login a{
+		margin-left:10px;
+		font-size:1%;
+	}
+	#button{
+		width: 95px;
+		height: 30px;
+		background:url("./login_img.png") repeat-x;
+	}
+	.login-bottom {
+		position: relative;
+		top: -23px;
+	}
+	.login-bottom p{
+		position: relative;
+		margin: 0 0 0 78px;
+	}
+	.login-commom-p p{
+		display:none;
+	}
+	.login-commom-p{
+		height:14px;
+		position:relative;
+		color: red;
+		top: 11px;
+		left: 93px;
+	}

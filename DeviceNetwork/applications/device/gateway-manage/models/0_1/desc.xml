@@ -1,0 +1,80 @@
+﻿<description version="1.0" type="dtu">
+<group id = "_setup_com_enable">
+<item id="com0_baud" encrypt="false" unique="true" ></item>
+<item id="com0_databit" encrypt="false" unique="true" ></item>
+<item id="com0_parity" encrypt="false" unique="true" ></item>
+<item id="com0_stopbit" encrypt="false" unique="true" ></item>
+<item id="com0_interval" encrypt="false" unique="true" ></item>
+<item id="com0_timeout" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_mode_enable">
+<item id="wmmp_enable" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_mode" encrypt="false" unique="true" ></item>
+<item id="wan1_trig_call" encrypt="false" unique="true" ></item>
+<item id="wan1_trig_sms" encrypt="false" unique="true" ></item>
+<item id="wan1_trig_data" encrypt="false" unique="true" ></item>
+<item id="wan1_trig_interval" encrypt="false" unique="true" ></item>
+<item id="wan1_off_interval" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_wan1_enable">
+<item id="f_wan1_enable" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_callno" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_apn" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_username" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_passwd" encrypt="false" unique="true" ></item>
+<item id="wan1_ppp_check_interval" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_wmmp_enable">
+<item id="wmmp_id" encrypt="false" unique="true" ></item>
+<item id="wmmp_svr" encrypt="false" unique="true" ></item>
+<item id="wmmp_port" encrypt="false" unique="true" ></item>
+<item id="wmmp_proto" encrypt="false" unique="true" ></item>
+<item id="wmmp_hb_interval" encrypt="false" unique="true" ></item>
+<item id="wmmp_sca" encrypt="false" unique="true" ></item>
+<item id="wmmp_sms_num" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_app_enable">
+<item id="app_id" encrypt="false" unique="true" ></item>
+<item id="app_svr" encrypt="false" unique="true" ></item>
+<item id="app_host" encrypt="false" unique="ture"></item>
+<item id="app_port" encrypt="false" unique="true" ></item>
+<item id="app_proto" encrypt="false" unique="true" ></item>
+<item id="app_retries" encrypt="false" unique="true" ></item>
+<item id="app_hb_interval" encrypt="false" unique="true" ></item>
+<item id="dns1" encrypt="false" unique="true" ></item>
+<item id="dns2" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_app_ext_enable">
+<item id="app1_svr" encrypt="false" unique="true" ></item>
+<item id="app1_host" encrypt="false" unique="true"></item>
+<item id="app1_port" encrypt="false" unique="true" ></item>
+<item id="app1_proto" encrypt="false" unique="true" ></item>
+<item id="app2_svr" encrypt="false" unique="true" ></item>
+<item id="app2_host" encrypt="false" unique="true"></item>
+<item id="app2_port" encrypt="false" unique="true" ></item>
+<item id="app2_proto" encrypt="false" unique="true" ></item>
+<item id="app3_svr" encrypt="false" unique="true" ></item>
+<item id="app3_host" encrypt="false" unique="true"></item>
+<item id="app3_port" encrypt="false" unique="true" ></item>
+<item id="app3_proto" encrypt="false" unique="true" ></item>
+<item id="app4_svr" encrypt="false" unique="true" ></item>
+<item id="app4_host" encrypt="false" unique="true"></item>
+<item id="app4_port" encrypt="false" unique="true" ></item>
+<item id="app4_proto" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_misc_enable">
+<item id="max_login" encrypt="false" unique="true" ></item>
+<item id="sms_passwd" encrypt="false" unique="true" ></item>
+<item id="debug" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_service_ovdp_enable">
+<item id="f_sn" encrypt="false" unique="true" ></item>
+<item id="ovdp_mode" encrypt="false" unique="true" ></item>
+<item id="ovdp_vendor_id" encrypt="false" unique="true" ></item>
+<item id="ovdp_device_id" encrypt="false" unique="true" ></item>
+<item id="ovdp_center" encrypt="false" unique="true" ></item>
+<item id="ovdp_center_port" encrypt="false" unique="true" ></item>
+<item id="ovdp_hb_interval" encrypt="false" unique="true" ></item>
+<item id="ovdp_trust_list" encrypt="false" unique="true" ></item>
+</group>
+</description>

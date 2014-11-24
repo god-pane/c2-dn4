@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <link href="../css/default.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../js/base/jquery.string.js"></script>
+        <script type="text/javascript" src="../js/plugin/openlayers.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.pnotify.js"></script>
+		<script type="text/javascript" src="../js/plugin/log4javascript.js"></script>
+		<script type="text/javascript" src="../js/base/ih.js"></script>
+		<script type="text/javascript" src="../js/plugin/jquery.data.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.watermark.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+    $(function(){
+        iHService.ajax({
+            url: iHService.API_SERVER_URL + "api2/users?verbose=100",
+            type: "POST",
+            data: {
+                name: "硬汉 （陈先生）",
+                roleId: "50E8A40C421AA97D900000E5",
+				email: "chenjian@inhand.com.cn",
+				phone: "1233211234567",
+				question: "你猜猜？",
+				answer: "猜啥呀?"
+            },
+            success: function(data){
+                log.debug("success");
+                log.debug(data);
+            },
+            
+            error: function(data){
+                log.debug("error");
+                log.debug(data);
+            }
+        });
+        
+		iHService.ajax({
+			url: iHService.API_SERVER_URL + "api2/users?verbose=100",
+            type: "GET",
+            success: function(data){
+                log.debug("success");
+               $("body").text(JSON.stringify(data));
+            },
+            
+            error: function(data){
+                log.debug("error");
+                log.debug(data);
+            }
+		});
+		
+    });
+			
+    </script>
+    <body>
+        <input type="text" id="test"/>
+		
+    </body>
+</html>

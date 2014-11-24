@@ -1,0 +1,256 @@
+/******************************/
+/*** user-center 用户中心首页 ***/
+/*****************************/
+#user-header{
+	
+}
+
+.user-header {
+	
+}
+
+.user-header-corp{
+	
+}
+
+.user-nav {
+	overflow: hidden;
+	width: 100%;
+	height: 60px;
+	background: #555;
+	border-bottom:3px solid #85C54A;
+}
+
+.user-nav-box {
+	float: left;
+	display: inline;
+	margin:20px 0 0 180px;
+	width: auto;
+	height: 40px;
+}
+
+.user-nav-box a{
+	color:#fff;
+}
+
+.user-nav-box a:hover{
+	color:#fff;
+}
+
+ul.user-nav-box li {
+	float: left;
+	display: inline;
+	width:100px;
+	height:100%;
+}
+
+ul.user-nav-box li p {
+	float: left;
+	display: inline;
+	margin-top:5px;
+	height: 35px;
+	line-height: 30px;
+}
+
+ul.user-nav-box li p.user-nav-box-p1 {
+	margin:7px 0 0 10px;
+}
+
+ul.user-nav-box li p.user-nav-box-p2 {
+	margin-left:5px;
+}
+
+ul.user-nav-view-model {
+	float: left;
+	display: inline;
+	margin: 28px 0 0 50px;
+	width: auto;
+}
+
+ul.user-nav-view-model li {
+	float: left;
+	display: inline;
+}
+
+.user-nav-view-menu {
+	position: absolute;
+	z-index: 1000;
+	top: 60px;
+	width: 100px;
+	height: 200px;
+	background: #eee;
+	border: 1px solid #333;
+}
+
+.user-nav-view-menu ul {
+	margin: 5px 0 0 10px;
+}
+
+.user-nav-view-menu ul li {
+	clear: left;
+	margin-top: 5px;
+}
+
+ul.user-nav-personal {
+	float: left;
+	display: inline;
+	margin: 28px 0 0 50px;
+	width: auto;
+}
+
+ul.user-nav-personal li {
+	float: left;
+	display: inline;
+	line-height: 30px;
+}
+
+
+
+.user-subnav {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 40px;
+	background:#ddd;
+}
+
+.user-popup-switch{
+	position: absolute;
+	left:20px;
+	top:5px;
+	cursor:pointer;
+}
+
+.user-subnav-box {
+	position: absolute;
+	display: inline;
+	float: left;
+	margin-left:180px;
+	width: 850px;
+}
+
+.user-subnav-box ul {
+	position: relative;
+	float:left;
+	height:90%;
+}
+
+.user-subnav-box ul li {
+	float: left;
+	display: inline;
+	margin:5px 0 0 0;
+	padding:0 5px;
+	height:30px;
+	line-height: 30px;
+	text-align:center;
+}
+
+.user-subnav-box ul li {
+	float: left;
+	display: inline;
+	margin-left: 5px;
+}
+
+.user-subnav-onclick{
+	color:#85C54A;
+	background:#85C54A;
+}
+
+.user-subnav-onclick a{
+	color:#fff;
+}
+
+.user-subnav-onclick a:hover{
+	color:#fff;
+}
+
+.user-subnav .user-subnav-search {
+	float: right;
+	display: inline;
+	margin: 6px 0 0 40px;
+	width: 320px;
+}
+
+.user-subnav-search p {
+	float: left;
+}
+
+.user-subnav-search .input-search {
+	float: left;
+	margin: 5px 0 0 0;
+	width: 200px;
+	height: 20px;
+	line-height: 23px;
+	text-indent: 5px;
+}
+
+.user-subnav-search .input-submit {
+	float: left;
+	margin: 4px 0 0 5px;
+	width: 50px;
+	height: 25px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+}
+.user-header-search-form {
+	float: right;
+	margin: 6px 30px 0 40px;
+}
+
+.user-header-search-form > div {
+	float: left;
+}
+
+#header-search-input{
+	width: 200px;
+	line-height: 21px;
+	text-indent: 5px;
+	margin:3px;
+}
+
+#header-search-button {
+	width: 40px;
+}
+
+#header-search-select{
+}
+
+#header-search-result {
+    position: absolute;
+    border: 1px solid #AAA;
+    margin-top: -1px;
+    width: 202px;
+    display: none;
+    z-index: 10000;
+    background-color: white;
+}
+
+.header-search-result-row {
+}
+
+.header-search-result-title {
+    padding: 3px 10px;
+    background-color: #EEE;
+    font-style: italic;
+}
+
+.header-search-result-body {
+	padding: 2px 10px;
+}
+
+.header-search-result-body:hover {
+	background-color: #DDD;
+	cursor:default;
+}
+
+#user-search-result{
+	display: none;
+}
+
+.test-div{
+	width:100%;
+	height:600px;
+	line-height:200px;
+	text-align:center;
+	font-size:20px;
+}

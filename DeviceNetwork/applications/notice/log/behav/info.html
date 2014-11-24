@@ -1,0 +1,82 @@
+<!-- <style>
+
+	#log-system-table tr td {
+		font-size:12px;
+		color:#333;
+		text-align:left;
+	}
+	#log-system span{
+		float:left;
+		margin:0 15px 0 20px;
+	}
+	.td160{
+		width:136px;
+		overflow:hidden;
+	}
+	#content{
+		resize:none;
+		width:136px;
+		height:60px;
+	}
+	#log-system{
+		margin:0 auto;
+		width:100%;
+		height:25px;
+		text-align:center;
+	}
+	#log-system-table{
+	margin:0 auto;
+	border-collapse:separate;
+	border-spacing:8px 15px;
+	}
+	#log-system-infos{
+		text-align:center;
+		vertical-align:middle;
+	}
+	#log-system-table-submit{
+		display: none;
+		float:left;
+	}
+	#log-system-table-cancel{
+		display: none;
+		float:left;
+	}
+	#log-system-table-edit{
+	float:left;
+	}
+	#log-system-buttons{
+		padding-left:70px
+	}
+</style> -->
+<div id="log-system" style="padding-top:10px">
+	<span class="cloud-icon-default cloud-icon-notice"/></span><label style='float:left' lang="text:log_detail">日志详情</label>
+</div>
+<div id="log-system-infos">
+	<table id="log-system-table" >
+		<tr>
+			<td lang="text:level+:">等级:</td>
+			<td class="td160" id="level" ></td>
+		</tr>
+		<tr>
+			<td lang="text:time+:">时间:</td>
+			<td class="td160" id="time"></td>
+		</tr>
+		<tr>
+			<td lang="text:IP+:">来自:</td>
+			<td class="td160" id="from"></td>
+		</tr>
+		<tr>
+			<td lang="text:operator+:">操作员:</td>
+			<td class="td160" id="operator"></td>
+		</tr>
+		<tr>
+			<td lang="text:content+:" valign="top">内容:</td>
+			<td class="td160"><textarea id="content" disabled="disabled" style="height:100px;"></textarea></td>
+		</tr>
+	</table>
+</div>
+<div id="log-system-buttons">
+<!-- 	<button id="log-system-table-submit">提交</button>
+	<button id="log-system-table-cancel">取消</button>
+	<button id="log-system-table-edit">编辑</button> -->
+</div>

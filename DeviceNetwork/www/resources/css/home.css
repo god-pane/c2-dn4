@@ -1,0 +1,392 @@
+.home-content{
+	width:100%;
+	height:585px;
+}
+
+.home-content-top-box{
+	width:100%;
+	height:400px;
+	border-top:1px solid #ccc;
+	border-bottom:2px solid #ccc;
+	background:url("../images/content-repeat-x.png") repeat-x #7DC53C;
+}
+
+.home-content-top{
+	overflow:hidden;
+	margin:0 auto;
+	width:1000px;
+	height:398px;
+	background:url("../images/content-bg.jpg") no-repeat #7DC53C;
+	border:0px;
+}
+
+.home-content-login-box{
+	margin:65px 0 0 738px;
+}
+
+.home-content-login{
+	float:left;
+	width:223px;
+	height:258px;
+	background:url("../images/login-bg-hh.jpg") repeat-y;
+	border:1px solid #ececec;
+	border-radius:3px;
+	box-shadow: 0px 0px 10px #666;
+}
+
+.home-content-login ul{
+	margin-top:15px;
+}
+
+.home-content-login ul li{
+	margin-left:23px;
+	text-align:left;
+}
+
+.home-content-login ul li input{
+	border:0px;
+	background:#e7e7e7;
+}
+
+.home-content-login-text{
+	height:16px;
+	margin-bottom:5px;
+}
+
+.home-content-login-user{
+	margin-bottom:10px;
+	width:175px;
+	height:33px;
+	background:url("../images/home-bg.png") 0 -130px;
+}
+
+#home-content .home-input-user,#home-content .home-input-pwd{
+	color:#555;
+}
+
+#home-content-bottom-div{
+	width:100%;
+	height: 180px;
+}
+
+#home-content-bottom-div-top-text{
+	width: 60%;
+	height: 30px;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #36630e;
+	padding-top: 20px;
+	min-width: 1024px;
+	text-align:left;
+	letter-spacing: 1px;
+}
+
+#home-content-bottom-div-center{
+	width: 60%;
+	height: 130px;
+	min-width: 1024px;
+	margin: 0 auto;
+}
+
+.home-content-bottom-div-center-item{
+	width: 270px;
+	height: 120px;
+	float: left;
+}
+
+.home-content-bottom-div-center-black{
+	width: 70px;
+	height: 120px;
+	float: left;
+}
+
+.home-content-bottom-div-center-item-image{
+	width: 130px;
+	height: 100%;
+	padding-top: 5px;
+	float: left;
+}
+
+.home-content-bottom-div-center-item-text{
+	width: 120px;
+	height: 100%;
+	padding-top: 5px;
+	float: left;
+	text-align: center;
+	color: #555;
+}
+
+.home-content-bottom-div-center-text-top{
+	width: 100%;
+	height: 20px;
+	font-size: 18px;
+	float: left;
+}
+
+.home-content-bottom-div-center-text-center{
+	width: 100%;
+	height: 35px;
+	font-size: 14px;
+	padding-top: 5px;
+	letter-spacing: 0px;
+	float: left;
+}
+
+.home-content-bottom-div-center-text-button-box{
+	width: 100%;
+	float: left;
+	height: 40px;
+	text-align: center;
+}
+
+.home-content-bottom-div-center-text-button{
+	width: 110px;
+	height: 24px;
+	margin: 0 auto;
+	padding-top: 8px;
+	cursor: pointer;
+	font-size:13px;
+	color:#fff;
+	background:#70cb57;
+	border:1px solid #52c050;
+	border-radius:1px;
+	box-shadow: 1px 1px 3px #e3e3e3;
+}
+
+
+.home-content-login-vercode{
+	float:left;
+	width:100%;
+}
+
+.home-content-login-vercode p{
+	float:left;
+}
+
+.home-content-login-ver{
+	float:left;
+	margin-right:10px;
+	width:75px;
+}
+
+.home-verimg{
+	overflow:hidden;
+	margin-left:5px;
+	width:83px;
+	height:28px;
+	background:#eee;
+	border:1px solid ccc;
+}
+
+#home-input-user{
+	margin:1px 0 0 33px;
+	width:140px;
+	height:30px;
+}
+
+#home-content .home-input-pwd-text,#home-content .home-input-pwd-password{
+	margin:2px 0 0 33px;
+	width:140px;
+	height:28px;
+	border:0px;
+	background:#e7e7e7;
+}
+
+#home-content .home-input-pwd-text{
+	color:#999;
+}
+
+#home-content .home-input-pwd-password{
+	color:#555;
+}
+
+#home-content .home-input-ver-default,#home-content .home-input-ver-custom{
+	width:83px;
+	height:30px;
+	background:#e7e7e7;
+	border:1px solid #eee;
+	border-radius:5px;
+	box-shadow: 0px 0px 5px #ccc;
+}
+
+
+#home-content .home-input-ver-default{
+	color:#999;		
+}
+
+#home-content .home-input-ver-custom{
+	color:#555;
+}
+
+.home-content-login-pwd{
+	margin-bottom:10px;
+	width:175px;
+	height:32px;
+	background:url("../images/home-bg.png") 0 -92px;
+}
+
+#home-content .home-input-submit{
+	float:left;
+	margin-top:15px;
+	width:75px;
+	height:28px;
+	font-size:14px;
+	color:#444;
+	background:#91b246;
+	border:1px solid #859956;
+	border-radius:7px;
+}
+
+.home-content-login-tool{
+	margin-top:10px;	
+}
+
+.home-content-login-tool a{
+	color:#617532;
+}
+
+.home-content-login-tool a:hover{
+	text-decoration:underline;
+}
+
+.home-login-forget{
+	float:left;
+	margin-left:10px;
+	line-height:52px;
+}
+
+.home-login-forget a{
+	text-decoration:underline;
+}
+
+.home-login-new{
+	float:left;
+}
+
+.home-login-or{
+	margin:0 10px;
+	float:left;
+}
+
+.home-content-loginright{
+	float:left;
+	margin-top:115px;
+	width:28px;
+	height:102px;
+	background:url("../images/login-right-bg.jpg");
+}
+
+.home-content-loginright-text{
+	margin:5px 0 0 7px;
+}
+
+.home-content-loginright-icon{
+	margin:2px 0 0 8px;
+	width:11px;
+	height:11px;
+	background:url("../images/home-login-r.png");
+}
+
+.home-content-bottom-box{
+	width:100%;
+	height:200px;
+}
+.home-content-bottom{
+	margin:0 auto;
+	width:1000px;
+	height:100%;
+}
+
+.home-content-bottom-update,.home-content-bottom-note{
+	float:left;
+	width:499px;
+	height:100%;
+}
+
+.home-content-bottom-update ul,.home-content-bottom-note ul{
+	margin-top:35px;
+}
+
+.home-content-bottom-update ul li,.home-content-bottom-note ul li{
+	clear:left;
+	width:100%;
+	line-height:30px;
+}
+
+.home-content-list-title{
+	overflow:auto;
+	margin-bottom:10px;
+}
+
+.home-content-list-titleicon-a{
+	float:left;
+	margin:8px 10px 0 80px;
+	width:15px;
+	height:14px;
+	background:url("../images/book.png") no-repeat;
+}
+
+.home-content-list-titletext{
+	float:left;
+	color:#517000;
+	font-size:16px;
+}
+
+.home-content-list-more{
+	float:right;
+	margin:6px 55px 0 0;
+}
+
+.home-list-more{
+	width:49px;
+	height:17px;
+	line-height:3px;
+	color:#fff;
+	background:#517000;
+	border:1px solid #517000;
+	border-radius:14px;
+}
+
+.home-content-list-text{
+	float:left;
+	margin-left:66px;
+}
+
+.home-content-list-date{
+	float:right;
+	margin-right:55px;
+}
+
+.home-content-bottom-note{
+	float:left;
+	width:499px;
+	height:100%;
+}
+
+.home-content-list-titleicon-b{
+	float:left;
+	margin:8px 10px 0 80px;
+	width:15px;
+	height:14px;
+	background:url("../images/note.png") no-repeat;
+}
+
+.home-content-list-article{
+	float:left;
+	margin-left:66px;
+	width:377px;
+	text-indent:20px;
+}
+
+.home-content-bottom-line{
+	width:2px;
+	height:100%;
+	float:left;
+}
+
+.home-content-line{
+	margin-top:26px;
+	width:100%;
+	height:145px;
+	background:#ccc;
+}

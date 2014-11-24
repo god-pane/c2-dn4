@@ -1,0 +1,23 @@
+.content-chart-toolbar-panel-right{
+	margin-left: 5px;
+}
+.content-chart-toolbar-panel{
+	float: right;
+    margin-right: 50px;
+}
+.content-chart-toolbar {
+	display: inline-block;
+    width: 100%;
+    height : 26px;
+}
+.content-chart-chartplugin{
+	/* height: 100%; */
+	width: 100%;
+	display: inline-block;
+}
+.content-chart-toolbar-panel-left {
+	margin-left: 9px;
+}
+.content-chart-toolbar-panel-left img.ui-datepicker-trigger {
+	margin: 0px 0px -2px 3px;
+}

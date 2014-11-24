@@ -1,0 +1,126 @@
+ .login{
+ 	position:relative;
+	width:410px;
+	padding:20px;
+	background:#fff;
+	border-top:1px solid #f2f2f2;
+ }
+
+.login a{
+	color:#0100ce;
+	text-decoration:underline;
+}
+
+.login a:hover{
+	color:#00AFFA;
+	text-decoration:underline;
+}
+
+.login-common{
+	width: auto;
+	top: 10px;
+}
+
+.login-window-form{
+	margin:0 0 20px 10px;
+}
+
+.login-window-form ul{
+	height:28px;
+	width:auto;
+	margin:15px 0 0 0;
+}
+
+.login-window-form ul li {
+	float: left;
+	display: inline;
+	height: 28px;
+	line-height: 25px;
+	border:0;
+}
+
+.login-window-form ul li.login-row-input{
+	width:auto;
+	height:auto;
+}
+
+#input-email,#input-password-text,#input-password-password{
+	margin:0;
+	padding:0;
+	width: 294px;
+	height:29px;
+	line-height: 29px;
+	background:#fff;
+}
+
+#input-vercode-default,#input-vercode-custom{
+	margin:0;
+	padding:0;
+	width: 110px;
+	height: 32px;
+	line-height:32px;
+	background:#fff;
+	border: 1px solid #ddd;
+}
+
+#input-password-text,#input-vercode-default{
+	color:#999;
+}
+
+#input-password-password,#input-vercode-custom{
+	color:#555;
+}
+
+.login ul li.login-row-vercode {
+	float:left;
+	margin:0 0 0 10px;
+	width: auto;
+	height: auto;
+	background: #fff;
+}
+
+.login-row-refresh{
+	float:left;
+}
+
+.login ul li.login-row-title {
+	margin-right: 9px;
+	width: 75px;
+	height: 23px;
+	text-align: left;
+}
+
+.login-row-button{
+	float:left;
+	position: relative;
+	margin-top:3px;
+}
+
+.login-bottom {
+	
+}
+
+.login-bottom-div{
+	clear:left;
+	float:left;
+	overflow:hidden;
+	margin:3px 0 0 10px;
+	padding-top:15px;
+	width:380px;
+	height:auto;
+	border-top:1px dotted #d5d5d5;
+}
+
+.login-bottom-div p{
+	float:right;	
+}
+
+.login-row-input-submit{
+	width:110px;
+	height:32px;
+	color:#444;
+	background:#87d05b;
+	border:1px solid #7ebd54;
+	border-radius:1px;
+	box-shadow: 1px 1px 3px #ddd;
+}

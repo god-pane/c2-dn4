@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <link href="../css/default.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../js/plugin/openlayers.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.pnotify.js"></script>
+		<script type="text/javascript" src="../js/plugin/log4javascript.js"></script>
+		<script type="text/javascript" src="../js/base/jquery.string.js"></script>
+		<script type="text/javascript" src="../js/base/ih.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+        $(function(){
+			
+				PrivilegeManager.load();
+				
+				PrivilegeManager.process();
+				
+            });
+			
+    </script>
+    <body>
+        <div id="map" style="width:100%; height: 100%;" privilege="2" >
+			123
+			<button value="button" privilege="7"></button>
+		</div>
+		
+    </body>
+</html>

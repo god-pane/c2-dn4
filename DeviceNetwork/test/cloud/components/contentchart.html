@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+
+.content-chart-toolbar {
+    display : block !important;
+}
+
+.content-chart-toolbar:before,
+.content-chart-toolbar:after {
+    content:"";
+    display:table;
+}
+
+.content-chart-toolbar:after {
+    clear:both;
+}
+
+</style>
+<script type="text/javascript">
+
+    var serviceTest = {
+    		
+    	/* service should contains a function named "loadChartByResIds" and return a Object to callback like : 
+            data.result = [{
+                "data":[
+                        [1371621600000,0], //[timestamp(value of x-axis), value of y-axis]
+                        [1371625356000,0],
+                        [1371629113000,0],
+                        ……
+                 ],
+                "resourceId":"51b8f48770e725ed1f680cc6"
+            },{
+                "data":[
+                        [1371621600000,0], 
+                        [1371625356000,0],
+                        [1371629113000,0],
+                        ……
+                 ],
+                "resourceId":"51b8f48770e725ed1f680cc7"
+            }] 
+   		*/
+        loadChartByResIds : function(resourceIds, startTime, endTime, callback, context){
+            resourceIds = cloud.util.makeArray(resourceIds);
+            var param = {};
+            if (startTime){
+                param.start_time = startTime
+            }
+            if (endTime){
+                param.end_time = endTime
+            }
+            if (resourceIds.length > 0){
+                cloud.Ajax.request({
+                    url: "api/reports/online_tendency",
+                    type: "post",
+                    parameters : param,
+                    data: {
+                        resourceIds: resourceIds
+                    },
+                    success: function(data) {
+                        if (data.result){
+                            var result = $A(data.result);
+                            result.each(function(one){
+                                var dataArr = $A();
+                                $A(one.onlineRate).each(function(rate, i){
+                                    var pointData = [1000 * one.timestamps[i], rate];
+                                    dataArr.push(pointData);
+                                })
+                                delete one.onlineRate;//optional, not required
+                                delete one.timestamps;//optional, not required
+                                one.data = dataArr;
+                                one.resourceId = one.deviceId;
+                            });
+                        }   
+                        
+                        console.log(data.result, "required object")
+                        callback && (callback.call(context || this, data.result));
+                    }
+                });
+            }
+        }
+    }   
+	require([ "../../../applications/components/content-chart","cloud/components/button", "cloud/resources/css/default.css", "cloud/lib/plugin/jquery-ui" ], function(ContentChart, Button) {
+		var contentChart;
+		var createContent = function(){
+			return new ContentChart({
+	            container : "#content",
+	            service : serviceTest,
+	            intervalButtons : [{
+	                name : "24" + "小时",
+	                value : 24 * 3600
+	            },{
+	                name : "7" + "天",
+	                value : 24 * 3600 * 7
+	            },{
+	                name : "30" + "天",
+	                value : 24 * 3600 * 30
+	            }],
+	            chart : {
+	                type : "spline",//"line", "spline", "column"
+	                title : "online rate chart",
+	                tooltips : {
+	                	formatter : function(){
+                            console.log("tooltips_formatter", this);
+                            return "tooltips" + this.y;
+                        }
+	                },
+	                xAxis : {
+	                	formatter : null
+	                },
+	                yAxis : {
+	                	formatter : function(){
+                            console.log("yAxis_formatter", this);
+                            if (!this.isLast){
+                                return "yAxis" + this.value;
+                            }
+                        }
+	                    /* min : 0,
+	                    max : 1, */
+	                    //"title" : "online rate",
+	 //                   unit : ""
+	                }
+	            }
+	        })
+		}
+		
+		var button = new Button({
+            container : $("#buttonset"),
+            title : "create",
+            text : "create",
+            events: {
+                click : function(event){
+                	contentChart = createContent();
+                }
+            }
+        });
+		var button1 = new Button({
+			container : $("#buttonset"),
+            title : "add",
+            text : "add",
+            events: {
+                click : function(event){
+                	contentChart && contentChart.addSeries([{
+                        resourceId : "51d67973c184f61c7c574c53",
+                        name : "devicesf"
+                    }])
+                }
+            }
+        });
+		var button2 = new Button({
+            container : $("#buttonset"),
+            title : "remove",
+            text : "remove",
+            events: {
+                click : function(event){
+                	contentChart && contentChart.removeSeries("51d67973c184f61c7c574c53")
+                }
+            }
+        });
+		var button3 = new Button({
+            container : $("#buttonset"),
+            title : "destroy",
+            text : "destroy",
+            events: {
+                click : function(event){
+                	contentChart && contentChart.destroy();
+                }
+            }
+        });
+	});
+</script>
+<body>
+	<div id = "content" style = "display: block; height : auto;width : 700px"></div>
+	<div id = "buttonset" style = "display: block; width : 500px"></div>
+	
+</body>
+</html>

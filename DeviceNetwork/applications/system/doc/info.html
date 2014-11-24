@@ -1,0 +1,100 @@
+<div class="info-wrapper">
+<form id="doc-info-form">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-name" class="validate[required]  info-form-text"/>
+		<div class="info-favor"></div>
+	</div>
+
+
+	<div class="info-tag-panel"></div>
+	<br>
+	<div class="info-form">
+		<div class="info-form-row">
+			<label for="info-document-address" class="info-form-label">文档类型:</label>
+			<!-- <input type="text" id="info-document-type" value="" class="info-form-text"/> -->
+			 <select id="info-document-type" class="info-form-select">
+				<option value="6">机型文档</option>
+				<option value="14">现场文档</option>
+				<option value="5">设备文档</option>
+			</select>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">从属于:</label>
+			<!-- input type="text" id="info-document-belong" value="" class="info-form-text"/> -->
+			<select id="info-document-belong" class="info-form-select">
+				<option value="010">螺杆机</option>
+				<option value="020">风冷机</option> 
+			</select>
+		</div>
+		
+		<div class="info-form-row">
+			<!-- <label for="document-info-file">导入文件 :</label> -->
+			<input class="info-form-file" type="file" id="document-info-file">
+		</div>
+	</div>
+	<div class="info-doc"></div>
+	<div class="info-pic"></div>
+	<div class="info-buttonset"></div>
+	</form>
+</div>
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+		/*border: 1px solid silver;*/
+	}
+
+	.info-header{
+		margin-top: 10px;
+	}
+
+	.info-header #info-name{
+		margin-left: 30px;
+	}
+
+	.info-header .info-favor{
+		margin-left: 9px;
+	}
+
+	.info-form-row .info-form-label{
+		display: inline-block;
+		width: 58px;
+	}
+	
+	.info-form .info-form-file{
+		width:30;
+	}
+
+	.info-form .info-form-text{
+		width: 96px;
+	}
+
+	.info-form .info-form-select{
+		width: 100px;
+	}
+
+	.info-form-row{
+		margin: 4px auto;
+	}
+
+	.info-form-row #info-serial-number{
+		width: 130px;
+	}
+
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+
+	.info-buttonset{
+	    margin: 0px 0 8px 8px;
+	}
+
+	.info-buttonset .cloud-button-body-main{
+		margin: 1px 2px;
+		padding: 1px 5px;
+	}
+</style>

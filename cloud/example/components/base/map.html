@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>item.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../../base/loader.js"></script>
+    <style>
+            html, body {
+                width: 100%;
+                height: 100% !important;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+</head>
+    <script type="text/javascript">
+        
+        require(["cloud/components/map"], function(maps){
+            $(function(){
+                var map = new maps.Map({
+                    selector: "#map"
+                });
+                map.addHomeControl(0, 0);
+                map.addPositionControl();
+
+                var frame = $("<iframe>").get(0);
+                frame.src = "./item.html";
+                var bubble = new maps.Bubble({
+                  content: frame,
+                  maxWidth: 500
+                });
+
+                for (var i = 10; i >= 0; i--) {
+                    var marker = map.addMarker({
+                        position: new maps.LonLat(cloud.util.random(1, 100), cloud.util.random(1, 50)),
+                        title: "test marker" + i,
+                       // animation: maps.Animation.drop
+                        draggable: true
+                    });
+                    marker.on("click", function(event){
+                      //bubble.open(map, this);
+                      
+                      bubble.open(map, this);
+                    }, marker);
+
+                    //marker.hide();
+
+                };
+
+
+                
+
+               /* var map = new google.maps.Map($("#map")[0], {
+                    center: new google.maps.LatLng(-34.397, 150.644),
+                    zoom: 3,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+
+                for (var i = 1000; i >= 0; i--) {
+                    var marker = new google.maps.Marker({
+                        title: "test marker",
+                        map: map,
+                        position: new google.maps.LatLng(cloud.util.random(1, 50), cloud.util.random(1, 50))
+                        // draggable: true
+                    });
+                    marker.addListener("click", function(){
+
+                    });
+                };
+*/
+                
+
+
+
+                /*var map;
+
+                var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+
+
+                // Define a property to hold the Home state.
+                HomeControl.prototype.home_ = null;
+
+                // Define setters and getters for this property.
+                HomeControl.prototype.getHome = function() {
+                  return this.home_;
+                }
+
+                HomeControl.prototype.setHome = function(home) {
+                  this.home_ = home;
+                }
+
+                function HomeControl(map, div, home) {
+
+                  // Get the control DIV. We'll attach our control UI to this DIV.
+                  var controlDiv = div;
+
+                  // We set up a variable for the 'this' keyword since we're adding event
+                  // listeners later and 'this' will be out of scope.
+                  var control = this;
+
+                  // Set the home property upon construction.
+                  control.home_ = home;
+
+                  // Set CSS styles for the DIV containing the control. Setting padding to
+                  // 5 px will offset the control from the edge of the map.
+                  controlDiv.style.padding = '5px';
+
+                  // Set CSS for the control border.
+                  var goHomeUI = document.createElement('div');
+                  goHomeUI.title = 'Click to set the map to Home';
+                  controlDiv.appendChild(goHomeUI);
+
+                  // Set CSS for the control interior.
+                  var goHomeText = document.createElement('div');
+                  goHomeText.innerHTML = '<strong>Home</strong>';
+                  goHomeUI.appendChild(goHomeText);
+
+                  // Set CSS for the setHome control border.
+                  var setHomeUI = document.createElement('div');
+                  setHomeUI.title = 'Click to set Home to the current center';
+                  controlDiv.appendChild(setHomeUI);
+
+                  // Set CSS for the control interior.
+                  var setHomeText = document.createElement('div');
+                  setHomeText.innerHTML = '<strong>Set Home</strong>';
+                  setHomeUI.appendChild(setHomeText);
+
+                  // Setup the click event listener for Home:
+                  // simply set the map to the control's current home property.
+                  google.maps.event.addDomListener(goHomeUI, 'click', function() {
+                    var currentHome = control.getHome();
+                    map.setCenter(currentHome);
+                  });
+
+                  // Setup the click event listener for Set Home:
+                  // Set the control's home to the current Map center.
+                  google.maps.event.addDomListener(setHomeUI, 'click', function() {
+                    var newHome = map.getCenter();
+                    control.setHome(newHome);
+                  });
+                }
+
+
+
+                function initialize() {
+                  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+                  var mapOptions = {
+                    zoom: 4,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+                    mapTypeControl: true,
+                        mapTypeControlOptions: {
+                            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                            position: google.maps.ControlPosition.BOTTOM_CENTER
+                        },
+                        panControl: true,
+                        panControlOptions: {
+                            position: google.maps.ControlPosition.TOP_RIGHT
+                        },
+                        zoomControl: true,
+                        zoomControlOptions: {
+                            style: google.maps.ZoomControlStyle.LARGE,
+                            position: google.maps.ControlPosition.LEFT_CENTER
+                        },
+                        scaleControl: true,
+                        scaleControlOptions: {
+                            position: google.maps.ControlPosition.TOP_LEFT
+                        },
+                        streetViewControl: true,
+                        streetViewControlOptions: {
+                            position: google.maps.ControlPosition.LEFT_TOP
+                        }
+                  };
+
+                  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+
+                  var homeControlDiv = document.createElement('div');
+                    var homeControl = new HomeControl(map, homeControlDiv, chicago);
+
+                    homeControlDiv.index = 1;
+                    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
+
+
+                  // Add 5 markers to the map at random locations.
+                  var southWest = new google.maps.LatLng(-31.203405,125.244141);
+                  var northEast = new google.maps.LatLng(-25.363882,131.044922);
+                  var bounds = new google.maps.LatLngBounds(southWest,northEast);
+                  map.fitBounds(bounds);
+                  var lngSpan = northEast.lng() - southWest.lng();
+                  var latSpan = northEast.lat() - southWest.lat();
+                  for (var i = 0; i < 5; i++) {
+                    var location = new google.maps.LatLng(southWest.lat() + latSpan * Math.random(),
+                        southWest.lng() + lngSpan * Math.random());
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                    var j = i + 1;
+                    marker.setTitle(j.toString());
+                    attachSecretMessage(marker, i);
+                  }
+
+                  google.maps.event.addListener(map, "click", function(event){
+                    var location = event.latLng;
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    })
+                  });
+  
+                  google.maps.event.addListener(map, "zoom_changed", function(){
+                    var zoomLevel = map.getZoom();
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: "zoom level: " + zoomLevel,
+                        position: map.getCenter()
+                    });
+
+                    infoWindow.open(map);
+                  });
+                }
+
+                // The five markers show a secret message when clicked
+                // but that message is not within the marker's instance data.
+                function attachSecretMessage(marker, number) {
+                  var message = ["This","is","the","secret","message"];
+                  var infowindow = new google.maps.InfoWindow(
+                      { content: message[number],
+                        size: new google.maps.Size(50,50)
+                      });
+                  google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map,marker);
+                  });
+                }
+
+                initialize();*/
+            });
+        });
+    </script>
+<body>
+    <div id="map" style="width:100%; height: 100%;"></div>
+</body>
+</html>

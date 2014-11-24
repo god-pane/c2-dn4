@@ -1,0 +1,204 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title lang="text:itkdn_networt+-+home"></title>
+		<link rel="stylesheet" href="./resources/css/common.css" type="text/css" /> 
+		<link rel="stylesheet" href="./resources/css/home.css" type="text/css" />
+		<link rel="stylesheet" href="./resources/css/verifyBrowser.css" type="text/css" />
+      	<link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon" />
+        <link rel="bookmark" href="./resources/images/favicon.ico"/>
+		<script type="text/javascript" src="../../../cloud/base/loader.js"></script>
+		<script type="text/javascript" src="../../../cloud/lib/jquery.js"></script>
+		<script type="text/javascript">
+		function _verifyBrowser(){			
+      	   if((isFirefox=navigator.userAgent.indexOf("Firefox")>0)||(isChrome=navigator.userAgent.indexOf("Chrome")>0)){ 
+    	        return true; 
+    	   }
+    	   else{
+    		   return false;
+    	   	}
+		};
+		function renderTip(){				
+			if(!_verifyBrowser()){				
+	         	$("<div id='tip_top' class='tip_top'></div>")
+	         	.appendTo("body")
+	         	.css({"height":(document.documentElement.clientHeight/2),"width":document.documentElement.clientWidth,"top":-(document.documentElement.clientHeight/2)})
+	         	.animate({top:"0px"},300,function(){
+	         		$("<div id='tip_content' class='tip_content'></div>").html("<div class='text_div_1'><image class='inhand_logo' src='./resources/images/Logo-InHand.png' />" +
+	         				"<p class='text_title'>浏览器不受支持</p>" +
+	         				"<p class='text_content'>使用当前浏览器，无法获得最佳体验，建议使用最新的" +
+	         				"<a class='browser_link' href='http://www.firefox.com.cn'>Firefox</a>或" +
+	         				"<a class='browser_link' href='http://www.google.cn/intl/zh-CN/chrome/browser/'>Chrome</a>浏览器</p></div>"+
+	         				"<div class='text_div_2'>" +
+	         				"<p class='text_title'>Browser Tip</p>" +
+	         				"<p class='text_content'>Suggest to select the latest version of " +
+	         				"<a class='browser_link' href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or " +
+	         				"<a class='browser_link' href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> browser</p></div>"          				            				
+	         				).appendTo("body").css({
+	         			"top":((document.documentElement.clientHeight/2)-125)+"px",
+	         			"left":((document.documentElement.clientWidth/2)-225)+"px"});
+	         		$("<div class='ignore_button'></div>").appendTo($("#tip_content")).text("Skip").mouseover(function(){
+	         			$(this).css({
+	         				"cursor":"pointer",
+	         				"font-weight":"bold"
+	         			})
+	         			.mousedown(function(){
+	         				$(this).css({
+	         					"border-right":"2px solid #dddddd",
+	         			    	"border-bottom":"2px solid #dddddd"
+	         				})
+	         			})
+	         			.mouseout(function(){
+	         				$(this).css({
+	         					"border-right":"2px solid #7E807C",
+	             			    "border-bottom":"2px solid #7E807C",
+	             			    "font-weight":"normal"
+	         				})          				
+	         			})
+	         		}).click(function(){
+	         			$("#tip_bottom").animate({top:(document.documentElement.clientHeight)+"px"},300,function(){$(this).remove()});
+	             		$("#tip_top").animate({top:-(document.documentElement.clientHeight/2)+"px"},300,function(){$(this).remove()});
+	             		$("#tip_content").fadeOut(300,function(){$(this).remove()});
+	         		})
+	         	});
+	         	$("<div id='tip_bottom' class='tip_bottom'></div>").appendTo("body").css({"height":(document.documentElement.clientHeight/2),"width":document.documentElement.clientWidth,"top":document.documentElement.clientHeight}).animate({top:(document.documentElement.clientHeight/2)+"px"},300)           
+				}	   	
+			};
+		</script>	
+		 		<script type="text/javascript">	
+		 	if(sessionStorage.getItem("accessToken")){
+        		location.href = "../../applications";
+        	};
+			require(["./index"], function(Index){
+				var index = new Index();			
+			});		 			
+		</script>	
+	</head>
+	<body onload="renderTip()">
+		<div id="common-header" style="height:57px"></div>
+		<div id="common-nav" style="height:63px"></div>
+		<div id="home-content" class="home-content">
+			<div class="home-content-top-box">
+				<div id="home-content-top" class="home-content-top">
+					<div class="home-content-login-box">
+						<div id="home-content-login"  class="home-content-login">
+							<form id="formID">
+							<ul>
+								<li class="home-content-login-text"  lang="text:email"></li>
+								<li class="home-content-login-user">
+									<input type="text" id="home-input-user" name="username" spellcheck="false" class="validate[required,custom[email],funcCall[cloudInput]] home-input-user"/>
+								</li>
+								<li lang="text:password" class="home-content-login-text"></li>
+								<li class="home-content-login-pwd">
+									<input type="text" class="home-input-pwd-text" id="home-input-pwd-text" lang="value:case_sensitive"/>
+									<input type="password" style="display:none" class="validate[required,funcCall[cloudInput]] home-input-pwd-password" id="home-input-pwd-password"/>
+								</li>
+								<li class="home-content-login-text" lang="text:security_code"></li>
+								<li class="home-content-login-vercode">
+									<p class="home-content-login-ver">
+										<input type="text" class="home-input-ver-default" id="home-input-ver-default" lang="value:case_insensitive" />
+										<input type="text" style="display:none" class="validate[required,custom[systemAuthcode],funcCall[cloudInput]] home-input-ver-custom" id="home-input-ver-custom" />
+									</p>
+									<a>
+										<p class="home-verimg" id="home-verimg">
+										<img lang="title:click_to_change" title="" src="" />
+										</p>
+									</a>
+								</li>
+								<li>
+									<a><input lang="{value:sign_in,title:sign_in}" type="button" value="" class="home-input-submit" id="home-input-submit"></a>
+									<p id="home-login-forget" class="home-login-forget"><a href="javascript:void(0)" lang="text:forgot_pwd"></a></p>
+								</li>
+							</ul>
+							</form>
+						</div>
+						<!--
+						<div id="home-content-loginright" class="home-content-loginright">
+							<p class="home-content-loginright-text">开<br />发<br />者<br />通<br />道<br /></p>
+							<p class="home-content-loginright-icon"></p>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="home-content-bottom-box" style="display:none">
+				<div id="home-content-bottom" class="home-content-bottom">
+					<div id="home-content-bottom-update" class="home-content-bottom-update">
+						<ul>
+							<li class="home-content-list-title"><p class="home-content-list-titleicon-a"></p><p class="home-content-list-titletext" lang="text:recent">最近更新</p><p class="home-content-list-more"><a><input type="button" lang="value:more" id="home-list-more" class="home-list-more" /></a></p></li>
+							<li><p class="home-content-list-text">发布V4.10版本，增加流量统计报表功能 </p><p class="home-content-list-date">2012-8-9</p></li>
+							<li><p class="home-content-list-text">发布V4.10版本，增加流量统计报表功能 </p><p class="home-content-list-date">2012-8-9</p></li>
+							<li><p class="home-content-list-text">发布V4.10版本，增加流量统计报表功能 </p><p class="home-content-list-date">2012-8-9</p></li>
+						</ul>
+					</div>
+					<div id="home-content-bottom-line" class="home-content-bottom-line">
+						<p class="home-content-line"></p>
+					</div>
+					<div id="home-content-bottom-note" class="home-content-bottom-note">
+						<ul>
+							<li class="home-content-list-title"><p class="home-content-list-titleicon-b"></p><p class="home-content-list-titletext" lang="text:recent">最近更新</p><p class="home-content-list-more"><a><input type="button" value="" lang="value:more" class="home-list-more" /></a></p></li>
+							<li><p class="home-content-list-article">2012-6-8 本系统将于2012年6月9日22:00-24:00进行系统维护，维护期间您的设备不受影响，但系统将暂时禁止登陆；维护完成后您可以继续使用本系统。 </p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+				-->
+			<div id="home-content-bottom-div">
+				<div id="home-content-bottom-div-top">
+					<div id="home-content-bottom-div-top-text">&gt;&gt; <span lang="text:itkdn_provides"></span></div>
+				</div>
+				<div id="home-content-bottom-div-center">
+					<div class="home-content-bottom-div-center-item">
+						<div class="home-content-bottom-div-center-item-image">
+							<img alt="DeviceTouch" src="./resources/images/DT.png" title="DeviceTouch">
+						</div>
+						<div class="home-content-bottom-div-center-item-text">
+							<div class="home-content-bottom-div-center-text-top">
+								DeviceTouch
+							</div>
+							<div class="home-content-bottom-div-center-text-center" lang="text:maintain_devices"></div>
+							<div class="home-content-bottom-div-center-text-button-box">
+								<div id="home-content-bottom-div-center-text-button-DT" class="home-content-bottom-div-center-text-button" lang="text:more"></div>
+							</div>
+						</div>
+					</div>
+					<div class="home-content-bottom-div-center-black"></div>
+					<div class="home-content-bottom-div-center-item">
+						<div class="home-content-bottom-div-center-item-image">
+							<img alt="DeviceTouch" src="./resources/images/DS.png"  title="DeviceSense">
+						</div>
+						<div class="home-content-bottom-div-center-item-text">
+							<div class="home-content-bottom-div-center-text-top">
+								DeviceSense
+							</div>
+							<div class="home-content-bottom-div-center-text-center" lang="text:monitor_devices"></div>
+							<div class="home-content-bottom-div-center-text-button-box">
+								<div id="home-content-bottom-div-center-text-button-DS" class="home-content-bottom-div-center-text-button" lang="text:more"></div>
+							</div>
+						</div>
+					</div>
+					<div class="home-content-bottom-div-center-black"></div>
+					<div class="home-content-bottom-div-center-item">
+						<div class="home-content-bottom-div-center-item-image">
+							<img alt="DeviceTouch" src="./resources/images/DM.png" title="DeviceManager">
+						</div>
+						<div class="home-content-bottom-div-center-item-text">
+							<div class="home-content-bottom-div-center-text-top">
+								DeviceManager
+							</div>
+							<div class="home-content-bottom-div-center-text-center" lang="text:manage_network"></div>
+							<div class="home-content-bottom-div-center-text-button-box">
+								<div id="home-content-bottom-div-center-text-button-DM" class="home-content-bottom-div-center-text-button" lang="text:more"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="common-footer"></div>
+		<div id="change-language"></div>
+	</body>
+</html>

@@ -1,0 +1,145 @@
+<div id="device-batch-import">
+<div class="batch-import-header">
+    <span id="batch-import-header-tips" lang="text:only_surpport_xml"></span>
+</div>
+<div id="device-batch-import-form-content" style="margin-top:20px">
+<form class="batch-import-wrapper" id="batch-import-wrapper" name="form_model">
+<div class="import-xmlfile-div select-xmlfile-wrapper" style="margin:13px auto">
+<a class="cloud-button cloud-button-body" onclick="document.form_model.import_xmlfile.click()" style="display:inline-block;width:90px">
+<i class="cloud-button-item cloud-button-img cloud-icon-shangchuan cloud-icon-default"></i>
+<span class="cloud-button-item cloud-button-text" lang="text:select_file"></span>
+</a>
+<input type="text" id="file_name" class="validate[required]" style="width:200px;margin-left:3px" readonly/>
+<input type="file" id="import-xmlfile" name="import_xmlfile" accept="text/xml" style="display:none"/>
+</div>
+<div id="model-name-div" class="model-name-div " style="margin:13px auto">
+<label lang="text:model+name1+:" style="display:inline-block;height:20px;width:110px"></label>&nbsp;&nbsp;&nbsp;
+<input type="text" id="input-model-name" class="validate[required]" autocomplete="off" style="width:200px" />
+</div>
+<div id="gateway-model-div" class="gateway-model-dive" style="margin:13px auto">
+	<lable lang="text:model_protocol+:" style="display:inline-block;heigth:20px;width:110px"></lable>&nbsp;&nbsp;&nbsp;
+	<select name="select-sensorType" id="select-sensorType">
+		<!-- <option value="1" lang="text:yes">是</option>
+		<option value="0" lang="text:no">否</option> -->
+	</select>
+</div>
+</form>
+</div>
+<div class="batch-import-buttonset-bottom" style="position:absolute;margin-top:100px;margin-left:350px"></div>
+</div>
+<div id="import-device-result" style="text-align: center;display : none">
+    <div style="display:inline-block;text-align: left;width: 315px;">
+    <!--<span  class="" style="margin: 3px 0px;" lang="text:import_result+:">导入结果：</span>  -->
+    <span  class="batch-import-device-result-sucorfailed" id="batch-import-device-result-sucorfailed" lang=""></span>
+    <br />
+    <span class="failed-details" lang="text:failed-details"></span>
+    <!-- <span  id ="batch-import-device-result-suc" ></span>
+    <span  class="" style="margin: 3px 0px;" lang="text:ge+,">个,</span> -->
+    <!-- <span  class="" style="margin: 3px 0px;" lang="text:failed">失败</span> 
+    <span  id ="batch-import-device-result-failed" ></span>
+    <span  class="" style="margin: 3px 0px;" lang="text:ge">个</span>
+    -->
+    <br>
+    <ol id="batch-import-device-result-list" >
+    </ol>
+    </div>
+</div>
+
+<style type="text/css">
+    .ui-window-content {
+        background-color: #F5F6F9;
+    }
+	.batch-import-wrapper{
+		width: 350px;
+		margin: 0 auto;
+		background-color: #F5F6F9;
+	}
+
+	.batch-import-header{
+		margin-top: 10px;
+		text-align: center;
+        font-size: 21px;
+	}
+	
+	.device-batch-import-left {
+	    float : left;
+	    width: 300px;
+	    overflow-y: auto;
+        height: 320px;
+	}
+	
+	.device-batch-import-right {
+        float: left;
+		width: 350px;
+		height: 320px;
+		margin-left: 40px;
+    }
+	
+    div.batch-import-whether-router-row label.batch-import-whether-router-label{
+        width: 92px;
+    }
+    
+	.batch-import-form-row label.batch-import-form-label{
+		display: inline-block;
+		width: 107px;
+	}
+
+	.batch-import-form .batch-import-form-text{
+		width: 104px;
+	}
+
+	.batch-import-form .batch-import-form-select{
+		width: 106px;
+	}
+	.batch-import-doc-select{
+		width: 136px;
+	}
+    #batch-import-site-autocreate a {
+        margin-left: 55px;
+    }
+	.batch-import-form-row{
+		margin: 13px auto;
+	}
+
+	.batch-import-form-row #batch-import-serial-number{
+		width: 130px;
+	}
+
+	.batch-import-map{
+		width: 100%;
+		height: 90%;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+    .batch-import-buttonset-bottom a{
+        margin: 8px 40px 0 0;
+    }
+    .batch-import-buttonset-bottom{
+    	margin-top:50px;
+    }
+	.batch-import-buttonset .cloud-button{
+		/*margin: 1px 2px;*/
+		/*padding: 1px 6px;*/
+	}
+    #device-site-batch-import-qtip .cloud-bubble-hide {
+        display : none;
+    }
+    #device-batch-import {
+        background-color: #F5F6F9;
+        text-align: center;
+    }
+    #device-batch-import-form-content{
+		display: inline-block;
+		text-align: left;
+    }
+    #import-xmlfile{
+    	cursor:pointer;
+    }
+    .model-name-div{
+    margin:13px auto;
+    }
+   .import-xmlfile-div .cloud-button{
+    	margin-right:15px;
+    }
+
+</style>

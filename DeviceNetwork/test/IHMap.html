@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <link href="../css/default.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../js/plugin/openlayers.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.pnotify.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
+		<script type="text/javascript" src="../js/plugin/log4javascript.js"></script>
+		<script type="text/javascript" src="../js/base/ih.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+        $(function(){
+			
+                var map = new IHMap("map");
+                map.addMyLocation(103.96483, 30.66385);
+                map.panToMyLocation();
+                
+                
+                var offlineLayer = map.createLayer("offline");
+                log.debug(offlineLayer);
+                
+                for (var i = 0; i < 3; i++) {
+                    var marker = map.addMarker(offlineLayer, 48, 48, 103.96483 + Math.random() * 5, 30.66385 + Math.random() * 5, context + "imgs/icon/map-offline.png", {
+                        title: "Hello world"
+                    });
+                    
+                    marker.data = {
+                        id: "123123",
+                        type: "device",
+                        status: "warn"
+                    }
+                }
+                
+                var popupContent = "<div style='width:300px; height:300px'>Select popup: <span class='popupId'></sapn></div>";
+                
+                map.layerSelectable(offlineLayer, {
+                    onSelect: function(feature){
+                        log.debug("select feature");
+                        log.debug(feature);
+                        
+                        var layer = feature.layer;
+                        feature.style.pointRadius = 20;
+                        layer.drawFeature(feature);
+                        
+                        map.addPopup(feature, popupContent);
+                        $(".popupId").text(feature.popup.id);
+                        
+                    },
+                    
+                    onUnselect: function(feature){
+                        log.debug("unselect feature");
+                        log.debug(feature);
+                        
+                        map.removePopup(feature);
+                    }
+                });
+                //map.displayOnlineLayer(true);
+                map.setAutoCenter();
+                
+                //map.setZoom(2);
+            });
+			
+    </script>
+    <body>
+        <div id="map" style="width:100%; height: 100%;"></div>
+		
+    </body>
+</html>

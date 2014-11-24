@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+<script type="text/javascript">
+	require(["../../cloud/components/paging.js"], function(Paging){
+		var limit = 30;
+		var cursor = 0;
+		var current = parseInt(cursor/limit) + 1;
+		Model.device({
+				method:"query_list",
+				param:{
+					verbose:1,
+					limit:limit,
+					cursor:cursor
+				},
+				success:function(data){
+//					console.log("data",data);
+					paging = new Paging({
+						selector:"#abc",//selector不解释
+						data:data,//获取total的同时，也获取到初始化的数据。在分页渲染之后，自动点击默认页时会用到的数据。避免二次请求API
+						current:current,//默认显示第几页
+						total:data.total,//资源总数
+						limit:limit,//每页显示的资源数
+						autoClick:false,//是否点击默认页，设置为false表示默认不点击
+						//请求api数据，使用返回数据执行用户自定义函数并修正分页
+						requestData:function(options,success){
+							//options对象，有两个属性cursor limit
+							//success函数，请求成功执行的函数
+							Model.device({
+								method:"query_list",
+								param:{
+									cursor:options.cursor,
+									limit:options.limit
+								},
+								success:function(returnData){
+									success(returnData);
+								}
+							});
+						},
+						//翻页执行的函数
+						turn:function(data){
+							console.log("turn() - data",data);
+						}
+					})
+				}
+		});
+	});
+</script>
+</head>
+<body>
+<div id="abc" style="width:100%;height:100%"></div>
+</body>
+</html>

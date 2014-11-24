@@ -1,0 +1,28 @@
+<div class="forget-window" id="forget-window">
+	<div lang="text:forget_pwd_prompt" class="forget-notice" style="padding-right:5px;line-height:20px;"></div>
+	<form id="forget-password-formid" class="forget-form" action="">
+	   <ul class="forget-form-ul">
+	   		<li>
+               <p lang="text:email" class="forget-row-title"></p>
+               <input id="forget-input-email" class="validate[required,custom[email],funcCall[cloudInput]] forget-row-input-email" name="" type="text" />
+	   		</li>
+	   		<li>
+               <p lang="text:security_code" class="forget-row-title"></p>
+                <input id="forget-input-vcode-default" class="forget-row-input-vcode-default" type="text" lang="value:case_insensitive"/>
+			    <input id="forget-input-vcode-custom" style="display:none;" class="validate[required,custom[systemAuthcode],funcCall[cloudInput]] forget-row-input-vcode-custom" type="text" />
+               <p style="margin-left:10px;"><a><img style="border:1px solid #ddd" id="imgVcode" src="" lang="title:click_to_change"/></a></p>
+               <p style="display:none;margin-left:10px;"><a lang="text:vague" id="refreshImgVcode" class="refreshImgVcode"></a></p>
+	   		</li>
+			<li>
+				<p class="forget-row-title"></p>
+               <a><input id="forget-button-sure" lang="{value:reset_password,title:reset_password}" class="forget-button-sure" value="" type="button" /></a></p>
+			</li>
+	   </ul>
+	</form>
+	<div class="forget-bottom">
+		<div class="forget-bottom-div">
+			<!--<p style="margin-left:10px;"><a href="./register.html" lang="text:registration"></a></p>
+			<p><span lang="text:donot_have_account+?"></span></p>-->
+		</div>
+    	</div>
+	</div>

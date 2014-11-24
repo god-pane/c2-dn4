@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>user</title>
+        <script type="text/javascript" src="http://localhost/cloud/base/loader.js"></script>
+		<script>
+			require(["../applications/system/user/table"],function(User){
+				var user = new User({
+					selector:"#test-user",
+				})
+//				console.log("site",site);
+				user.tableTemplate.layout.show("east");
+			})
+		</script>
+    </head>
+    <body>
+    	<div id="test-user" style="width:100%;height:800px;"></div>
+    </body>
+</html>

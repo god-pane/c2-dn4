@@ -1,0 +1,315 @@
+<form class="info-wrapper" id="info-wrapper" style="position:relative">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-name" class="validate[required,custom[giveName],minSize[0],maxSize[30],funcCall[cloudInput]]">
+		<div class="info-header-btn" style="float:left"></div>
+		<div class="info-device-favor"></div>
+	</div>
+		<div class="info-buttonset-bottom"></div>
+
+	<div class="info-tag-panel"></div>
+	<div class="info-form" >
+		<!--<div class="info-form-row info-device-vendor-row">
+			<label for="info-vendor" class="info-form-label" lang="text:vendor_name+:">氓沤鈥毭モ�鈥�</label>
+			<select id="info-vendor" class="validate[required] info-form-select">
+				<option value="3" lang="text:inhand">Inhand</option> 
+			</select>
+		</div>-->
+		<div class="info-form-row">
+			<label for="info-serial-number" class="info-form-label" lang="text:serial_number+:"></label>
+			<input type="text" id="info-serial-number" class="info-form-text validate[required,custom[serialNumber2],funcCall[cloudInput]]"/>
+		</div>
+		<div class="info-form-row">
+            <label for="info-mobilenumber" class="info-form-label" lang="text:mobile_number+:">忙鈥扳�忙艙潞氓锟铰�</label>
+            <input type="text" id="info-mobilenumber" class="info-form-text validate[custom[phone1],maxSize[20],minSize[8],funcCall[cloudInput]]"/>
+        </div>
+		<div class="info-form-row info-device-model-row">
+			<label for="info-model" class="info-form-label" lang="text:model+:">忙艙潞氓啪鈥�</label>
+			<!-- <input type="text" id="info-model" class="info-form-text"/> -->
+			<select id="info-model" class="validate[required] info-form-select">
+				<!-- <option ></option> -->
+			</select>
+		</div>
+		<!-- <div class="info-form-row info-whether-router-row">
+			<label for="info-whether-router" class="info-form-label info-whether-router-label" lang="text:whether_the_gateway_device+:"></label>
+			<select id="info-whether-router" class="validate[required] info-form-select">
+				<option value="0">忙藴炉</option>
+                <option value="1">氓锟铰�/option>
+			</select>
+			<input type="radio" id="info-whether-router-yes" name="info-whether-router" class="info-whether-router" value="0" disabled="disabled" checked/>
+			<span  lang="text:yes">忙藴炉</span>
+			&nbsp;&nbsp;&nbsp;
+			<input type="radio" id="info-whether-router-no" name="info-whether-router" class="info-whether-router" value="1" disabled="disabled"/>
+			<span  lang="text:no">氓锟铰�/span>
+		</div> -->
+		<div class="info-form-row info-device-ip-row">
+            <label class="info-form-label" lang="text:ip+:"></label>
+            <label id="info-device-ip" style="width:90px">wait for config</label>
+           <!--  <span class="info-device-ip-signal" ></span> -->
+        </div>
+        <div class="info-form-row info-device-basestation-row" style="display:none">
+            <label class="info-form-label" lang="text:base_station+:">氓鸥潞莽芦鈩�</label>
+            <label id="info-device-basestation" style="width:90px"></label>
+            <!-- <span class="info-device-ip-signal" ></span> -->
+        </div>
+        <div class="info-form-row info-device-signal-row" style="display:none">
+            <label class="info-form-label" lang="text:signal_strength+:"></label>
+            <label id="info-device-signal-num" style="width:90px"></label>
+            <span id="info-device-signal-icon" ></span>
+        </div>
+		<div class="info-form-row info-device-business-row">
+			<label for="info-business-state" class="info-form-label" lang="text:business_state+:">盲赂拧氓艩隆莽艩露忙鈧拷:</label>
+			<!-- <input type="text" id="3" class="info-form-text"/> -->
+			<select id="info-business-state" class="validate[required] info-form-select">
+				<option value="0" lang="text:construction"></option>
+                <option value="1" lang="text:operation"></option>
+                <option value="2" lang="text:fault"></option>
+                <option value="3" lang="text:overhaul"></option>
+			</select>
+		</div>
+		<!-- <div class="info-form-row info-device-business-row">
+            <label for="info-install-addr" class="info-form-label" lang="text:installation_address+:"></label>
+            <input type="text" id="info-install-addr" class="info-form-text validate[maxSize[20],funcCall[cloudInput]]"/>
+        </div> -->
+		<div class="info-form-row info-device-customer-row" style="display:none">
+			<span for="4" class="info-form-label" lang="text:belong_customer+:"></span>
+			<span id="info-device-customers" class="info-form-span"></span>
+		</div>
+		<div class="info-form-row info-device-site-auto-row">
+			<!-- <label for="info-site-name" class="info-form-label"></label> -->
+			<span id="info-site-autocreate" class="info-site-autocreate"></span>
+		</div>
+		<div class="info-form-row info-device-site-row">
+            <label for="info-site-name" class="info-form-label" lang="text:install_site+:"></label>
+            <span>
+            <select id="info-site-name" style="width:90px;" class="info-form-select">
+                <option></option>
+            </select>
+            </span>
+        </div>
+		<div class="info-form-row info-device-alarm-row" style="display:none">
+			<span  class="info-form-label" lang="text:event_or_alarm+:"></span>
+			<span  class="info-form-span">!!!</span>
+		</div>
+		
+		
+		<div class="info-form-row info-device-advanced-row">
+			<div class = "info-device-advances-title">
+				<label for="info-advanced-options" class="info-form-label" style="width : 54px" lang="text:show_advanced_options"></label>
+				<span id="info-device-button-content" ></span>
+			</div>
+			<div class="info-form-row info-device-advanced-form" id="info-device-advanced-form" style="display:none">
+			<!--<div class="info-form-row info-advanced-sync-row"  >
+	                <label for="info-device-sync" class="info-form-label" lang=""></label>
+					<select id="info-device-sync" class="info-form-select">
+						<option value="0" lang=""></option>
+		                <option value="1" lang=""></option>
+		                <option value="2" lang=""></option>
+					</select>
+	            </div>-->
+				<div class="info-form-row info-advanced-heartbeattimeout-row"  >
+	                <label for="info-device-heartbeattimeout" class="info-form-label" lang="text:heartbeat_timeout+:"></label>
+	                <input type="text" id="info-device-advanced-heartbeattimeout" class="info-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="10"/>
+	                 <span  lang="text:seconds"></span>
+	            </div>
+				<div class="info-form-row info-advanced-heartbeatinterval-row"  >
+	                <label for="info-device-heartbeatinterval" class="info-form-label" lang="text:heartbeat_interval+:"></label>
+	                <input type="text" id="info-device-advanced-heartbeatinterval" class="info-form-text validate[required,custom[number],min[30],max[600],funcCall[cloudInput]]" value="120"/>
+	               <span  lang="text:seconds"></span>
+	            </div>
+				<div class="info-form-row info-advanced-maxheartbeatlost-row"  >
+	                <label for="info-device-maxheartbeatlost" class="info-form-label" lang="text:max_heartbeat_lost+:"></label>
+	                <input type="text" id="info-device-advanced-maxheartbeatlost" class="info-form-text validate[required,custom[number],min[1],max[20],funcCall[cloudInput]]" value="6"/>
+	            </div>
+	            <div class="info-form-row info-advanced-resendlogin-row"  >
+                    <label for="info-device-resendlogin" class="info-form-label" lang="text:resend_login+:"></label>
+                    <input type="text" id="info-device-advanced-resendlogin" class="info-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="60"/>
+                    <span lang="text:seconds">
+                </div>
+                
+                <div class="info-form-row info-advanced-timeout-row"  >
+                    <label for="info-device-timeout" class="info-form-label" lang="text:connection_timeout+:"></label>
+                    <input type="text" id="info-device-advanced-timeout" class="info-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="300000"/>
+                    <span  lang="text:milliscond"></span>
+                </div>
+                
+                <div class="info-form-row info-advanced-acktimeout-row"  >
+                    <label for="info-device-acktimeout" class="info-form-label" lang="text:ack_timeout+:"></label>
+                    <input type="text" id="info-device-advanced-acktimeout" class="info-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="120000"/>
+                    <span lang="text:milliscond"></span>
+                </div>
+                
+                <div class="info-form-row info-advanced-ackretries-row"  >
+                    <label for="info-device-ackretries" class="info-form-label" lang="text:ack_retries+:"></label>
+                    <input type="text" id="info-device-advanced-ackretries" class="info-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="3"/>
+                </div>
+                
+                <div class="info-form-row info-advanced-sync-row"  >
+                    <label for="info-device-sync" class="info-form-label" lang="text:sync_config+:"></label>
+                    <!-- <input type="text" id="info-device-advanced-sync" class="info-form-text validate[required,custom[number],min[1],max[20]]" value="6"/> -->
+                    <select id="info-device-advanced-sync" class="validate[required] info-device-advanced-sync-select">
+		                <option value="2" lang="text:keep_device"></option>
+		                <option value="1" lang="text:keep_platform" selected=true></option>
+		                <option value="0" lang="text:ignore"></option>
+		            </select>
+                </div>
+			</div>
+		</div>
+		
+		
+		
+
+	</div>
+	<!-- <div class="info-map" id="info-map"></div> -->
+	<div class="info-doc"  style="display:none">
+		<div class="info-doc-row">
+			<select id="info-doc-select" class="info-doc-select">
+			</select>
+		</div>
+	</div>
+	<div class="info-form-row info-device-pic-row"  style="display:none">
+		<img id="info-device-pic" ></img>
+	</div>
+	
+</form>
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	.info-header{
+		margin-top: 10px;
+		height:26px;
+	}
+	
+	#info-name{
+		margin-left: 12px!important;
+		float:left;
+	}
+
+	.info-header .info-device-favor{
+		margin-left: 0px;
+	}
+    
+	.info-form-row label.info-form-label{
+		display: inline-block;
+		width: 70px;
+	}
+
+	.info-doc-select{
+		width: 136px;
+	}
+    #info-site-autocreate a {
+        margin-left: 0px;
+    }
+	.info-form-row{
+		margin: 8px 0;
+	}
+
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+    .info-buttonset-bottom a{
+        margin: 8px 10px 0 0;
+    }
+    .info-buttonset-bottom{
+        margin-bottom: 13px;
+        height: 32px;
+		width: 100%;
+		overflow: hidden;
+    }
+	#module-info-tag-edit{
+		padding: 0px;
+		border: 0px ;
+	}
+	.info-form-span{
+		display: inline-block;
+		width: 81px;
+        margin: 0px 10px;
+	}
+	.info-buttonset .cloud-button{
+		/*margin: 1px 2px;*/
+		/*padding: 1px 6px;*/
+	}
+	.info-device-pic-row {
+	   height: 132px;
+	}
+	
+	.info-device-pic-row a {
+	   margin:3px 0px 0px 0px;
+	   float : right;
+	}
+
+	#info-device-pic {
+	    float: left;
+	    width: 178px;
+        height: 132px;
+	}
+    #device-site-info-qtip .cloud-bubble-hide {
+        display : none;
+    }
+    #device-site-info-qtip{
+        height: 350px;
+        width: 210px;
+        overflow: auto;
+    }
+    .info-online-status {
+        float:left;
+    }
+    .info-header-btn{
+        float:left;
+        width:72px;
+        height:17px;
+        margin-top: 3px;
+    }
+	.info-device-advances-title{
+		left: 19px;
+		position: relative;
+		background-color: #F5F6F9;
+		z-index: 1;
+		/* width: 82px; */
+		padding-left: 12px;
+	}
+	.info-device-advanced-form{
+		position: relative;
+		top: -21px;
+		border: 1px solid rgb(204, 204, 204);
+		padding-top: 13px;
+		padding-left: 15px;
+		display: block;
+	}
+    .info-form a.cloud-button {
+        margin-right : 0px;
+    }
+    .info-device-ip-row{
+        height: 18px;
+        line-height: 18px;
+    }
+    #info-device-signal-icon{
+        display:inline-block;
+        margin-bottom : -2px;
+    }
+    
+    .info-device-advanced-row div#info-device-advanced-form input.info-form-text {
+        width : 60px;
+    }
+	
+	.info-device-advanced-sync-select{
+		width:80px;
+	}
+	#module-info-autocreate-site span.cloud-button-text {
+	    width: 150px;
+        height: 40px;
+	}
+	#module-info-autocreate-site span.cloud-button-checkbox-icon {
+        margin-top : -13px;
+    }
+    #info-site-name option{
+    	width:100px!important;
+    	margin: 0 -18px 0 0;
+    }
+</style>

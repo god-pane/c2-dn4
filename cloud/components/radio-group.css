@@ -1,0 +1,8 @@
+.radio-group {
+	overflow: auto;
+}
+
+.radio-group-vertical .radio-group-item{
+	float: left;
+	clear: left;
+}

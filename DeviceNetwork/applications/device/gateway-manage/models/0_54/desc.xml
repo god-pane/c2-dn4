@@ -1,0 +1,168 @@
+﻿<description version="1.0" type="700"  >
+<group id = "_setup_system_enable">
+	<item id="language" encrypt="false" unique="false" ></item>
+	<item id="router_name" encrypt="false" unique="true" ></item>
+	<item id="hostname" encrypt="false" unique="true" ></item>
+</group>
+<group id = "_setup_time_enable">
+	<item id="tm_sel" encrypt="false" unique="false" ></item>
+	<item id="tm_tz" encrypt="false" unique="false" ></item>
+	<item id="tm_dst" encrypt="false" unique="false" ></item>
+	<item id="ntp_updates" encrypt="false" unique="false" ></item>
+	<item id="ntp_tdod" encrypt="false" unique="false" ></item>
+	<item id="ntp_server" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_setup_com_enable">
+	<item id="com0_config" encrypt="false" unique="false" ></item>
+	<item id="com0_hw_flow" encrypt="false" unique="false" ></item>
+	<item id="com0_sw_flow" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_admin_log_enable">
+	<item id="log_remote" encrypt="false" unique="false" ></item>
+	<item id="log_remoteip" encrypt="false" unique="false" ></item>
+	<item id="log_remoteport" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_admin_access_enable">
+	<item id="http_enable" encrypt="false" unique="false" ></item>
+	<item id="http_port" encrypt="false" unique="false" ></item>
+	<item id="http_local" encrypt="false" unique="false" ></item>
+	<item id="http_remote" encrypt="false" unique="false" ></item>
+	<item id="http_src" encrypt="false" unique="false" ></item>
+	<item id="http_description" encrypt="false" unique="false" ></item>
+	<item id="https_enable" encrypt="false" unique="false" ></item>
+	<item id="https_port" encrypt="false" unique="false" ></item>
+	<item id="https_local" encrypt="false" unique="false" ></item>
+	<item id="https_remote" encrypt="false" unique="false" ></item>
+	<item id="https_src" encrypt="false" unique="false" ></item>
+	<item id="https_description" encrypt="false" unique="false" ></item>
+	<item id="telnet_enable" encrypt="false" unique="false" ></item>
+	<item id="telnet_port" encrypt="false" unique="false" ></item>
+	<item id="telnet_local" encrypt="false" unique="false" ></item>
+	<item id="telnet_remote" encrypt="false" unique="false" ></item>
+	<item id="telnet_src" encrypt="false" unique="false" ></item>
+	<item id="telnet_description" encrypt="false" unique="false" ></item>
+	<item id="sshd_enable" encrypt="false" unique="false" ></item>
+	<item id="sshd_port" encrypt="false" unique="false" ></item>
+	<item id="sshd_local" encrypt="false" unique="false" ></item>
+	<item id="sshd_remote" encrypt="false" unique="false" ></item>
+	<item id="sshd_src" encrypt="false" unique="false" ></item>
+	<item id="sshd_description" encrypt="false" unique="false" ></item>
+	<item id="console_enable" encrypt="false" unique="false" ></item>
+	<item id="console_description" encrypt="false" unique="false" ></item>
+	<item id="login_timeout" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_setup_wan1_enable">
+	<item id="wan1_proto" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_mode" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_provider" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_callno" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_apn" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_username" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_passwd" encrypt="true" unique="false" ></item>
+	<item id="wan1_ppp_static" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_ip" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_peer" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_check_interval" encrypt="false" unique="false" ></item>
+	<item id="wan1_ppp_check_retries" encrypt="false" unique="false" ></item>
+	<item id="wan1_icmp_host" encrypt="false" unique="false" ></item>
+	<item id="wan1_icmp_interval" encrypt="false" unique="false" ></item>
+	<item id="wan1_icmp_timeout" encrypt="false" unique="false" ></item>
+	<item id="wan1_icmp_retries" encrypt="false" unique="false" ></item>
+	<item id="wan1_trig_data" encrypt="false" unique="false" ></item>
+	<item id="wan1_trig_sms" encrypt="false" unique="false" ></item>
+	<item id="wan1_debug" encrypt="false" unique="false"></item>
+	<item id="wan1_trig_call" encrypt="false" unique="false"></item>
+</group>
+<group id = "_setup_lan0_enable">
+	<item id="lan0_ip" encrypt="false" unique="false" ></item>
+	<item id="lan0_netmask" encrypt="false" unique="false" ></item>
+	<item id="lan0_mip" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_setup_dns_enable">
+	<item id="dns_static" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_routes_static_enable">
+	<item id="routes_static" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_setup_ddns_enable">
+	<item id="ddnsx0" encrypt="true" unique="false" ></item>	
+	<item id="ddnsx1" encrypt="true" unique="false" ></item>	
+</group>
+<group id = "_service_ovdp_enable">
+	<item id="ovdp_mode" encrypt="false" unique="false" ></item>	
+	<item id="ovdp_vendor" encrypt="false" unique="false" ></item>	
+	<item id="ovdp_device_id" encrypt="false" unique="false" ></item>	
+	<item id="ovdp_center" encrypt="false" unique="false" ></item>	
+	<item id="ovdp_center_port" encrypt="false" unique="false" ></item>	
+	<item id="ovdp_trust_list" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_service_dtu_enable">
+	<item id="dtu_enable" encrypt="false" unique="false" ></item>	
+	<item id="dtu_server_mode" encrypt="false" unique="false" ></item>	
+	<item id="dtu_tcp_mode" encrypt="false" unique="false" ></item>	
+	<item id="dtu_server" encrypt="false" unique="false" ></item>	
+	<item id="dtu_port" encrypt="false" unique="false" ></item>	
+	<item id="dtu_id" encrypt="false" unique="false" ></item>
+	<item id="dtu_protocol" encrypt="false" unique="false" ></item>
+</group>
+<group id = "_fw_basic_enable">
+	<item id="fw_strict" encrypt="false" unique="false" ></item>	
+	<item id="fw_block_wan" encrypt="false" unique="false" ></item>	
+	<item id="fw_anti_dos" encrypt="false" unique="false" ></item>	
+</group>
+<group id = "_fw_acl_enable">
+	<item id="fw_acl" encrypt="false" unique="false" ></item>	
+</group>
+<group id = "_fw_portmap_enable">
+	<item id="fw_portmap" encrypt="false" unique="false" ></item>	
+</group>
+<group id = "_fw_vip_enable">
+	<item id="fw_router_vip" encrypt="false" unique="false" ></item>	
+	<item id="fw_vip_range" encrypt="false" unique="false" ></item>	
+	<item id="fw_vip" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_fw_dmz_enable">
+	<item id="dmz_enable" encrypt="false" unique="false" ></item>		
+	<item id="dmz_ip" encrypt="false" unique="false" ></item>		
+	<item id="dmz_src" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_fw_mac_rules_enable">
+	<item id="fw_mac_rules" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_qos_settings_enable">
+	<item id="qos_enable" encrypt="false" unique="false" ></item>		
+	<item id="qos_obw" encrypt="false" unique="false" ></item>		
+	<item id="qos_ibw" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_ipsec_basic_enable">
+	<item id="ipsec_natt_enable" encrypt="false" unique="false" ></item>		
+	<item id="ipsec_natt_interval" encrypt="false" unique="false" ></item>		
+	<item id="ipsec_uniqueids" encrypt="false" unique="false" ></item>		
+	<item id="ipsec_compress" encrypt="false" unique="false" ></item>		
+	<item id="ipsec_debug" encrypt="false" unique="false" ></item>		
+	<item id="ipsec_force_natt" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_ipsec_tunnels_enable">
+	<item id="ipsec_tunnels" encrypt="true" unique="false" ></item>		
+</group>
+<group id = "_gre_tunnels_enable">
+	<item id="gre_tunnels" encrypt="false" unique="false" ></item>		
+</group>
+<group id = "_cert_mgr_enable">
+	<item id="cert_key" encrypt="true" unique="false" ></item>		
+	<item id="scep_enable" encrypt="false" unique="false" ></item>		
+	<item id="scep_status" encrypt="false" unique="false" ></item>		
+	<item id="scep_challenge" encrypt="true" unique="false" ></item>		
+	<item id="scep_url" encrypt="false" unique="false" ></item>		
+	<item id="scep_common_name" encrypt="false" unique="false" ></item>		
+	<item id="scep_fqdn" encrypt="false" unique="false" ></item>		
+	<item id="scep_unit1" encrypt="false" unique="false" ></item>		
+	<item id="scep_unit2" encrypt="false" unique="false" ></item>		
+	<item id="scep_domain" encrypt="false" unique="false" ></item>		
+	<item id="scep_serialno" encrypt="false" unique="false" ></item>		
+	<item id="scep_unaddr" encrypt="false" unique="false" ></item>		
+	<item id="scep_key_len" encrypt="false" unique="false" ></item>		
+	<item id="scep_poll_interval" encrypt="false" unique="false" ></item>		
+	<item id="scep_poll_timeout" encrypt="false" unique="false" ></item>
+</group>
+</description>

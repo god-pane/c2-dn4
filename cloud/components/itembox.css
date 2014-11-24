@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.itembox{
+	overflow: auto;
+}
+.itembox-container{
+	overflow:auto;
+	height: 100%;
+	padding-bottom: 10px;
+}
+
+.itembox .cloud-item-clicked{
+	background: #fff;
+    /* -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
+    box-shadow: 0 0 0; */
+}

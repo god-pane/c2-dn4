@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example of cloud/component/uploader</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+</style>
+<script type="text/javascript">
+	require([ "cloud/components/button", "cloud/base/cloud", "cloud/components/uploader", "cloud/lib/plugin/plupload.full", "cloud/resources/css/default.css" ], 
+			function(Button, cloud, Uploader) {
+		
+		var id = null;
+		
+		function renderPic(picId){
+			console.log("render pic of id = :" + picId)
+            var accessToken = cloud.Ajax.getAccessToken();
+            var url = cloud.config.FILE_SERVER_URL + "/api/file/" + picId + "?access_token=" + accessToken;
+            console.log("get pic from " + url);
+            $("<img/>").height(200).width(200).attr("src", url).appendTo($("#img"));
+        }
+		
+        var uploaderUrl = cloud.config.FILE_SERVER_URL + "/api/file?access_token=" + cloud.Ajax.getAccessToken() //+ "&file_name=" + fileName;
+        
+        $(function() {
+        	var isDisable = false;
+        	var button = new Button({
+                container : $("#container"),
+                title : "button1",
+                text : "disable",
+                events: {
+                    click : function(event){
+                        //id && (renderPic(id));
+                        	upload.disable();
+                            //uploader.destroy();
+                            
+                    }
+                }
+            });
+        	var button2 = new Button({
+                container : $("#container"),
+                title : "button2",
+                text : "enable",
+                events: {
+                    click : function(event){
+                        //id && (renderPic(id));
+                            upload.enable();
+                            //uploader.init();
+                            
+                    }
+                }
+            });
+        	
+        	var button3 = new Button({
+                container : $("#container"),
+                title : "button2",
+                text : "download current pic",
+                events: {
+                    click : function(event){
+                        id && (renderPic(id));
+                    }
+                }
+            });
+        	
+        	var upload = new Uploader({
+        		browseElement : "pickfiles", 
+                url : uploaderUrl,
+                //autoInit : false,
+                autoUpload : true,
+                filters : [
+                    {title : "Image files", extensions : "jpg,gif,png"},
+                    {title : "Zip files", extensions : "zip"}
+                ],
+                requestParams : {test : "test"},
+                multiSelection : true,
+                maxFileSize : "8mb",
+        		tipsContainer : $("#tips"),
+        		events : {
+                    "onFilesRemoved": function(){
+                        console.log("onFilesRemoved 222222222");
+                    }
+        		}
+        	}) 
+        	
+        	
+        	upload.on({
+        		//tested
+        		"onInit" : function(self){
+                    console.log("onInit");
+                    console.log(arguments);
+                    
+                    $("#filelist").html("<div>Current runtime: " + self.pluginObj.runtime + "</div>");
+                },
+                "onDestory": function(){
+                    console.log("onDestory");
+                    console.log(arguments);
+                },
+                "onError": function(){
+                    console.log("onError");
+                    console.log(arguments);
+                },//tested
+                "beforeFileUpload": function(){
+                    console.log("beforeFileUpload");
+                    console.log(arguments);
+                },//tested
+                "onFilesRemoved": function(){
+                    console.log("onFilesRemoved");
+                    console.log(arguments);
+                },//tested
+                "onQueueChanged": function(){
+                    console.log("onQueueChanged");
+                    console.log(arguments);
+                },//tested
+                "onFileUploaded": function(res){
+                	(res && res.result) && (id = res.result._id);
+                	console.log(id);
+                    console.log("onFileUploaded");
+                    console.log(arguments);
+                },//tested
+                "onUploadComplete": function(){
+                    console.log("onUploadComplete");
+                    console.log(arguments);
+                },//tested
+                "onFilesAdded": function(){
+                    console.log("onFilesAdded");
+                    console.log(arguments);
+                    upload.start();
+                },//tested
+                "onUploadProgress": function(){
+                    console.log("onUploadProgress");
+                    console.log(arguments);
+                }
+        	});
+        	
+        	
+        	upload.init();
+            
+        	$("#uploadfiles").click(function(e) {
+        		//start upload, the method enabled only when the config "autoUpload" equals false
+                upload.start();
+                e.preventDefault();
+            });
+        	
+        });
+	});
+</script>
+<body style="background-color: #F5F5F5;">
+	<div id="container">
+    <div id="filelist">No runtime found.</div>
+    <br />
+    <a id="pickfiles" href="#">[Select files]</a>
+    <a id="uploadfiles" href="#">[Upload files]</a>
+</div>
+
+<div id = "tips" style="width:200px;display:inline-block"></div>
+
+<div id = "img"></div>
+<img alt="" src="" style = "width:200px;height : 200px; border: none">
+</body>
+</html>

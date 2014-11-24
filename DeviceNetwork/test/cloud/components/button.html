@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+</style>
+<script type="text/javascript">
+	require([ "cloud/cloud", "cloud/components/button", "cloud/resources/css/default.css", "cloud/lib/plugin/jquery-ui" ], function(Button) {
+		var status = true;
+		var button = new Button({
+			container : "div.buttonset1",
+			text : "shit",
+			//img : "../../../../www/resources/images/r.png",
+			//checkbox : true,
+			imgCls : "cloud-icon-config",
+			//hoverImgCls : "cloud-icon cloud-icon-unselect",
+			selected : true
+			,
+			cls : "cloud-button-body1",
+			events: {
+                click : function(event){
+                	// get is button2 enabled
+                	if (button2.isEnable()){
+                		button2.disable();
+                	}else{
+                		button2.enable();
+                	}
+                }
+            }
+		});
+		var button2 = new Button({
+            container : "div.buttonset2",
+            title : "s2 title",
+            text : "s2",
+            //img : "../../../../www/resources/images/r.png",
+            checkbox : true,
+            imgCls : "cloud-icon cloud-icon-config",
+            selected : true
+            ,
+            btnBackgroud : false,
+            events : {
+                click : function(event){
+                	if (button.isEnable()){
+                        button.disable();
+                    }else{
+                        button.enable();
+                    }
+                }
+            }
+        }); 
+		
+		// bind multi(second) handler for click event
+		button2.on({
+            click : function(event){
+            	
+                alert("this is shit2");
+            }
+        });
+		
+		var button3 = new Button({
+            container : "div.buttonset3",
+            text : "shit3",
+            btnBackgroud : false,
+            //img : "../../../../www/resources/images/r.png",
+            checkbox : true
+            
+        }); 
+		
+		var button4 = new Button({
+            container : "div.buttonset6",
+            text : "shit4"
+            //img : "../../../../www/resources/images/r.png",
+            //checkbox : true
+            
+        }); 
+		var button5 = new Button({
+            container : "div.buttonset5",
+            btnBackgroud : false,
+            //text : "shit4"
+            //img : "../../../../www/resources/images/r.png",
+            checkbox : true,
+            events : {
+                click : function(event){
+                    button6 = button6.destroy();
+                    console.log(button6);
+                    console.dir(button6);
+                }
+            }
+            
+        }); 
+		var button6 = new Button({
+			title : "button6",
+            container : "div.buttonset6",
+            text : "shit6",
+            btnBackgroud : true,
+            imgCls : "cloud-icon cloud-icon-config"
+            
+        }); 
+		var button7 = new Button({
+			title : "button7",
+            container : "div.buttonset7",
+            checkbox : true,
+            btnBackgroud : false,
+            imgCls : "cloud-icon cloud-icon-config"
+        });
+		var button8 = new Button({
+            title : "button8",
+            //container : "div.buttonset7",
+            checkbox : true,
+            btnBackgroud : false,
+            imgCls : "cloud-icon cloud-icon-config"
+        });
+		var button9 = new Button({
+            title : "button9",
+            //container : "div.buttonset7",
+            checkbox : true,
+            btnBackgroud : true,
+            imgCls : "cloud-icon cloud-icon-config"
+        });
+		$("#7").button();
+		button3.setText("set shit3");
+		button6.setText("set shit6");
+		button7.setText("test text");
+		var newDiv = $("<div>");
+		$("div.buttonset7").after(newDiv);
+		button8.element.appendTo(newDiv);
+		button9.element.appendTo(newDiv);
+		$("<font size=4>|</font>").appendTo(newDiv);
+		console.log((button8 instanceof cloud.Component));
+	});
+</script>
+<body>
+	<div class="buttonset1" style = "display: block"></div>
+	<div class="buttonset2" style = "display: block"></div>
+	<div class="buttonset3" style = "display: block"></div>
+	<div class="buttonset4" style = "display: block"></div>
+	<div class="buttonset5" style = "display: block"></div>
+	<div class="buttonset6" style = "display: block"></div>
+	<div class="buttonset7" style = "display: block"></div>
+	<button id="7" class="buttonset7" style = "display: block">123123123</button>
+</body>
+</html>

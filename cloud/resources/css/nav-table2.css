@@ -1,0 +1,90 @@
+p{
+	margin:0px;
+	padding:0px;	
+}
+
+.component-nav{
+	width:100%;
+	height:100%;;
+}
+
+.component-nav-main{
+	z-index:10;
+	position:relative;
+	margin-bottom:30px;
+	width:100%;
+	height:32px;
+	text-align: center;
+	color:#fff;
+	background:#55b235;
+	border-bottom:1px solid #babbbd;
+}
+.component-nav-main div{
+	display: inline-block;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+}
+.component-nav-main-icon{
+	float:left;
+	margin:8px 0 0 0;
+	width:16px;
+	height:17px;
+	background:url("../images/nav-main-icon.png") no-repeat;
+}
+
+.component-nav-main-text{
+	font-size:13px;
+	font-weight:bold;
+	float:left;
+	margin:8px 0 0 5px;
+}
+
+.component-nav-main-downicon{
+	z-index:20;
+	position:absolute;
+	margin:5px 0 0 85px;
+	width:8px;
+	height:5px;
+	background:url("../images/nav-down-icon.png") no-repeat;
+}
+
+ul.component-nav-sub{
+	overflow:hidden;
+	width:100%;
+	height:auto;
+}
+
+ul.component-nav-sub li{
+	overflow:hidden;
+	margin-bottom:5px;
+	width:100%;
+	height:23x;
+	line-height:23px;
+	text-indent:8px;
+	cursor:pointer;
+}
+
+.component-nav-sub-on{
+	color:#fff;
+	background:#55b235;
+}
+
+.component-nav-sub-out{
+	color:#5c5c5c;
+}
+
+.component-nav-sub-text{
+	float:left;
+	/* margin:0 0 0 20px; */
+	width:auto;
+	height:auto;
+}
+
+.component-nav-sub-icon{
+	float:right;
+	margin:9px 10px 0 0;
+	width:6px;
+	height:7px;
+	background:url("../images/nav-sub-icon.png") no-repeat;
+}

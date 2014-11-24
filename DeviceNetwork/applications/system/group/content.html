@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+    	
+    </style>
+  </head>
+  <body>
+  	<div id="group-title" class="group-title">
+  		<p class="group-title-p">
+	  		<span lang="{text:group_name+:}"></span>
+  			<span id="group-name"></span>
+  		</p>
+  	</div>
+    <div id="group-user" class="group-user">
+    	<div id="group-own-user" class="group-own-user">
+	    	<div id="group-own-user-title" class="group-user-title" lang="{text:allow_access_to_users+:}"></div>
+	    	<div id="group-own-user-table" class="group-user-table"></div>
+    	</div>
+    	<div id="group-user-move" class="group-move group-user-move">
+    		<ul>
+    			<li class="group-move-remove-one group-remove-button" lang="{title:remove_one,alt:remove_one}">
+    			</li>
+    			<li class="group-move-remove-whole group-remove-whole-button" lang="{title:remove_whole_page,alt:remove_whole_page}">
+    			</li>
+    			<li class="group-move-add-one group-add-button" lang="{title:add_one,alt:add_one}">
+    			</li>
+    			<li class="group-move-add-whole group-add-whole-button" lang="{title:add_whole_page,alt:add_whole_page}">
+    			</li>
+    		</ul>
+    	</div>
+    	<div id="group-notown-user" class="group-own-user">
+    		<div id="group-notown-user-title" class="group-user-title" lang="{text:refuse_access_to_users+:}"></div>
+	    	<div id="group-notown-user-table" class="group-user-table"></div>	
+    	</div>
+    </div>
+    <div class="group-res" id="group-res">
+	    <div id="own-group-res" class="own-group-res">
+	    	<div id="own-group-res-title" class="own-group-res-title" lang="{text:belong_to_the_group_device_and_site+:}"></div>
+	    	<div id="own-group-res-table" class="own-group-res-table">
+	    		<div id="own-tabs">
+				  <ul>
+				    <li><a href="#own-tabs-1" id="tabs-own-gateway" lang="{text:device}"></a></li>
+				    <li><a href="#own-tabs-2" id="tabs-own-site" lang="{text:site}"></a></li>
+				  </ul>
+				  <div id="own-tabs-1" class="own-tabs-1">
+				  </div>
+				  <div id="own-tabs-2"  class="own-tabs-2">
+				  </div>
+				</div>
+	    	</div>
+	    </div>
+	    <div id="group-gateway-move" class="group-move group-res-move">
+    		<ul>
+    			<li class="group-move-remove-one group-remove-button" lang="{title:remove_one,alt:remove_one}">
+    			</li>
+    			<li class="group-move-remove-whole group-remove-whole-button" lang="{title:remove_whole_page,alt:remove_whole_page}">
+    			</li>
+    			<li class="group-move-add-one group-add-button" lang="{title:add_one,alt:add_one}">
+    			</li>
+    			<li class="group-move-add-whole group-add-whole-button" lang="{title:add_whole_page,alt:add_whole_page}">
+    			</li>
+    		</ul>
+    	</div>
+    	<div id="group-site-move" class="group-move group-res-move" style="display:none">
+    		<ul>
+    			<li class="group-move-remove-one group-remove-button" lang="{title:remove_one,alt:remove_one}">
+    			</li>
+    			<li class="group-move-remove-whole group-remove-whole-button" lang="{title:remove_whole_page,alt:remove_whole_page}">
+    			</li>
+    			<li class="group-move-add-one group-add-button" lang="{title:add_one,alt:add_one}">
+    			</li>
+    			<li class="group-move-add-whole group-add-whole-button" lang="{title:add_whole_page,alt:add_whole_page}">
+    			</li>
+    		</ul>
+    	</div>
+	    <div id="notown-group-res" class="notown-group-res">
+	    	<div id="notown-group-res-title" class="notown-group-res-title" lang="{text:not_belong_to_the_group_device_and_site+:}"></div>
+	    	<div id="notown-group-res-table" class="notown-group-res-table">
+	    		<div id="notown-tabs">
+				  <ul>
+				    <li><a href="#notown-tabs-1" id="tabs-notown-gateway" lang="{text:device}"></a></li>
+				    <li><a href="#notown-tabs-2" id="tabs-notown-site" lang="{text:site}"></a></li>
+				  </ul>
+				  <div id="notown-tabs-1" class="notown-tabs-1">
+				  </div>
+				  <div id="notown-tabs-2"  class="notown-tabs-2">
+				  </div>
+				</div>
+	    	</div>
+	    </div>
+    </div>
+    <div id="group-options" class="group-options">
+    	<ul>
+    		<li id="group-update-user" style="display:none">
+    		<label>
+    			<input type="checkbox">
+    			<p>更新允许访问分组的用户</p>
+    		</label>
+    		</li>
+    		<li id="group-delete-gateway" style="display:none">
+    		<label>
+    			<input type="checkbox">
+    			<p>删除分组的设备</p>
+    		</label>
+    		</li>
+    		<li id="group-delete-site" style="display:none">
+    		<label>
+    			<input type="checkbox">
+    			<p>删除分组的现场</p>
+    		</label>
+    		</li>
+    		<li id="group-add-gateway" style="display:none">
+    		<label>
+    			<input type="checkbox">
+    			<p>新增分组的设备</p>
+    		</label>
+    		</li>
+    		<li id="group-add-site" style="display:none">
+    		<label>
+    			<input type="checkbox">
+    			<p>新增分组的现场</p>
+    		</label>
+    		</li>
+    	</ul>
+    </div>
+    <div id="group-buttons" class="group-buttons" style="display:none"></div>
+  </body>
+</html>

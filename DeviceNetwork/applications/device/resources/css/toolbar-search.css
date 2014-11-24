@@ -1,0 +1,28 @@
+#toolbar-search-box{
+	margin:3px 0 0 0;
+	float:left;
+	width:auto;
+	height:20px;
+}
+
+#toolbar-search-hint{
+	color:#999;
+}
+
+#toolbar-search-hint,#toolbar-search-input{
+	margin:0;
+	padding:0;
+	float:left;
+	width:220px;
+	height:20px;
+}
+
+#toolbar-search-button{
+	margin-left:5px;
+	float:left;
+	width:48px;
+	height:20px;
+	background:url("../images/search.png");
+	border:0;
+	cursor:pointer;
+}

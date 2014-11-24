@@ -1,0 +1,96 @@
+.paging-box{
+	margin:0 auto;
+	width:340px;
+	height:23px;
+	font-size:12px;
+}
+
+.paging-page-box{
+	float:left;
+	width:auto;
+	height:auto;
+}
+
+.paging-page-previouspage{
+	float:left;
+	margin-right:5px;
+	width:22px;
+	height:22px;
+	background:url("../images/previouspage.png");
+	cursor:pointer;
+}
+
+.paging-page-current{
+	padding-right:10px;
+	float:left;
+	color:green!important;
+	width:40px!important;
+	height:20px!important;
+	line-height:20px;
+	text-align:right;
+	text-indent:-10px;
+	font-size:12px;
+	border:1px solid #ccc;
+	border-radius:3px;
+}
+
+.paging-page-sprit{
+	float:left;
+	margin:0 2px;
+	width:3px;
+	height:22px;
+	line-height:22px;
+}
+
+.paging-page-total{
+	float:left;
+	min-width:22px;
+	height:22px;
+	line-height:22px;
+	font-size:12px;
+}
+
+.paging-page-jump{
+	overflow:hidden;
+	margin:0 5px;
+	float:left;
+	width:22px;
+	height:22px;
+	background:url("../images/refresh.png");
+	cursor:pointer;
+}
+
+.paging-page-nextpage{
+	float:left;
+	width:22px;
+	height:22px;
+	background:url("../images/nextpage.png");
+	cursor:pointer;
+}
+
+.paging-limit-box{
+	float:left;
+	width:auto;
+	height:auto;
+	line-height:22px;
+	font-size:12px;
+}
+
+.paging-limit-text1{
+	float:left;
+	margin-left:10px;
+	font-size:12px;
+}
+
+.paging-limit-select{
+	float:left;
+	margin:0 5px 0 5px;
+	width:50px!important;
+	height:22px!important;
+	font-size:12px;
+}
+
+.paging-limit-text2{
+	float:left;
+	font-size:12px;
+}

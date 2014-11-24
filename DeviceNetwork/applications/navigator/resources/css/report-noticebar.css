@@ -1,0 +1,73 @@
+.notice-bar{
+	overflow:hidden;
+	height:28px;
+	line-height:28px;
+}
+.notice-bar-state{
+	float:left;
+}
+.notice-bar-state-title{
+	float:left;
+	margin-left:20px;	
+}
+.notice-bar-state-online,.notice-bar-state-offline{
+	float:left;
+}
+.notice-bar-state-online{
+	margin-left:6px;
+}
+.notice-bar-state-offline{
+	margin-left:16px;
+}
+.notice-bar-state-online p,.notice-bar-state-offline p{
+	float:left;
+}
+.notice-bar-state-input{
+	float:left;
+	margin:9px 0 0 0;
+}
+.notice-bar-state-text{
+	float:left;
+	margin-left:5px;
+}
+.notice-bar-state-count{
+	float:left;
+	margin-left:5px;
+}
+.notice-bar-calendar{
+	float:right;
+	margin-right:20px;
+}
+.notice-bar-calendar img{
+	float:left;
+	margin:5px 0 0 3px;
+}
+
+.notice-bar-calendar-text{
+	float:left;
+	margin:0px 10px;
+}
+.notice-bar-calendar-input{
+	float:left;
+	margin-top:4px;
+	width:85px;
+	height:20px;
+}
+.notice-bar-calendar-button{
+	float:left;
+	margin:2px 0 0 10px;
+	width:44px;
+	height:23px;
+	color:#5c5d5f;
+	background:#f0f1f5;
+	border:1px solid #dfe0e4;
+	box-shadow: 1px 1px 0px #bbb;
+	border-radius:2px;
+}
+.notice-bar-calendar-icon{
+	float:left;
+	margin:5px 0 0 3px;
+	width:16px;
+	height:16px;
+	background:url("../images/calendar.gif") no-repeat;
+}

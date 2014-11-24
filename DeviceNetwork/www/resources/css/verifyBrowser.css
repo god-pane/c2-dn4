@@ -1,0 +1,79 @@
+.tip_top{
+	z-index:99;
+	background-color:rgb(211, 211, 211);
+	position:absolute;
+	left:0px
+}
+.tip_bottom{
+	z-index:99;
+	background-color:rgb(211, 211, 211);
+	position:absolute;
+	left:0px;
+}
+.tip_content{
+	width:450px;
+	height:250px;
+	position:absolute;
+	background-color:rgb(255, 255, 255);
+	z-index:100;
+	border-radius:20px;
+	border:2px solid #BEC7B5
+}
+.text_div_1 .inhand_logo{
+	 position:absolute;
+     top:50px;
+     left:20px
+}
+.text_div_1 .text_title{
+	font-size:16px;
+	font-weight:bold;
+	text-indent:80px;
+	position:absolute;
+	top:40px;
+}
+.text_div_2 .text_title{
+	font-size:16px;
+	font-weight:bold;
+	text-indent:80px;
+	position:absolute;
+	top:130px;
+}
+.text_div_1 .text_content{
+	font-size:14px;
+	width:370px;
+      position:absolute;
+       top:70px;
+       left:80px;
+        line-height:20px;
+        text-align:left
+}
+.text_div_2 .text_content{
+	font-size:14px;
+	width:370px;
+      position:absolute;
+       top:160px;
+       left:80px;
+        line-height:20px;
+        text-align:left
+}
+.ignore_button{
+	width:60px;
+	height:20px;
+	line-height:20px;
+    border-radius:7px;
+    border-top:2px solid #dddddd;
+    border-left:2px solid #dddddd;
+    border-right:2px solid #7E807C;
+    border-bottom:2px solid #7E807C;
+    position:absolute;
+    top:200px;
+    left:350px
+}
+.browser_link{
+	color:blue;
+	text-decoration:underline
+}
+.inhand_logo{
+	width:50px;
+	height:45px
+}

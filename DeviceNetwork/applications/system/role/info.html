@@ -1,0 +1,197 @@
+<style type="text/css">
+	
+	.module-info-role-body {
+		/*height:100%;*/
+		/*border:1px solid red;*/
+	}
+	.module-info-role-namebox {
+		height:20px;
+		margin-top:20px;
+		padding: 0px 0px 0px 20px;
+	}
+	.module-info-role-edit, .module-info-role-namebox input{
+		margin-left:5px;
+	}
+	.module-info-role-permissions{
+		height:20px;
+		margin:10px 0px 0px 20px;
+		line-height:20px;
+		font-size:12px;
+		font-weight:bold;
+	}
+	.module-info-role-items {
+		margin: 15px 0px 0px 20px;
+		border:1px solid #D0D0D0;
+		padding: 5px 0px 10px 35px;
+		position:relative;
+		border-radius:3px;
+		width:155px;
+	}
+	.module-info-role-items-text {
+		background-color:#F5F6F9;
+		padding:0px 8px 0px 8px;
+		font-family:Tahoma;
+		position:absolute;
+		height:15px;
+		line-height:16px;
+		top:-8px;
+		left:15px;
+		
+	}
+	.module-info-role-body input{vertical-align:middle;}
+	.module-info-role-body input label{vertical-align:middle;}
+	/*.module-info-role-body label{margin-left:1px;}*/
+	
+	.module-info-role-item {
+		margin-top:10px;
+		height:15px;
+		line-height:16px;
+	}
+	
+	.module-info-role-active-button {
+		height:25px;
+		width:190px;
+		margin: 15px 0px 0px 20px;
+		display:none;
+	}
+	
+	.module-info-role-type {
+		height:25px;
+		width:190px;
+		margin: 15px 0px 0px 20px;
+	}
+	.module-info-role-name-show {
+		width:90px;
+		border:0px solid red;
+		background-color:#F5F6F9;
+		height:15px;
+		margin-top:-4px;
+	}
+
+</style>
+<div class="module-info-role-body">
+	<form id="role-info-form">
+	<div class="module-info-role-namebox">
+		<label lang="text:role_name1+:">角色名称:</label>
+		<input style="display:none;" class="validate[required,custom[giveName],maxSize[30]] module-info-role-name-edit" type="text"/>
+		<input class="module-info-role-name-show" disabled="disabled"></input>
+		<span id="module-info-role-edit" class="module-info-role-edit">
+			<a href="#">
+				<i class="cloud-button-item cloud-button-img cloud-icon-edit cloud-icon-default"></i>
+			</a>
+		</span>
+	</div>
+	
+	<div class="module-info-role-active-button">
+		<span class="module-info-role-active-yes"></span>
+		<span class="module-info-role-active-cancel"></span>
+	</div>
+	
+	<div class="module-info-role-type" style="display:block">
+		<label lang="text:role_type+:">角色类型:</label>
+		<label class="module-info-role-type-value" xtype="52">用户自定义角色</label>
+	</div>
+	
+	<div class="module-info-role-permissions" lang="text:empower+:">操作权限:</div>
+	
+	<div class="module-info-role-items">
+		<div class="module-info-role-items-text">
+			<input id="system-manage-button" type="checkbox"/>
+			<label for="system-manage-button" lang="text:system_manage">系统管理</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="system-manage-button-1" type="checkbox" />
+			<label for="system-manage-button-1" lang="text:user_manage">用户管理</label>
+		</div>
+		<div class="module-info-role-item">
+			<input id="system-manage-button-2" type="checkbox" />
+			<label for="system-manage-button-2" lang="text:role_manage">角色管理</label>
+		</div>
+		<div class="module-info-role-item">
+			<input id="system-manage-button-3" type="checkbox" />
+			<label for="system-manage-button-3" lang="text:authority_manage">权限管理</label>
+		</div>
+	</div>
+	
+	<div class="module-info-role-items">
+		<div class="module-info-role-items-text">
+			<input id="network-manage-button" type="checkbox" />
+			<label for="network-manage-button" lang="text:network_manage">网络管理</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="network-manage-button-1" type="checkbox" />
+			<label for="network-manage-button-1" lang="text:scout">监视</label>
+		</div>
+		<div class="module-info-role-item">
+			<input id="network-manage-button-2" type="checkbox" />
+			<label for="network-manage-button-2" lang="text:create_update">创建、更改</label>
+		</div>
+		<div class="module-info-role-item">
+			<input id="network-manage-button-3" type="checkbox" />
+			<label for="network-manage-button-3" lang="text:configure_upgrade">配置、升级</label>
+		</div>
+		<div class="module-info-role-item">
+			<input id="network-manage-button-4" type="checkbox" />
+			<label for="network-manage-button-4" lang="text:console">控制台</label>
+		</div>
+	</div>
+	
+	<div class="module-info-role-items">
+		<div class="module-info-role-items-text">
+			<input id="remote-maintenance-button" type="checkbox" />
+			<label for="remote-maintenance-button" lang="text:remote_maintenance">远程维护</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="remote-maintenance-button-1" type="checkbox" />
+			<label for="remote-maintenance-button-1" lang="text:allow">允许</label>
+		</div>
+	</div>
+	
+	<div class="module-info-role-items">
+		<div class="module-info-role-items-text">
+			<input id="remote-control-button" type="checkbox" />
+			<label for="remote-control-button" lang="text:remote_monitoring">远程监控</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="remote-control-button-1" type="checkbox" />
+			<label for="remote-control-button-1" lang="text:read_configuration_diagram">组态图查看</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="remote-control-button-2" type="checkbox" />
+			<label for="remote-control-button-2" lang="text:write_configuration_diagram">组态图编辑</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="remote-control-button-3" type="checkbox" />
+			<label for="remote-control-button-3" lang="text:remote_control">远程控制</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="remote-control-button-4" type="checkbox" />
+			<label for="remote-control-button-4" lang="text:business_report">查看业务报表</label>
+		</div>
+	</div>
+	
+	<div class="module-info-role-items">
+		<div class="module-info-role-items-text">
+			<input id="alarm-processing-button" type="checkbox" />
+			<label for="alarm-processing-button" lang="text:alarm_processing">告警处理</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="alarm-processing-button-1" type="checkbox" />
+			<label for="alarm-processing-button-1" lang="text:see_alarm">查看</label>
+		</div>
+		
+		<div class="module-info-role-item">
+			<input id="alarm-processing-button-2" type="checkbox" />
+			<label for="alarm-processing-button-2" lang="text:affirm_clear">确认、清除</label>
+		</div>
+	</div>
+	</form>
+</div>

@@ -1,0 +1,136 @@
+<!DOCTYPE>
+<html ng-app="Model">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link href="./model.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript" src="../base/loader.js"></script>
+<script type="text/javascript" src="./lib/angular.js"></script>
+<script type="text/javascript" src="./lib/angular-route.js"></script>
+<script type="text/javascript" src="./model.js"></script>
+</head>
+<body>
+<div class="header">
+	<div class="header-content">Model Docs</div>
+</div>
+<div class="box">
+	<div class="docs"  ng-controller="docs">
+		<div id="reslist" class="reslist">
+			<ul class="res" ng-repeat="(key, value) in structure">
+				<li class='res-head' ng-click="status = (status === 'show') ? 'hide' : 'show'">
+					<p ng-bind="value._name.zh + '  ' + key"></p>
+				</li>
+				<div ng-show="status === 'show'"  ng-hide="status === 'hide' || !status">
+				<li class='res-method'  ng-hide="_key == '_name'" ng-repeat="(_key,_value) in value">
+					<span style="color:red;font-size:16px;" ng-hide="!_value._custom" ng-bind="_value._custom ? '*' : '' "></span>
+					<a href='javascript:void(0)' ng-bind="_key" ng-click="setMethodData(key,_key,_value)"></a>
+				</li>
+				</div>
+			</ul>
+		</div>
+		<div id="methodInfo" class="methodInfo">
+			<div class="method-inner">
+			<!-- <table ng-show="resName" style="margin-top:20px;">
+				<tr>
+					<td ng-bind="resName" style="font-size:23px;">
+					</td><td ng-show="resName" style="font-size:20px;">=></td>
+					<td ng-bind="methodName" style="font-size:20px;"></td>
+				</tr>
+			</table> -->
+			<table ng-show="methodData._desc.zh.name" style="margin-top:20px;" class="not-table">
+				<tr>
+					<td style="font-size:22px;" ng-bind="methodData._desc.zh.name"></td>
+					<td ng-hide="!methodData._custom" style="font-size:22px;"><p class="custom-ident" ng-bind="'自定义复合方法'"></p></td>
+				</tr>
+			</table>
+			<table ng-show="methodData.url" class="not-table">
+				<tr>
+					<td style="font-size:18px;" ng-bind="methodData.url + (methodData.part ? '/$part' : '') + (methodData.suffix ? methodData.suffix : '')"></td>
+					<td style="font-size:15px;" ng-bind="methodData.type"></td>
+				</tr>
+			</table>
+			<table ng-show="methodData" class="not-table">
+				<tr>
+					<td style="font-size:20px;">
+						<p>Model.{{resName}}({</p>
+						<p class="method_param">method:"{{methodName}}",</p>
+						<p class="method_param" ng-hide="!methodData.param">param:{object},</p>
+						<p class="method_param" ng-hide="!methodData.part">part:{string},</p>
+						<p class="method_param" ng-hide="!methodData.data">data:{object},</p>
+						<p class="method_param">success:function(data){...},</p>
+						<p class="method_param">error:function(err){...}"</p>
+						<p>})</p>
+					</td>
+				</tr>
+			</table>
+			<table ng-show="methodData.part" class="table">
+				<tr>
+					<td>part</td>
+					<td>
+						<table>
+							<tr>
+								<th>是否必需</th><th>类型</th><th>描述</th>
+							</tr>
+							<tr>
+								<td ng-bind="methodData.part[0]"></td>
+								<td ng-bind="methodData.part[1]"></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table ng-show="methodData.param" class="table">
+				<tr>
+					<td>param</td>
+					<td>
+						<table>
+							<tr>
+								<th>参数名</th><th>是否必需</th><th>类型</th><th>描述</th>
+							</tr>
+							<tr ng-hide="pkey === '_required'" ng-repeat="(pkey,pvalue) in methodData.param">
+								<td ng-bind="pkey"></td>
+								<td ng-bind="pvalue[0]"></td>
+								<td ng-bind="pvalue[1]"></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table ng-show="methodData.data" class="table">
+				<tr>
+					<td>data</td>
+					<td>
+						<table>
+							<tr>
+								<th>参数名</th><th>是否必需</th><th>类型</th><th>描述</th>
+							</tr>
+							<tr ng-hide="dkey === '_required'" ng-repeat="(dkey,dvalue) in methodData.data">
+								<td ng-bind="dkey"></td>
+								<td ng-bind="dvalue[0]"></td>
+								<td ng-bind="dvalue[1]"></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<div style="height:100px"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#reslist").find("a").live("click",function(){
+			var $methodInner = $(".method-inner");
+			var height = $methodInner.height();
+			$methodInner.css({height:height + "px"})
+			$("#methodInfo").scrollTop(0);
+		})
+	})
+</script>
+</body>
+</html>

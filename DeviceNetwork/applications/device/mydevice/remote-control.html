@@ -1,0 +1,253 @@
+<div class="remote-control">
+	<div class="remote-control-head">
+		<form class="remote-control-head-mode">
+			<label id="normal-mode">
+				<input type="radio" value="normal" name="normal-mode" checked="checked"/>
+				<p lang="text:normal_mode">æ™®é€šæ¨¡å¼�</p>
+			</label>
+			<label id="advance-mode" style="display:none">
+				<input type="radio" value="advance" name="advance-mode"/>
+				<p lang="text:advanced_mode">é«˜çº§æ¨¡å¼�</p>
+			</label>
+		</form>
+		<p class="remote-control-head-title">
+			<span id="title-gateway-name"></span>
+			<span> - </span><span lang="text:remote_control_tool">Remote Control Tool</span>
+		</p>
+	</div>
+	<div class="remote-control-body">
+		<div class="remote-control-body-current">
+			<div class="remote-control-body-current-gateway">
+				<span lang="text:gateway+:">ç½‘å…³:</span>
+				<span id="current-gateway-name"></span>
+			</div>
+			<div id="current-machines-arrow" class="remote-control-body-current-arrow">></div>
+			<div id="current-machines-box" class="remote-control-body-current-machines">
+				<p lang="text:device+:">è®¾å¤‡:</p>
+				<form id="current-machines-list"></form>
+			</div>
+		</div>
+		<div class="remote-control-body-title">
+			<span lang="text:welcome_to_Remote_control_tool">Welcome to Remote Control Tool</span><br/>
+			<span> Last login: </spa>
+			<span id="remote-control-user-lasttime"></span>
+			<span> from </span>
+			<span id="remote-control-user-lastip"></span>
+		</div>
+		<div id="remote-control-content" class="remote-control-body-content">
+			
+		</div>
+		
+	</div>
+	<div id="remote-control-foot" class="remote-control-foot">
+		<form>
+			<div class="remote-control-foot-command-list">
+				<select id="command-list">
+				<!-- 
+					<option value="show log" lang="text:show_system_log">æŸ¥çœ‹ç³»ç»Ÿæ—¥å¿—</option>
+					<option value="show running" lang="text:show_running">æŸ¥çœ‹ç³»ç»Ÿé…�ç½®</option>
+					<option value="inhandsh" lang="text:enter_advanced_mode">è¿›å…¥é«˜çº§å‘½ä»¤æ¨¡å¼�</option>
+					<option value="inhandsh exit" lang="text:exit_advanced_mode"> é€€å‡ºé«˜çº§å‘½ä»¤æ¨¡å¼�</option>
+					<option value="commandLine" lang="text:customized_cmd">è‡ªå®šä¹‰å‘½ä»¤</option>
+				 -->
+				</select>
+			</div>
+			<div class="remote-control-foot-command-run">
+				<div id="command-run-normal" class="remote-control-foot-command-run-normal" style="display:none">
+				<form>
+					<input type="button" class="remote-control-button" id="remote-control-submit1" lang="value:submit" value="æ��äº¤" />
+					<input type="button" class="remote-control-button" id="remote-control-cancel1" lang="value:cancel" value="å�–æ¶ˆ" />
+					<input type="button" class="remote-control-button remote-control-cleanscreen" lang="value:clean_screen" value="æ¸…å±�" />
+				</form>
+				</div>
+				<div id="command-run-commandline" class="remote-control-foot-command-run-commandline">
+				<form>
+					<input type="text" id="remote-control-input" class="remote-control-input" />
+					<input type="button" class="remote-control-button" id="remote-control-submit2" lang="value:submit" value="æ��äº¤1" />
+					<input type="button" class="remote-control-button" id="remote-control-cancel2" lang="value:cancel" value="å�–æ¶ˆ" />
+					<input type="button" class="remote-control-button remote-control-cleanscreen" lang="value:clean_screen" value="æ¸…å±�" />
+				</form>
+				</div>
+			</div>
+			<div id="hex-crlf" class="remote-control-foot-hex-crlf" style="display:none">
+				<label id="hex">
+					<input type="checkbox" value="hex" name="hex"/>
+					<p>HEX</p>
+				</label>
+				<label id="crlf">
+					<input type="checkbox" value="crlf" name="crlf"/>
+					<p>CRLF</p>
+				</label>
+			</div>
+		</form>
+	</div>
+</div>
+<style type="text/css">
+	.remote-control{
+		margin:0 auto;
+		width:837px;
+		height:auto;
+		border:8px solid #DADADA;
+	}
+	.remote-control-head{
+		position:relative;
+		width:100%;
+		height:35px;
+		text-align:center;
+		border-top:1px solid #A0A0A0;
+		border-right:1px solid #A0A0A0;
+		border-left:1px solid #A0A0A0;
+		border-bottom:2px solid #A0A0A0;
+		background:#EBEBEB;
+	}
+	.remote-control-head-mode{
+		position:absolute;
+		width:100%;
+		line-height:10px;
+		text-align:left;
+		z-index:100;
+	}
+	
+	.remote-control-head-mode label{
+		margin:10px 0 0 10px;
+		float:left;
+	}
+	
+	.remote-control-head-mode input,.remote-control-head-mode p{
+		float:left;
+	}
+	
+	.remote-control-head-mode p{
+		margin-left:2px;
+	}
+	
+	.remote-control-head-title{
+		position:absolute;
+		width:100%;
+		line-height:35px;
+		font-weight:bold;
+		text-align:center;
+		z-index:1;
+	}
+	.remote-control-body{
+		overflow:scroll;
+		width:832px;
+		height:415px;
+		line-height:18px;
+		padding:5px 0 0 5px;
+		border-top:1px solid #696969;
+		border-right:1px solid #A0A0A0;
+		border-left:1px solid #A0A0A0;
+		border-bottom:1px solid #A0A0A0;
+	}
+	.remote-control-body-content{
+		overflow:auto;
+		width:832px;
+		height:320px;
+		padding:5px 0 0 0;
+		white-space:normal;
+		word-wrap: break-word;
+	}
+	.remote-control-body-current{
+		overflow:hidden;
+		padding-left:5px;
+		width:100%;
+		height:30px;
+		line-height:30px;
+		text-align:left;
+		font-weight:bold;
+	}
+	.remote-control-body-current div{
+		float:left;
+	}
+	.remote-control-body-current-machines p,.remote-control-body-current-machines form{
+		float:left;
+	}
+	.remote-control-body-current-machines form{
+		margin:2px 0 0 5px;
+	}
+	.remote-control-body-current-machines form select{
+		width:80px;
+		border-radius:2px;
+	}
+	.remote-control-body-current-arrow{
+		margin:0 5px;
+		font-size:10px;
+	}
+	.remote-control-foot{
+		position:relative;
+		width:100%;
+		height:35px;
+		border-right:1px solid #A0A0A0;
+		border-left:1px solid #A0A0A0;
+		border-bottom:1px solid #A0A0A0;
+		background:#F0F0F0;
+	}
+	.remote-control-foot-command-list{
+		position:absolute;
+		width:105px;
+		height:35px;
+	}
+	.remote-control-foot-command-list select{
+		position:absolute;
+		margin:3px 0 0 2px;
+		width:100%;
+		height:29px;
+		border-radius:2px;
+	}
+	.remote-control-foot-command-run{
+		position:absolute;
+		left:105px;
+		width:732px;
+		height:35px;
+	}
+	.remote-control-foot-command-run-normal{
+		margin:0 0 0 3px;
+	}
+	.remote-control-button{
+		margin:3px 0 0 2px;
+		float:left;
+		width:50px;
+		height:29px;
+		border:1px solid #ccc;
+		border-radius:3px;
+		cursor:pointer;
+	}
+	.remote-control-foot-command-run-commandline{
+	
+	}
+	.remote-control-foot-command-run-commandline .remote-control-input{
+		margin:3px 0 0 5px;
+		float:left;
+		width:565px;
+		height:23px;
+		border:1px solid #ccc;
+		border-radius:3px;
+	}
+	.remote-control-foot-hex-crlf{
+		position:absolute;
+		top:30px;
+		width:100%;
+		height:25px;
+	}
+	
+	.remote-control-foot-hex-crlf label{
+		margin:10px 0 0 5px;
+		float:left;
+	}
+	
+	.remote-control-foot-hex-crlf input,.remote-control-foot-hex-crlf p{
+		float:left;
+	}
+	
+	.remote-control-foot-hex-crlf p{
+		margin: -1px 0 0 2px;
+	}
+	
+	.remote-control-stop-task{
+		cursor:pointer;
+		text-decoration:underline;
+		color:green;
+		font-weight:bold;
+	}
+</style>

@@ -1,0 +1,443 @@
+	.nav{
+		overflow:hidden;
+		height:61px;
+		background:url("../images/nav-repeat-bg.png") repeat-x 0px 0px;
+	}
+	
+	.nav-main{
+		position:relative;
+		height:40px;
+	}
+	
+	.nav-sub{
+		position:relative;
+		height:20px;
+	}
+	
+	.nav-main-corp,.nav-sub-corp{
+		position:absolute;
+		overflow:hidden;
+		width:200px;
+		heigh:100%;
+	}
+	
+	.nav-main-left,.nav-sub-left{
+		left:200px;
+		position:absolute;
+		overflow:hidden;
+		min-width:700px;
+		height:100%;
+	}
+	
+	.nav-sub-view{
+		position:absolute;
+		left:900px;
+		width:120px;
+		height:100%;
+	}
+	
+	.nav-sub-view-content{
+		margin-top:3px;
+	}
+	
+	.nav-main-right,.nav-sub-right{
+		position:fixed;
+		overflow:hidden;
+		width:auto;
+		height:100%;
+	}
+	
+	.nav-main-right{
+		height:35px;		
+	}
+	
+	.nav-sub-right{
+		height:22px;
+	}
+	
+	.nav-main-corp-content{
+		float:left;
+		width:190px;
+	}
+	
+	.nav-main-corp-content p{
+		float:left;
+	}
+	
+	.nav-main-corp-content-p1{
+		margin:8px 6px 0 25px;
+		width:25px;
+		height:21px;
+		background:url("../images/nav-bg.png") no-repeat 0px 0px;
+	}
+	
+	.nav-main-corp-content-p2{
+		color:#fff;
+		line-height:42px;
+	}
+		
+	.nav-sub-right-search{
+		height: 26px;
+		right: 31px;
+	}
+	.nav-sub-search-button{
+		float:left;
+		width: 29px;
+		height: 20px;
+	}
+	#nav-sub-search-input{
+		float:left;
+	}
+	
+	ul.nav-main-left-app{
+		width:auto;
+		height:100%;
+	}
+	ul.nav-main-left-app li{
+		postion:absolute;
+		float:left;
+		width:83px;
+		cursor:pointer;
+		}
+	.nav-main-left-app-home,.nav-main-left-app-system,.nav-main-left-app-report,.nav-main-left-app-device,.nav-main-left-app-site,.nav-main-left-app-app,.nav-main-left-app-notice,.nav-main-left-app-task,.nav-main-left-app-organ{
+		width:2px;
+		height:37px;
+		background:url("../images/nav-app-bg.png") no-repeat;
+		}
+	.nav-main-left-app-home-active,.nav-main-left-app-system-active,.nav-main-left-app-report-active,.nav-main-left-app-device-active,.nav-main-left-app-site-active,.nav-main-left-app-app-active,.nav-main-left-app-notice-active,.nav-main-left-app-task-active,.nav-main-left-app-organ-active{
+		width:29px;
+		height:39px;
+		background:url("../images/nav-bg.png") no-repeat -589px 0px;
+		}
+	.nav-main-left-app-home p,.nav-main-left-app-system p,.nav-main-left-app-report p,.nav-main-left-app-device p,.nav-main-left-app-site p,.nav-main-left-app-app p,.nav-main-left-app-notice p,.nav-main-left-app-task p,.nav-main-left-app-organ p{
+		width:22px;
+		height:22px;
+		margin:8px 0 0 30px;
+		}
+	.nav-main-left-app-home-active p,.nav-main-left-app-system-active p,.nav-main-left-app-report-active p,.nav-main-left-app-device-active p,.nav-main-left-app-site-active p,.nav-main-left-app-app-active p,.nav-main-left-app-notice-active p,.nav-main-left-app-task-active p,.nav-main-left-app-organ-active p{
+		width:22px;
+		height:22px;
+		margin:8px 0 0 30px;
+		}
+	.header-icon-active ,.header-icon-on{
+		color:#3a3e41;
+		background:#3a3e41;
+		}
+	/*home*/
+	.nav-main-left-app-home p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -54px;
+		}
+	.nav-main-left-app-home-active p,.nav-main-left-app-home-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -54px;
+		}
+
+	/*system*/
+	.nav-main-left-app-system p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -162px;
+		}
+	.nav-main-left-app-system-active p,.nav-main-left-app-system-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -162px;
+		}
+
+	/*report*/
+	.nav-main-left-app-report p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -189px;
+		}
+	.nav-main-left-app-report-active p,.nav-main-left-app-report-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -189px;
+		}
+
+	/*device*/
+	.nav-main-left-app-device p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -81px;
+		}
+	.nav-main-left-app-device-active p,.nav-main-left-app-device-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -81px;
+		}
+
+	/*site*/	
+	.nav-main-left-app-site p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -135px;
+		}
+	.nav-main-left-app-site-active p,.nav-main-left-app-site-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -135px;
+		}
+	/*app*/	
+	.nav-main-left-app-app p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px 0px;
+		}
+	.nav-main-left-app-app-active p,.nav-main-left-app-app-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px 0px;
+		}
+	/*notice*/	
+	.nav-main-left-app-notice p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -108px;
+		}
+	.nav-main-left-app-notice-active p,.nav-main-left-app-notice-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -108px;
+		}
+	/*task*/
+	.nav-main-left-app-task p{
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -27px;
+		}
+	.nav-main-left-app-task-active p,.nav-main-left-app-task-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat 0px -27px;
+		}
+	/*organ*/
+	.nav-main-left-app-organ p{
+		background:url("../images/cloud-icons-default.png") no-repeat -26px 0;
+		}
+	.nav-main-left-app-organ-active p,.nav-main-left-app-organ-on p{
+		background:url("../images/cloud-icons-active.png") no-repeat -26px 0;
+		}
+	/*end*/	
+	.nav-main-right-account{
+		overflow:hidden;
+		float:left;
+		width:270px;
+		font-size:12px;
+	}
+	.nav-main-right-account-head{
+		float:left;
+		margin:10px 8px 0 0;
+		width:16px;
+		height:16px;
+		background:url("../images/cloud-icons-default.png") no-repeat 0px -1134px;
+	}
+	.nav-main-right-account-text{
+		overflow:hidden;
+		float:left;
+		margin:0 5px 0 0;
+		width:230px;
+		color:#fff;
+		line-height:36px;
+	}
+	.nav-main-right-account-text a{
+		color:#84c44a;
+		text-decoration:none
+		}
+	.nav-main-right-account-text a:hover{
+		text-decoration:underline;
+		}
+	.nav-account-dropdown{
+		float:left;
+		margin:10px 8px 0 0;
+		width:15px;
+		height:14px;
+		background:url("../images/nav-bg.png") no-repeat -473px 0px;
+	}
+	.nav-sub-left-app{
+		float:left;
+		width:auto;
+		height:100%;
+		font-size:12px;
+	}
+	
+	.nav-sub-left-app ul{
+		
+	}
+	
+	.nav-sub-left-app ul li{
+		float:left;
+		line-height:18px;
+		color:#fff;
+	}
+	
+	.nav-sub-left-app ul li span{
+		float:left;
+		margin:-1px 10px 0 0;
+		display:block;
+	}
+	
+	.nav-sub-left-app ul li a{
+		float:left;
+		margin-right:10px;
+		color:#fff;
+		text-decoration:none;
+	}
+	
+	.nav-sub-left-app ul li a:hover{
+		color:#84c44a;
+		text-decoration:underline;
+	}
+	
+	.nav-sub-left-view-overview{
+		width:16px;
+		height:14px;
+		background:url("../images/nav-bg.png") no-repeat -425px 0px;
+	}
+	
+	.nav-sub-left-view-table{
+		width:15px;
+		height:14px;
+		background:url("../images/nav-bg.png") no-repeat -441px 0px;
+	}
+	
+	.nav-sub-left-view-gis{
+		width:16px;
+		height:14px;
+		background:url("../images/nav-bg.png") no-repeat -457px 0px;
+	}
+	
+	.nav-sub-left-view-dropdown{
+		width:14px;
+		height:14px;
+		background:url("../images/nav-bg.png") no-repeat -474px 0px;
+	}
+	/*panel*/
+		.nav-panel-box{
+		position:absolute;
+		z-index: 1100;
+		top: 60px;
+		right:130px;
+		padding:20px;
+		width:300px;
+		height:520px;
+		background:#eee;
+	}
+	
+	.nav-panel-box a{
+		color:#333;
+	}
+	
+	.nav-panel-box a:hover{
+		color:#f00;
+	}
+	
+	.nav-panel-box ul{
+		float:left;
+	}
+	
+	ul.nav-panel-ul{
+		
+	}
+	
+	ul.nav-panel-ul li{
+		width:100%;
+	}
+	
+	ul.nav-panel-handle-ul{
+			
+	}
+	
+	ul.nav-panel-handle-ul li{
+		float:left;
+		margin-right:5px;
+		width:auto;
+	}
+	
+	.nav-panel-title{
+		margin-bottom:10px;
+		width:100%;
+		height:50px;
+	}
+	
+	.nav-panel-title p{
+		display:inline;
+		float:left;
+	}
+	
+	.nav-panel-title p.nav-panel-title-userhead{
+		margin-left:70px;
+		width:50px;
+		height:100%;
+		border:1px solid #ccc;
+	}
+	
+	.nav-panel-title p.nav-panel-title-text{
+		width:100px;
+		height:100%;
+		line-height:50px;
+		text-align:center;
+	}
+	
+	.nav-panel-buttom{
+		width:60px;
+		height:26px;
+	}
+	
+	.nav-panel-input{
+		width:130px;
+		height:20px;
+	}
+	
+	ul.nav-panel-info-ul{
+			
+	}
+	
+	ul.nav-panel-info-ul li{
+		margin-bottom:5px;
+		width:96%;
+	}
+	
+	ul.nav-panel-info-ul li p{
+		float:left;
+		height:25px;
+		line-height:25px;
+	}
+	
+	.nav-panel-info-ul-p1{
+		width:80px;	
+	}
+	
+	.nav-panel-info-ul-p2{
+		width:140px;
+	}
+	
+	.nav-panel-info-ul-p3{
+		width:auto;
+	}
+	
+	.nav-panel-info-ul-img{
+		margin-bottom:10px;
+		height: 130px;
+		border:1px solid #ccc;
+	}
+	
+	.hidden{
+		display:none;
+	}
+	/*end panel*/
+span.nav-sub-view-list {
+	   background: url("../../../resources/images/view-table.png") 0px;
+	   height:16px;
+	   width:16px;
+	   display : inline-block;
+	}
+	span.nav-sub-view-overview{
+       background: url("../../../resources/images/view-overview.png") 0px;
+       height:16px;
+       width:16px;
+       display : inline-block;
+    }
+    span.nav-sub-view-gis{
+       background: url("../../../resources/images/view-gis.png") 0px;
+       height:16px;
+       width:16px;
+       display : inline-block;
+    }
+    span.nav-sub-view-scada{
+       background: url("../../../resources/images/view-scada.png") 0px;
+       height:16px;
+       width:16px;
+       display : inline-block;
+    }
+    
+    span.nav-sub-view-active {
+        background-position: -16px 0;
+    }
+    
+    span.nav-sub-views{
+        cursor: pointer;
+        margin : 0px 5px;
+    }
+    span.nav-sub-views:hover{
+        background-position: -16px 0;
+    }
+    
+    #nav-sub-left-app a.nav-subnav{
+        color : rgb(255,255,255);
+    }
+    #nav-sub-left-app a.nav-subnav-active{
+        color: rgb(132, 196, 74);
+    }

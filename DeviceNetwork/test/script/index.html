@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <script type="text/javascript" src="../../js/base/prototype.lang.js"></script>
+        <script type="text/javascript" src="../../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../../js/base/jquery-ui.js"></script>
+        <script type="text/javascript" src="../../js/base/jquery.string.js"></script>
+        <script type="text/javascript" src="../../js/base/ih.js"></script>
+        <script type="text/javascript" src="../../js/plugin/jquery.pnotify.js"></script>
+        <script type="text/javascript" src="../../js/base/log4javascript.js"></script>
+        <script type="text/javascript" src="../../js/plugin/jquery.loadmask.js"></script>
+		<script type="text/javascript" src="../../js/plugin/jquery.data.js"></script>
+        <script type="text/javascript" src="../../js/plugin/jquery.watermark.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+    $(function(){
+        var manager = new cloud.ResourceManager(new cloud.ItemResourceHandler());
+		
+        manager.setResources([{
+            _id: "50E8B734421AA97D90000159",
+            id: "50E8B731421AA97D90000153",
+            name: "admin",
+            type: 3
+        }]);
+		
+    });
+			
+    </script>
+    <body>
+        <div id="content"></div>
+		<br/>
+		This is body;
+    </body>
+</html>

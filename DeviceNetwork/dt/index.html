@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Pragma" CONTENT="no-cache"> 
+	<meta http-equiv="Cache-Control" CONTENT="no-cache"> 
+	<meta http-equiv="Expires" CONTENT="0">
+	<link href="resources/css/global.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./library/log4javascript.js"></script>
+
+     
+    <script type="text/javascript" src="./library/require.js"></script>
+    <script type="text/javascript">
+    	require(["./resources/js/index.js"]);
+    	
+    	
+		var log = log4javascript.getLogger();
+		var appender = new log4javascript.InPageAppender();
+		log.addAppender(appender);
+		
+//		log.debug("");
+    </script>
+  </head>
+  <body>
+  	<div class="mainbox">
+  		<div class="topbox">
+  			<div class="language-container">
+  				<a href="#" id="zh-cn">简体中文</a>&nbsp;|&nbsp;
+  				<a href="#" id="en" style="margin-right:20px;">English</a>
+  			</div>
+  			<div class="config-container">
+  				<!--<div class="dt-title-box" lang="text:welecome_to_device_touch_service"></div>-->
+  				<div class="dt-title-box"></div>
+  				<div class="select-port-box">
+  					<div id="accesspoint-select"></div> 
+  						<!-- 
+  						<select id="access_port" style="border-color:#C4C5C0">
+							<option value=0 selected="selected">c.inhandnetworks.com</option>
+							<option value=1>g.inhandnetworks.com</option>
+							<option value=2>t.inhandnetworks.com</option>
+						</select>
+						 -->
+  					<label class="access-point-title" lang="text:access_point+:"></label>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="middlebox">
+  			<div class="login-box-info">
+  				<div class="login-text-container"><label lang="text:login"></label></div>
+  				<div class="login-account-info">
+  					<div style="margin-top:20px;">
+  						<span style="background-image:url(resources/images/user.png)" lang="{alt:email,title:email}"></span>
+  						<input maxlength="40" id="userEmail" type="text"/>
+  					</div>
+  					<div>
+  						<span style="background-image:url(resources/images/password.png)" lang="{alt:password,title:password}"></span>
+  						<input maxlength="40" id="userPassword" type="password"/>
+  					</div>
+  					<div>
+  						<span style="background-image:url(resources/images/yanzhengma.png)" lang="{alt:auth_code,title:auth_code}"></span>
+  						<input maxlength="5" id="text-identifying-code" style="width:75px;height:29px;line-height:29px;" type="text"/>
+  						<span id="login-identifying-code" lang="{alt:click_change_code,title:click_change_code}"></span>
+  					</div>
+  					<div style="width:100%;margin-top:10px;text-align:left;"><div id="login-button" lang="text:login"></div></div>
+  				</div>
+  				<div class="account-forget-info-box" style="display:none">
+  					<a href="#" id="forgot-password" lang="text:forgot_your_password"></a><br/>
+  					<a href="#" id="create-acount" lang="text:create_an_account"></a><br/>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="bottombox">
+  			<span class="icon-logo"></span>
+  			<span class="copyright-info"></span>
+  		</div>
+  	</div>
+  </body>
+</html>

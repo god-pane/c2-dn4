@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			 <script type="text/javascript" src="../base/loader.js"></script>
+			 <script type="text/javascript">
+			 	var modelTree = {
+					organ:{
+						self:{
+							name:"机构"
+						},
+						query_one:{
+							name:"查询指定机构"
+						},
+						query_list:{
+							name:"查询机构列表"
+						},
+						query_current:{
+							name:"查询当前机构"
+						},
+						query_stat:{
+							name:"查询机构统计"
+						},
+						add:{
+							name:"新建机构"
+						},
+						"delete":{
+							name:"删除机构"
+						},
+						update:{
+							name:"更新机构信息"
+						},
+						update_current:{
+							name:"更新当前机构信息"
+						}
+					},
+					site:{
+						self:{
+							name:"现场"
+						},
+						query_one:{
+							name:"查询指定现场"
+						},
+						query_list:{
+							name:"查询现场列表"
+						},
+						query_devices_count:{
+							name:"查询现场下设备总数"
+						},
+						add:{
+							name:"新建现场"
+						},
+						"delete":{
+							name:"删除现场"
+						},
+						update:{
+							name:"更新现场信息"
+						}
+					},
+					device:{
+						self:{
+							name:"设备"
+						},
+						query_one:{
+							name:"查询指定设备"
+						},
+						query_list:{
+							name:"查询设备列表"
+						},
+						query_organ:{
+							name:"查询设备所属机构"
+						},
+						query_site:{
+							name:"查询设备所属现场"
+						},
+						add:{
+							name:"新建设备"
+						},
+						"delete":{
+							name:"删除设备"
+						},
+						update:{
+							name:"更新设备信息"
+						},
+						batch_add:{
+							name:"批量新建设备"
+						},
+						batch_update:{
+							name:"批量更新设备信息"
+						},
+						batch_delete:{
+							name:"批量删除设备"
+						}
+					},
+					machine:{
+						self:{
+							name:"机器"
+						},
+						query_one:{
+							name:"查询指定机器"
+						},
+						query_list:{
+							name:"查询机器列表"
+						},
+						add:{
+							name:"新建机器"
+						},
+						"delete":{
+							name:"删除机器"
+						},
+						update:{
+							name:"更新机器信息"
+						}
+					},
+					model:{
+						self:{
+							name:"机型"
+						},
+						query_one:{
+							name:"查询指定机型"
+						},
+						query_list:{
+							name:"查询机型列表"
+						},
+						add:{
+							name:"新建机型"
+						},
+						"delete":{
+							name:"删除机型"
+						},
+						update:{
+							name:"更新机型信息"
+						}
+					},
+					history:{
+						self:{
+							name:"历史数据"
+						},
+						query_variables:{
+							name:"查询历史变量"
+						}
+					},
+					tag:{
+						self:{
+							name:"标签"
+						},
+						query_one:{
+							name:"查询指定标签"
+						},
+						query_list:{
+							name:"查询标签列表"
+						},
+						query_type:{
+							name:"查询标签类型"
+						},
+						query_resource_tags:{
+							name:"查询指定资源拥有的标签"
+						},
+						query_resources_tags:{
+							name:"查询多个资源拥有的标签"
+						},
+						query_tag:{
+							name:"查询指定标签拥有的资源"
+						},
+						query_count:{
+							name:"查询指定资源列表资源类型的资源数量统计"
+						},
+						add:{
+							name:"新建标签"
+						},
+						tag_resource:{
+							name:"对指定资源打上标签"
+						},
+						tag_resources:{
+							name:"对多个资源打上标签"
+						},
+						tag_resources_tags:{
+							name:"对多个资源打上多个标签"
+						},
+						"delete":{
+							name:"删除标签"
+						},
+						delete_resource_tag:{
+							name:"删除资源的标签"
+						},
+						delete_resources_tags:{
+							name:"删除多个资源的多个标签"
+						},
+						update:{
+							name:"更新标签信息"
+						},
+						query_user:{
+							name:"获取资源类型为用户的标签列表"
+						},
+						query_role:{
+							name:"获取资源类型为角色的标签列表"
+						},
+						query_device:{
+							name:"获取资源类型为设备的标签列表"
+						},
+						query_site:{
+							name:"获取资源类型为现场的标签列表"
+						},
+						query_model:{
+							name:"获取资源类型为机型的标签列表"
+						},
+						query_document:{
+							name:"获取资源类型为文档的标签列表"
+						},
+						query_customer:{
+							name:"获取资源类型为客户的标签列表"
+						},
+						query_none:{
+							name:"获取无标签的资源"
+						}
+					},
+					user:{
+						self:{
+							name:"用户"
+						},
+						query_one:{
+							name:"查询指定用户"
+						},
+						query_list:{
+							name:"查询用户列表"
+						},
+						query_current:{
+							name:"查询当前用户"
+						},
+						add:{
+							name:"新建用户"
+						},
+						"delete":{
+							name:"删除用户"
+						},
+						update:{
+							name:"更新指定用户信息"
+						},
+						update_current:{
+							name:"更新当前用户信息"
+						},
+						update_owner:{
+							name:"更改拥有者"
+						},
+						update_role:{
+							name:"更改用户角色"
+						},
+						update_password:{
+							name:"更改指定用户密码"
+						},
+						update_current_password:{
+							name:"更改当前用户密码"
+						},
+						reset_password:{
+							name:"重置指定用户密码"
+						},
+						reset_current_password:{
+							name:"重置当前用户密码"
+						},
+						forgot_password:{
+							name:"忘记密码"
+						},
+						query_privilege:{
+							name:"查询权限"
+						},
+						_logout:{
+							name:"退出"
+						},
+						logout:{
+							name:"退出"
+						}
+					},
+					role:{
+						self:{
+							name:"角色"
+						},
+						query_one:{
+							name:"查询指定角色"
+						},
+						query_list:{
+							name:"查询角色列表"
+						},
+						add:{
+							name:"新建角色"
+						},
+						"delete":{
+							name:"删除角色"
+						},
+						update:{
+							name:"更新角色信息"
+						}
+					},
+					customer:{
+						self:{
+							name:"客户"
+						},
+						query_one:{
+							name:"查询指定客户"
+						},
+						query_list:{
+							name:"查询客户列表"
+						},
+						query_sites_count:{
+							name:"查询客户现场总数"
+						},
+						add:{
+							name:"新建客户"
+						},
+						"delete":{
+							name:"删除客户"
+						},
+						update:{
+							name:"更新客户信息"
+						}
+					},
+					task:{
+						self:{
+							name:"任务"
+						},
+						query_one:{
+							name:"查询指定任务"
+						},
+						query_list:{
+							name:"查询任务列表"
+						},
+						add:{
+							name:"新建任务"
+						},
+						update:{
+							name:"更新任务信息"
+						},
+						change_state:{
+							name:"改变任务状态"
+						},
+						"delete":{
+							name:"取消任务"
+						},
+						delete_tasks:{
+							name:"取消指定对象的所有任务"
+						}
+					},
+					oauth:{
+						self:{
+							name:"认证"
+						},
+						get_token:{
+							name:"获取访问令牌"
+						},
+						refresh_token:{
+							name:"刷新访问令牌"
+						}
+					},
+					captchas:{
+						self:{
+							name:"验证码"
+						},
+						get:{
+							name:"获取验证码"
+						},
+						img:{
+							name:"获取验证码图片"
+						},
+						check:{
+							name:"校验验证码"
+						}
+					},
+					
+					app:{
+						self:{
+							name:"应用"
+						},
+						query_one:{
+							name:"查询指定应用"
+						},
+						query_list:{
+							name:"查询应用列表"
+						},
+						add:{
+							name:"新建应用"
+						},
+						update:{
+							name:"更新应用信息"
+						}
+					},
+					
+					statistics:{
+						self:{
+							name:"统计"
+						},
+						query_online:{
+							name:"获取在线统计列表"
+						},
+						query_online_trend:{
+							name:"获取在线趋势"
+						},
+						query_month_traffic:{
+							name:"获取月流量统计列表"
+						},
+						query_day_traffic:{
+							name:"获取日流量统计列表"
+						},
+						query_traffic:{
+							name:"获取流量统计列表"
+						},
+						query_signal:{
+							name:"获取信号列表"
+						}
+					},
+					
+					alarm:{
+						self:{
+							name:"告警"
+						},
+						query:{
+							name:"查询告警"
+						},
+						confirm:{
+							name:"确认告警"
+						},
+						cancel:{
+							name:"取消告警"
+						},
+						query_state:{
+							name:"查询告警状态"
+						},
+						query_trend:{
+							name:"查询告警趋势"
+						},
+						query_count:{
+							name:"查询告警统计"
+						}
+					},
+					
+					reports:{
+						self:{
+							name:"报表"
+						},
+						get_forms:{
+							name:"获取报表"
+						}
+					},
+					
+					favor:{
+						self:{
+							name:"收藏"
+						},
+						batch_add:{
+							name:"批量添加收藏"
+						},
+						"delete":{
+							name:"删除收藏"
+						},
+						query_list:{
+							name:"查询当前用户收藏列表"
+						},
+						check:{
+							name:"验证资源是否当前用户收藏"
+						},
+					},
+					
+					log:{
+						self:{
+							name:"日志"
+						},
+						query_behav:{
+							name:"查询操作日志列表"
+						},
+						query_comm:{
+							name:"查询通信日志列表"
+						},
+					},
+					
+					realtime:{
+						self:{
+							name:"实时数据"
+						},
+						query_devices:{
+							name:"查询设备实时数据"
+						},
+						query_sites:{
+							name:"查询现场实时数据"
+						},
+					},
+					
+					
+				}
+				
+				var modelExtendTree = {
+					
+					user:{
+						
+						login:{
+							name:"登录"
+						}
+			
+					},
+					
+					tag:{
+						
+						query_resource_type:{
+							name:"获取指定资源类型的标签列表"
+						}
+						
+					},
+					
+					role:{
+					
+						query_current:{
+							name:"查询当前用户角色"
+						}
+						
+					},
+					
+					organ:{
+						
+						query_with_stat:{
+							name:"查询指定机构详细信息与统计信息"
+						}
+						
+//						query_detail:{
+//							name:""
+//						}
+						
+					}
+				}
+				
+			 	require(["../base/cloud.js","../lib/plugin/jsoneditor.js"], function(cloud,jsoneditor){
+					
+					for(var attr in modelExtendTree){
+						if(modelTree[attr] !== undefined){
+							$.extend(modelTree[attr],modelExtendTree[attr]);
+						}
+					}
+					
+					var container = document.getElementById("doc_content_content");
+        			var editor = new jsoneditor.JSONEditor(container);
+					editor.setMode("view");
+					
+					var dataStructure = Model._dataStructure;
+//					console.log("dataStructure",dataStructure);
+					
+					for(attr in dataStructure){
+						$("<p>").attr("id",attr).attr("class","level1").appendTo("#doc_tree");
+						var attrName;
+//						console.log("attr",attr);
+//						console.log("modelTree[attr]",modelTree[attr]);
+						if(modelTree[attr] !== undefined){
+							attrName = modelTree[attr]["self"]["name"];
+						}else{
+							attrName = "";
+						}
+						$("<span>").text(attrName + " " +attr).appendTo("#" + attr);
+						$("<div>").attr("id","_" + attr).hide().appendTo("#" + attr);
+						var _dataStructure = dataStructure[attr];
+						for(var _attr in _dataStructure){
+							var $p = $("<p>").attr("id",attr + "." +_attr).attr("class","level2");
+							var _attrName;
+							if(modelTree[attr][_attr]){
+								_attrName = modelTree[attr][_attr]["name"];
+							}else{
+								_attrName = "";
+							}
+							$p.append($("<span>").attr("class","level2_1").text(_attr)).append($("<span>").attr("class","level2_2").text(_attrName));
+							$p.appendTo("#" + "_" + attr);
+						}
+					}
+					
+					$("#doc_tree").children("p").children("span").click(function(){
+						$("#doc_tree").children("p").children("div").hide();
+						$(this).parent("p").children("div").show();
+						$("#doc_tree").children("p").children("span").css("background","#fff");
+						$(this).css("background","#f1f1ff");
+						$(this).parent("p").siblings().children("div").children("p").siblings().andSelf().css("background","#fff");
+//						$("#doc_content_head_1").text($(this).text());
+//						$("#doc_content_head_2").text("");
+						editor.set({});
+					});
+					
+					$("#doc_tree").children("p").children("div").children("p").click(function(){
+						var id = $(this).attr("id");
+						var appName = id.substring(0,id.indexOf("."));
+						var methodName = id.substring(id.indexOf(".") + 1);
+						var currentStructure = dataStructure[appName][methodName];
+						var attachedAttr = {
+							success:[false,"Function"],
+							error:[false,"Function"]
+						}
+						currentStructure = $.extend(currentStructure,attachedAttr);
+						editor.set(currentStructure);
+						$(this).siblings().andSelf().css("background","#fff");
+						$(this).css("background","#f1f1ff");
+						var text = "Model." + appName + "({\"method\":\"" + methodName + "\"})";
+						var zh = $(this).find(".level2_2").text();
+						$("#doc_content_head_1").text(text);
+						$("#doc_content_head_2").text(zh);
+					});
+					
+					$(window).scroll(function(){
+						$("#doc_content").css("margin-top",$(window).scrollTop());
+					});
+					
+				});
+			 </script>
+			 <style type="text/css">
+			 	
+			 	div,p{
+			 		cursor:pointer;
+			 		font-family:arial;
+			 	}
+				
+				.model-head{
+					width:100%;
+					height:50px;
+					background:#ccc;
+					border:1px solid #fff;
+				}
+				
+				.model-head-text{
+					margin:12px 0 0 120px;
+					font-style:italic;
+					font-size:22px;
+				}
+				
+				.doc{
+					margin-top:20px;
+					min-height:800px;
+			 	}
+				
+				.doc_tree{
+					overflow:hidden;
+					float:left;
+					margin:0 20px 0 0;
+					width:400px;
+					height:100%;
+				}
+				
+				.doc_content{
+					overflow:hidden;
+					float:left;
+					width:800px;
+					min-height:700px;
+					height:700px;
+				}
+				
+				.doc_content_head{
+					width:100%;
+					height:auto;
+				}
+				
+				.doc_content_head_1{
+					width:100%;
+					height:50px;
+					line-height:50px;
+					font-size:30px;
+				}
+				
+				.doc_content_head_2{
+					margin-bottom:10px;
+					width:100%;
+					height:30px;
+					line-height:30px;
+					font-size:25px;
+				}
+				
+				.doc_content_content{
+					width:100%;
+					height:450px;
+				}
+				
+				.doc_content_help{
+					margin-top:10px;
+					width:100%;
+					height:80px;
+					color:blue;
+					line-height:22px;	
+				}
+				
+				.level1{
+					margin:0 0 20px 150px;
+					font-size:18px;
+				}
+				
+				.level2{
+					margin:10px 0 0 25px;
+					font-size:13px;
+				}
+				
+				.level2_1,.level2_2{
+					clear:left;
+					display:block;
+				}
+				
+				.level2_1{
+					font-size:17px;
+					font-weight:bold;
+				}
+				
+				.level2_2{
+					font-size:12px;
+					color:#777;
+				}
+				
+			 </style>
+		</head>
+		<body>
+			<div class="model-head">
+				<p class="model-head-text">Model API Documentation</p>
+			</div>
+			<div id="doc" class="doc">
+				<div id="doc_tree" class="doc_tree"></div>
+				<div id="doc_content" class="doc_content">
+					<div  id="doc_content_head" class="doc_content_head">
+						<p id="doc_content_head_1" class="doc_content_head_1">
+							Model API Documentation
+						</p>
+						<p id="doc_content_head_2" class="doc_content_head_2">
+							参考文档
+						</p>
+					</div>
+					<div  id="doc_content_content" class="doc_content_content"></div>
+					<div  id="doc_content_help" class="doc_content_help">
+						**&nbsp;&nbsp;&nbsp;帮助&nbsp;&nbsp;&nbsp;**<br />
+						*&nbsp;&nbsp;&nbsp;拥有“url”、“type”参数的为基础API，否则为复合API；复合API由基础API组成，所以基于基本API的参数<br />
+						*&nbsp;&nbsp;&nbsp;不论请求基础API还是复合API，都不需要“url”、“type”以及“suffix”参数<br />
+						*&nbsp;&nbsp;&nbsp;“param”与“data”拥有“_required”字段，表示这个对象参数是否必需，true表示必需，false表示非必需<br />
+						*&nbsp;&nbsp;&nbsp;字段是否必需与类型由数组表示，数组第一个值表示字段是否是必需，true表示必需，false表示非必需；数组第二个值表示字段的类型，共有String、Number、Object、Array、Boolean、Function、Empty几种类型
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>

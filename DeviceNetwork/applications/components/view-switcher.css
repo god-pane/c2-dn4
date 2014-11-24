@@ -1,0 +1,26 @@
+.view-switcher {
+}
+
+.view-switcher img {
+    display: block;
+    height: 16px;
+    width: 32px;
+    position: relative;
+    left: 0px;
+}
+
+.view {
+}
+
+.view-switcher .view {
+    cursor: pointer;
+    float: left;
+    width: 16px;
+    overflow: hidden;
+    margin: 0 5px;
+    
+}
+
+.view-switcher .view-active img { left: -16px; }
+
+.view-switcher .view-hover img { left: -16px; }

@@ -1,0 +1,18 @@
+{
+	"hidden": true,
+	"category": "common",
+	"keyName": "common.canvas",
+	"groupType": 0,
+	"scriptFiles":
+	[
+		"$/<%lang%>/common-canvas.js.gziped"
+	],
+	"debugFiles":
+	[
+		"$/lang/<%lang%>.js",
+		"$/Global.js",
+		"$/Drawable.js",
+		"$/Board.js"
+	]
+}
+

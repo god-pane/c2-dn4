@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="/cloud/base/loader.js"></script>
+	</head>
+	<script type="text/javascript">
+		require([ "./paginate" ], function(Page) {
+			var paging = new Page({
+				start:1,
+//				count:33,
+				total:300,
+				display:6,
+//				autoPageSize:[10,15,20,25,50],
+				container: $("#paging"),
+				events:{
+					change:function(page){
+						alert(page)
+					}
+				}
+			});
+		});
+	</script>	
+	<body>
+		<div id="paging">
+			
+		</div>
+	</body>
+</html>

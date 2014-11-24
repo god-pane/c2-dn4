@@ -1,0 +1,57 @@
+
+.cloud-table{
+	width: 100%;
+}
+
+.cloud-table .dataTable thead th{
+	padding-left: 13px;
+	padding-right: 0;
+	height: 24px;
+}
+.cloud-table .dataTable thead th.cloud-unsortable{
+    padding-left: 3px;
+}
+/* 
+.cloud-table .dataTable thead th.cloud-table-resizable{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+} */
+
+.cloud-table table.dataTable tbody tr{
+    height: 29px;
+}
+
+.cloud-table .dataTable tbody td{
+	height: 20px;
+	padding-right: 5px;
+	padding-left: 12px;
+	font-size: 12px;
+}
+.cloud-table .dataTable tbody td.cloud-unsortable{
+    padding-left: 3px;
+}
+
+.cloud-table .dataTable tbody td a{
+    /*margin-left: 5px;*/
+    margin-right: 0px;
+}
+
+.cloud-table .dataTable .sorting{
+	background: url('../../resources/images/sort_both.png') no-repeat -3px 6px #e7e7e7;
+}
+.cloud-table .dataTable .sorting_asc{
+	background: url('../../resources/images/sort_asc.png') no-repeat -3px 6px #e7e7e7;
+	background-position: -3px 10px;
+}
+
+.cloud-table .dataTable .sorting_desc{
+	background-position: -3px 2px;
+} 
+.cloud-table table.dataTable tr .cloud-table-select-column{
+	text-align: center;
+	padding-left: 5px;
+}
+.cloud-table-shadow {
+	background-color: rgb(204, 238, 193) !important;
+}

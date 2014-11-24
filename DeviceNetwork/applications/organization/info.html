@@ -1,0 +1,126 @@
+<div class="info-wrapper"  style="position:relative">
+    <form id="info-form">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-org-name" style="float:left; " class=" validate[required,minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+		<span class="org-info-btns "><span class = "info-edit cloud-bubble-hide"></span></span>
+		<span class="info-org-favor"></span>
+	</div>
+	<div class="info-buttonset-org "></div>
+	<div class="info-form">
+		
+		<div class="info-form-row"  >
+            <label for="info-org-creator" class="org-info-form-label" lang="text:creator+:">创建人:</label>
+            <input type="text" id="info-org-creator" class="info-form-text validate[required, maxSize[50],funcCall[cloudInput]]"/>
+        </div> 
+		
+		<div class="info-form-row"  >
+            <label for="info-org-contact-email" class="org-info-form-label" lang="text:contactor_email+:">联系人邮箱:</label>
+            <input type="text" id="info-org-contact-email" class="info-form-text validate[custom[email],maxSize[50],funcCall[cloudInput]]"/>
+        </div> 
+		
+		<div class="info-form-row"  >
+            <label for="info-org-createtime" class="org-info-form-label" lang="text:create_time+:">创建时间:</label>
+            <input type="text" id="info-org-createtime" class="info-form-text "/>
+        </div>
+		
+		<div class="info-form-row"  >
+            <label for="info-org-phone" class="org-info-form-label" lang="text:phone+:">电话:</label>
+            <input type="text" id="info-org-phone" class="info-form-text validate[custom[phone],maxSize[20],funcCall[cloudInput]]"/>
+        </div>
+		
+        <div class="info-form-row"  >
+            <label for="info-org-fax" class="org-info-form-label" lang="text:fax+:">传真:</label>
+            <input type="text" id="info-org-fax" class="info-form-text validate[custom[phone],maxSize[20],funcCall[cloudInput]]"/>
+        </div>
+		
+		<div class="info-form-row">
+			<label for="info-org-address" class="org-info-form-label" lang="text:address+:">地址:</label>
+			<input type="text" id="info-org-address" value="" class="info-form-text  validate[minSize[0],maxSize[20],funcCall[cloudInput]]"/>
+		</div>
+		
+		<div class="info-form-row ">
+			<label for="info-org-website" class="org-info-form-label" lang="text:website+:">网址:</label>
+			<input type="text" id="info-org-website" value="" class="info-form-text  validate[minSize[0],maxSize[20],funcCall[cloudInput]]"/>
+		</div>
+		
+        <div class="info-form-row ">
+            <label for="info-org-count-gateway" class="org-info-form-label" lang="text:gateway_count+:">网关数量:</label>
+            <span id="info-org-count-gateway" class="info-form-text"></span>
+        </div>
+        
+        <div class="info-form-row ">
+            <label for="info-org-count-userdevice" class="org-info-form-label" lang="text:user_device_count+:">用户设备数量:</label>
+            <span id="info-org-count-userdevice" class="info-form-text"></span>
+        </div>
+        
+        <div class="info-form-row ">
+            <label for="info-org-count-site" class="org-info-form-label" lang="text:site_count+:">现场数量:</label>
+            <span id="info-org-count-site" class="info-form-text"></span>
+        </div>
+        
+        <div class="info-form-row ">
+            <label for="info-org-count-dbsize" class="org-info-form-label" lang="text:db_size+:">数据库大小:</label>
+            <span id="info-org-count-dbsize" class="info-form-text"></span>
+        </div>
+	</div>
+	
+	</form>
+</div>
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+		/*border: 1px solid silver;*/
+	}
+
+	.info-header{
+		margin-top: 10px;
+		display: inline-block;
+	}
+    
+	.info-header #info-name{
+		margin-left: 30px;
+	}
+
+	.info-form-row .org-info-form-label{
+		text-align:left;
+		display: inline-block;
+		width: 70px;
+	}
+	
+    .info-form-row .info-doc-label{
+        display: inline-block;
+        width: 35px;
+    }
+    
+	.info-form-row{
+		margin: 8px 0;
+	}
+
+	.info-org-ip-row{
+	    height: 18px;
+        line-height: 18px;
+	}
+	
+	.info-buttonset-org{
+	    text-align: left;
+	    margin: 10px 0 0 0;
+	}
+	.info-buttonset-org a{
+		margin: 13px 10px 8px 0;
+	}
+
+	.info-buttonset-org .cloud-button-body-main{
+		margin: 1px 2px;
+		padding: 1px 5px;
+	}
+	.org-info-btns{
+		width:22px;
+		height:23px;
+		float:left;
+	}
+	.info-org-favor{
+		float:left;
+	}
+</style>

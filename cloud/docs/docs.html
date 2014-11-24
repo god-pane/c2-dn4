@@ -1,0 +1,173 @@
+<!DOCTYPE>
+<html ng-app="Docs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link href="./docs.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../base/loader.js"></script>
+<script type="text/javascript" src="./lib/angular.js"></script>
+<script type="text/javascript" src="./lib/angular-route.js"></script>
+<script type="text/javascript" src="./docs.js"></script>
+</head>
+<body>
+<div class="header">
+	<div class="header-content">Cloud SDK Docs</div>
+</div>
+<div class="box">
+	<div class="docs">
+		<div class="sidebar" ng-controller="fileList">
+			<ul class="modulelist-ul" ng-repeat="one in map">
+				<li class='modulelist-li-head' ng-bind="one[0]"></li>
+				<li class='modulelist-li-item' ng-repeat="module in one[1]">
+					<a href='javascript:void(0)' _href="{{module[1]}}" ng-click="showFile($event)" ng-bind="module[0]"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="content" ng-controller="fileInfo">
+			<div class="file-info">
+				<table ng-show="head">
+					<tr>
+						<td>
+							<span class="filename" ng-bind="head.filename"></span>
+							<span class="filetype" ng-bind="head.filetype"></span>
+						</td>
+					</tr>
+					<tr>
+						<td class="filedescription" colspan="2" ng-bind="head.filedescription"></td>
+					</tr>
+					<tr ng-show="head.fileparams">
+						<td>
+							<table class="info-table">
+								<tr>
+									<td ng-bind="head.fileparams ? '参数' : ''"></td>
+									<td>
+										<table class="info-table">
+											<tr>
+												<td ng-bind="param[1] ? '参数名'"></td>
+												<td ng-bind="param[0] ? '参数类型'"></td>
+												<td ng-show="param[2]" ng-bind="param[2] ? '描述' : ''"></td>
+											</tr>
+											<tr ng-repeat="param in head.fileparams">
+												<td ng-bind="param[1]||''"></td>
+												<td ng-bind="param[0] | toType"></td>
+												<td ng-show="param[2]" ng-bind="param[2]||''"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr ng-show="head.filereturn">
+						<td>
+							<table class="info-table">
+								<tr>
+									<td ng-bind="head.filereturn[0] ? '返回值' : ''"></td>
+									<td>
+										<table class="info-table">
+											<tr>
+												<td ng-show="head.filereturn[1]" ng-bind="head.filereturn[1] ? '返回名' : ''"></td>
+												<td ng-bind="head.filereturn[0] ? '返回类型' : ''"></td>
+												<td ng-show="head.filereturn[2]" ng-bind="head.filereturn[2] ? '描述' : ''"></td>
+											</tr>
+											<tr>
+												<td ng-show="head.filereturn[1]" ng-bind="head.filereturn[1]"></td>
+												<td ng-bind="head.filereturn[0] | toType"></td>
+												<td ng-show="head.filereturn[2]" ng-bind="head.filereturn[2]"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr ng-show="attrs.length">
+						<td>
+							<table class="info-table">
+								<tr>
+									<td ng-bind="'属性'"></td>
+									<td>
+										<table class="info-table">
+											<tr>
+												<td ng-bind="'属性名'"></td>
+												<td ng-bind="'类型'"></td>
+												<td ng-bind="'描述'"></td>
+											</tr>
+											<tr ng-repeat=" attr in attrs">
+												<td ng-bind="attr[1]"></td>
+												<td ng-bind="attr[0] | toType"></td>
+												<td ng-bind="attr[2]"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="methodfun-list">
+				<div ng-repeat="methodFun in methods">
+				<div class="methodfun-sum" ng-click="status = (status === 'show') ? 'hide' : 'show'">
+					<span style="font-style:italic;" ng-bind="head.filetype == '{class}' ? '(new  ' + head.filename + '()).' : head.filename + '.' "></span>
+					<span style="font-weight:bold" ng-bind="methodFun.name + '('"></span>
+					<span ng-repeat="param in methodFun.params">
+						<span style="font-size: 14px;color: #666;" ng-bind="param[0] | toType"></span>
+						<span ng-hide="$index === methodFun.params.length - 1" ng-bind="','"></span>
+					</span>
+					<span ng-bind="')'"></span>
+					<span style="font-size: 13px;color: #777;" ng-bind="methodFun.description"></span>
+				</div>
+				<table class="methodfun" ng-show="status === 'show'"  ng-hide="status === 'hide' || !status">
+					<tr>
+						<td ng-bind="methodFun.type === '{method}' ? '方法名' : '函数名'"></td>
+						<td ng-bind="methodFun.name"></td>
+					</tr>
+					<tr>
+						<td ng-bind="'描述'"></td>
+						<td ng-bind="methodFun.description"></td>
+					</tr>
+					<tr ng-show="methodFun.params">
+						<td ng-bind="'参数'"></td>
+						<td>
+							<table>
+								<tr>
+									<td ng-bind="'参数名'"></td>
+									<td ng-bind="'参数类型'"></td>
+									<td ng-bind="'描述'"></td>
+								</tr>
+								<tr ng-repeat="param in methodFun.params">
+									<td ng-bind="param[1]"></td>
+									<td ng-bind="param[0] | toType"></td>
+									<td ng-bind="param[2]"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr ng-show="methodFun.return">
+						<td ng-bind="'返回值'"></td>
+						<td>
+							<table>
+								<tr>
+									<td ng-bind="'返回类型'"></td>
+									<td ng-bind="'描述'"></td>
+								</tr>
+								<tr>
+									<td ng-bind="methodFun.return[0] | toType"></td>
+									<td ng-bind="methodFun.return[1]||''"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr ng-show="methodFun.deprecated">
+						<td></td>
+						<td ng-bind="methodFun.deprecated"></td>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

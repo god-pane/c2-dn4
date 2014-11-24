@@ -1,0 +1,99 @@
+
+.cloud-button {
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    margin-right: 4px;
+    padding: 0 6px;
+    color: #5e5e60;
+    vertical-align: middle;
+}
+
+.cloud-button-checkbox{
+    padding: 0 6px;
+}
+.cloud-button-icon-only{
+    padding: 2px;
+    border: 1px solid transparent;
+}
+
+.cloud-button-icon-only span{
+    margin-top: 0;
+}
+
+.cloud-button-active {
+    border: 1px solid #DBDCE0;
+    border-left: 1px solid #9B9FA2;
+    border-top: 1px solid #9B9FA2;
+    -webkit-box-shadow: inset 1px 1px 1px #C8CCCF;
+    -moz-box-shadow: inset 1px 1px 1px #C8CCCF;
+    box-shadow: inset 1px 1px 1px #C8CCCF;
+    background: #dfe2e7;
+    background: -moz-linear-gradient(top,  #dfe2e7 0%, #dfe3e9 13%, #e6e8e7 44%, #ebf3f3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dfe2e7), color-stop(13%,#dfe3e9), color-stop(44%,#e6e8e7), color-stop(100%,#ebf3f3));
+    background: -webkit-linear-gradient(top,  #dfe2e7 0%,#dfe3e9 13%,#e6e8e7 44%,#ebf3f3 100%);
+    background: -o-linear-gradient(top,  #dfe2e7 0%,#dfe3e9 13%,#e6e8e7 44%,#ebf3f3 100%);
+    background: -ms-linear-gradient(top,  #dfe2e7 0%,#dfe3e9 13%,#e6e8e7 44%,#ebf3f3 100%);
+    background: linear-gradient(to bottom,  #dfe2e7 0%,#dfe3e9 13%,#e6e8e7 44%,#ebf3f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe2e7', endColorstr='#ebf3f3',GradientType=0 );
+}
+
+.cloud-button-hover .cloud-button-item, .cloud-button-active .cloud-button-item {
+    color: #4cae29;
+}
+
+.cloud-button-disabled {
+    text-shadow : 1px 1px rgba(0,0,0,.15);
+    filter : gray;
+    opacity : 0.5;
+}
+
+.cloud-button-body {
+    -webkit-box-shadow: 1px 1px 2px #B0B1B5;
+    -moz-box-shadow: 1px 1px 2px #B0B1B5;
+    box-shadow: 1px 1px 2px #B0B1B5;
+    border-top: 1px solid #DDE1E4;
+    border-left: 1px solid #DDE1E4;
+    border-bottom: 1px solid #D7DBDE;
+    border-right: 1px solid #D7DBDE;
+    background: #f2f6f9;
+    background: -moz-linear-gradient(top,  #f2f6f9 0%, #f5f6fa 8%, #e3e4e9 80%, #e1e2e7 92%, #e3e4e8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f6f9), color-stop(8%,#f5f6fa), color-stop(80%,#e3e4e9), color-stop(92%,#e1e2e7), color-stop(100%,#e3e4e8));
+    background: -webkit-linear-gradient(top,  #f2f6f9 0%,#f5f6fa 8%,#e3e4e9 80%,#e1e2e7 92%,#e3e4e8 100%);
+    background: -o-linear-gradient(top,  #f2f6f9 0%,#f5f6fa 8%,#e3e4e9 80%,#e1e2e7 92%,#e3e4e8 100%);
+    background: -ms-linear-gradient(top,  #f2f6f9 0%,#f5f6fa 8%,#e3e4e9 80%,#e1e2e7 92%,#e3e4e8 100%);
+    background: linear-gradient(to bottom,  #f2f6f9 0%,#f5f6fa 8%,#e3e4e9 80%,#e1e2e7 92%,#e3e4e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f9', endColorstr='#e3e4e8',GradientType=0 );
+}
+.cloud-button-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cloud-button-img {
+    width: 16px;
+    height: 16px;
+}
+.cloud-button-checkbox-icon {
+    width: 16px;
+    height: 16px;
+    /*margin-top: 4px;*/
+}
+.cloud-button-checkbox-select {
+    margin: 1px 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../../resources/images/cloud-icons-active.png);
+}
+
+.cloud-button-text {
+    height: 20px;
+    line-height: 20px;
+    margin: 0 3px;
+}
+
+

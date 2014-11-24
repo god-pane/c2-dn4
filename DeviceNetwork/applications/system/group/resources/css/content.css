@@ -1,0 +1,142 @@
+.group-user{
+    		overflow:hidden;
+    		margin-top:10px;
+    		width: 1400px;
+    		height:auto;
+    	}
+    	.group-own-user,.group-notown-user{
+    		overflow:hidden;
+    		display:inline;
+    		float:left;
+    		width:45%;
+    		margin-left:15px;
+    	}
+    	.group-user-title{
+    		height:29px;
+    		line-height:29px;
+    	}
+    	.group-user-table{
+    		overflow: hidden;
+    		height:240px;
+    		border: 2px solid #ccc;
+			border-radius: 2px;
+			background:#fff;
+    	}
+    	.group-res{
+    		overflow:hidden;
+    		margin-top:10px;
+    		width: 1400px;
+    		height:auto;
+    	}
+    	.own-group-res,.notown-group-res{
+    		overflow:hidden;
+    		display:inline;
+    		float:left;
+    		width:45%;
+    		margin-left:15px;
+    		/*
+    		height:410px;
+    		*/
+    		height:auto;
+    	}
+    	.own-group-res-title,.notown-group-res-title{
+    		height:29px;
+    		line-height:29px;
+    	}
+    	.own-group-res-table,.notown-group-res-table{
+			overflow:hidden;
+    		height:360px;
+    		border: 2px solid #ccc;
+			border-radius: 2px;
+			background:#fff;
+    	}
+    	.group-options{
+    		margin:10px 0 10px 0;
+    		padding-left:16px;
+    		clear:both;
+    		width:100%;
+    		height:auto;
+    	}
+    	.group-options ul{
+    	
+    	}
+    	.group-options ul li{
+    		float:left;
+    	}
+    	.group-options label{
+    		float:left;
+    		margin:0 10px 10px 0;
+    	}
+    	.group-options input{
+    		float:left;
+    	}
+    	.group-options p{
+    		float:left;
+    		margin:-2px 0 0 3px;
+    	}
+    	.group-buttons{
+    		clear:both;
+    		margin:10px 0 0 15px;
+    	}
+    	.own-tabs-1,.own-tabs-2,.notown-tabs-1,.notown-tabs-2{
+    		overflow:hidden;
+    		height:300px;
+    	}
+    	.group-move{
+			float: left;
+			width: 42px;
+			height: auto;
+			margin-left: 15px;
+			cursor:pointer;
+    	}
+    	.group-user-move{
+    		margin-top: 70px;
+    	}
+    	.group-res-move{
+    		margin-top: 120px;
+    	}
+    	.group-move ul{
+    		
+    	}
+    	.group-move ul li{
+    		margin-bottom:10px;
+    		width:100%;
+    		height:27px;
+    		line-height:25px;
+    		text-align:center;
+    		background:#eee;
+    		border:1px solid #ddd;
+    		border-radius:5px;
+    	}
+    	.group-title{
+    		width:100%;
+    		height:29px;
+    		border-bottom:1px solid #ccc;
+    		background-color: #F5F6F9;
+    	}
+    	.group-remove-button{
+    		width:42px;
+    		height:27px;
+    		background:url("../images/1.png") no-repeat !important;
+    	}
+    	.group-remove-whole-button{
+    		background:url("../images/2.png") no-repeat !important;
+    	}
+    	.group-add-button{
+    		background:url("../images/3.png") no-repeat !important;
+    	}
+    	.group-add-whole-button{
+    		background:url("../images/4.png") no-repeat !important;
+    	}
+    	.group-title-p {
+    		margin: 3px 0 0 10px;
+    		padding:0 10px;
+			width: auto;
+			height: 20px;
+			line-height: 18px;
+			background: #000;
+			color: #fff;
+			border: 1px solid #000;
+			border-radius: 3px;
+			float: left;
+		}

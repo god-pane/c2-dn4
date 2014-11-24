@@ -1,0 +1,196 @@
+
+@charset "utf-8";
+html{ font-family: Verdana, Arial, sans-serif, "宋体"; font-size: 12px; color:#333; background:#fff; }
+body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,span,img,a { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img,a { border:0; }
+/* TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...*/
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
+ol,ul,li{ list-style:none; }
+caption,th { text-align:left; }
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; margin:0; padding:0; }
+q:before,q:after { content:''; }
+abbr,acronym { border:0; font-variant:normal; }
+/* to preserve line-height and selector appearance */
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+input,textarea { font-family:inherit; font-size:inherit; font-weight:inherit; color: inherit; }
+/*because legend doesn't inherit in IE */
+legend { color:#333; }
+input[type=text],input[type=password]{ padding:2px 0px; width:110px; height:18px; display: inline-block; background-color: #fff; border: 1px solid #ccc; text-indent: 3px; border-top-color: #c0c0c0; border-color: #c9c9c9; }
+input[type=text]:focus,input[type=password]:focus{ border-color: #55b235; outline: none; }
+input[type=text]:disabled,input[type="text"]:disabled:hover{ /*text-overflow: ellipsis*/ ; background: transparent; border-color: transparent; }
+select { width:112px; height:22px; border: 1px solid #ccc; background-color: #fff; }
+/* link style */
+a { color:#333; }
+a,a>input,a>div,a>p,a>li,a>span,a>img,a>button { text-decoration:none; outline-style:none; }
+a:hover { color:#83a82f; }
+a:hover,a:hover>input,a:hover>div,a:hover>p,a:hover>li,a:hover>span,a:hover>img,a:hover>button { text-decoration:underline; cursor:pointer; }
+/* font size  */
+.f10 { font-size: 10px; }
+.f11 { font-size: 11px; }
+.f12 { font-size: 12px; }
+.f13 { font-size: 13px; }
+.f14 { font-size: 14px; }
+.f15 { font-size: 15px; }
+.f16 { font-size: 16px; }
+.bold{ font-weight: bold; }
+/* custom style */
+.hide{ display:none; }
+.show{ display:block; }
+.left{ text-align:left; }
+.center{ text-align:center; }
+.right{ text-align:right; }
+/** jquery.layout custom classes.*/
+.cloud-layout-resizer{ border-left: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; overflow: visible !important; }
+.cloud-layout-resizer-closed{ border: none; }
+.cloud-layout-resizer-west, .cloud-layout-resizer-east{ border-top-style: none; border-bottom-style: none; }
+.cloud-layout-resizer-north{ border-left-style: none; border-right-style: none; -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15); -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.15); box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+.cloud-layout-resizer-south{ border-left-style: none; border-right-style: none; -webkit-box-shadow: 0 -1px 3px rgba(0,0,0,0.15); -moz-box-shadow: 0 -1px 3px rgba(0,0,0,0.15); box-shadow: 0 -1px 3px rgba(0,0,0,0.15); }
+.cloud-layout-toggler-west, .cloud-layout-toggler-east{ width: 12px !important; }
+.cloud-layout-toggler-north{ width: 93px !important; height: 7px !important; top: -2px !important; border: none; }
+.cloud-layout-toggler-north-open{ /*background-position: -382px -20px; */background-position: 0 -58px; width: 93px; height: 7px; }
+.cloud-layout-toggler-north-closed{ /*background-position: -382px -58px; */background-position: 0 -46px; width: 93px; height: 7px; }
+.cloud-layout-toggler:hover { opacity: 1.0; }
+.cloud-layout-toggler-east{ left: -9px !important; }
+.pane { background-color: #F5F6F9; overflow: auto; }
+.cloud-qtip { background-color: #f5f6f9; line-height: normal; }
+.cloud-layout-toggler, .cloud-icons-default, .cloud-icons-active, .cloud-icons-disable  { background-image: url("../images/cloud-icons.png"); background-color: transparent; opacity:1.0;}
+.cloud-icon-pagedown{ background-position: 0 0; width: 19px; height: 18px; } 
+.cloud-icon-pageup{ background-position: 0 -23px; width: 19px; height: 18px; } 
+.cloud-icon-top-open{ background-position: 0 -46px; width: 93px; height: 7px; } 
+.cloud-icon-top-close{ background-position: 0 -58px; width: 93px; height: 7px; } 
+.cloud-icon-inbutton1{ background-position: 0 -70px; width: 16px; height: 16px; } 
+.cloud-icon-inbutton2{ background-position: 0 -91px; width: 16px; height: 16px; } 
+.cloud-icon-home-shortcat{ background-position: 0 -112px; width: 16px; height: 16px; } 
+.cloud-layout-toggler-west-open, .cloud-icon-left-open{ background-position: 0 -133px; width: 10px; height: 49px; } 
+.cloud-layout-toggler-west-closed, .cloud-icon-left-close{ background-position: 0 -187px; width: 10px; height: 49px; } 
+.cloud-layout-toggler-east-open, .cloud-icon-right-open{ background-position: 0 -241px; width: 10px; height: 49px; } 
+.cloud-layout-toggler-east-closed, .cloud-icon-right-close{ background-position: 0 -295px; width: 10px; height: 49px; } 
+.cloud-icon-tongji{ background-position: 0 -349px; width: 16px; height: 16px; } 
+.cloud-icon-xinhao1{ background-position: 0 -370px; width: 16px; height: 16px; } 
+.cloud-icon-xinhao2{ background-position: 0 -391px; width: 16px; height: 16px; } 
+.cloud-icon-xinhao3{ background-position: 0 -412px; width: 16px; height: 16px; } 
+.cloud-icon-xinhao4{ background-position: 0 -433px; width: 16px; height: 16px; } 
+/* button icons */
+.cloud-icon-default{ background-image: url(../images/cloud-icons-default.png); }
+.cloud-icon-active{ background-image: url(../images/cloud-icons-active.png); }
+.cloud-icon-disable{ background-image: url(../images/cloud-icons-disable.png); }
+/*jquery ui icons*/
+.ui-icons-default{ background-image: url(../images/ui-icons_222222_256x240.png); }
+.ui-icons-active{ background-image: url(../images/ui-icons_454545_256x240.png)}
+.ui-icons-disable{ background-image: url(../images/ui-icons_888888_256x240.png)}
+.nav-apply{ background-position: 0 0; width: 22px; height: 22px; } 
+.nav-assignment{ background-position: 0 -27px; width: 22px; height: 22px; } 
+.nav-home{ background-position: 0 -54px; width: 22px; height: 22px; } 
+.nav-machine{ background-position: 0 -81px; width: 22px; height: 22px; } 
+.nav-notice{ background-position: 0 -108px; width: 22px; height: 22px; } 
+.nav-scene{ background-position: 0 -135px; width: 22px; height: 22px; } 
+.nav-setting{ background-position: 0 -162px; width: 22px; height: 22px; } 
+.nav-table{ background-position: 0 -189px; width: 22px; height: 22px; } 
+.cloud-icon-pause{ background-position: 0 -216px; width: 16px; height: 16px; } 
+.cloud-icon-add-tag{ background-position: 0 -237px; width: 16px; height: 16px; } 
+.cloud-icon-add{ background-position: 0 -258px; width: 16px; height: 16px; } 
+.cloud-icon-add1{ background-position: 0 -279px; width: 16px; height: 16px; } 
+.cloud-icon-arrow{ background-position: 0 -300px; width: 16px; height: 16px; } 
+.cloud-icon-arrow1{ background-position: 0 -321px; width: 14px; height: 14px; } 
+.cloud-icon-arrow3{ background-position: 0 -340px; width: 16px; height: 16px; } 
+.cloud-icon-arrow4{ background-position: 0 -361px; width: 16px; height: 16px; }
+.cloud-icon-arrowleft{ background-position: 0 -382px; width: 16px; height: 16px; } 
+.cloud-icon-arrowright{ background-position: 0 -403px; width: 16px; height: 16px; } 
+.cloud-icon-calendar{ background-position: 0 -424px; width: 16px; height: 16px; } 
+.cloud-icon-change{ background-position: 0 -445px; width: 16px; height: 17px; } 
+.cloud-icon-choice{ background-position: 0 -467px; width: 16px; height: 16px; } 
+.cloud-icon-daochu{ background-position: 0 -488px; width: 16px; height: 16px; } 
+.cloud-icon-daoru{ background-position: 0 -509px; width: 16px; height: 16px; } 
+.cloud-icon-delete{ background-position: 0 -530px; width: 16px; height: 16px; } 
+.cloud-icon-delete1{ background-position: 0 -551px; width: 14px; height: 14px; } 
+.cloud-icon-doc{ background-position: 0 -570px; width: 16px; height: 16px; } 
+.cloud-icon-download{ background-position: 0 -591px; width: 14px; height: 14px; } 
+.cloud-icon-edit{ background-position: 0 -610px; width: 16px; height: 16px; }
+.cloud-icon-guard{ background-position: 0 -631px; width: 16px; height: 16px; }
+.cloud-icon-history{  background-position: 0 -1094px; width: 16px; height: 16px;  }
+.cloud-icon-label{ background-position: 0 -652px; width: 16px; height: 16px; } 
+.cloud-icon-leftarrow1{ background-position: 0 -671px; width: 14px; height: 14px; } 
+.cloud-icon-leftarrow2{ background-position: 0 -690px; width: 14px; height: 14px; } 
+.cloud-icon-money{ background-position: 0 -711px; width: 14px; height: 14px; } 
+.cloud-icon-no{ background-position: 0 -730px; width: 16px; height: 16px; } 
+.cloud-icon-notice{ background-position: 0 -751px; width: 16px; height: 16px; } 
+.cloud-icon-open{ background-position: 0 -772px; width: 14px; height: 14px; } 
+.cloud-icon-config{ background-position: 0 -791px; width: 16px; height: 16px; } 
+.cloud-icon-reduce{ background-position: 0 -812px; width: 16px; height: 16px; } 
+.cloud-icon-remove-tag{ background-position: 0 -833px; width: 16px; height: 16px; } 
+.cloud-icon-rightarrow1{ background-position: 0 -853px; width: 14px; height: 14px; } 
+.cloud-icon-rightarrow2{ background-position: 0 -872px; width: 14px; height: 14px; } 
+.cloud-icon-save{ background-position: 0 -892px; width: 14px; height: 14px; } 
+.cloud-icon-search{ background-position: 0 -911px; width: 14px; height: 14px; } 
+.cloud-icon-setting{ background-position: 0 -930px; width: 14px; height: 14px; } 
+.cloud-icon-shangchuan{ background-position: 0 -949px; width: 14px; height: 14px; } 
+.cloud-icon-share{ background-position: 0 -968px; width: 16px; height: 16px; } 
+.cloud-icon-share1{ background-position: 0 -989px; width: 16px; height: 16px; } 
+.cloud-icon-upgrade{ background-position: 0 -1010px; width: 16px; height: 16px; } 
+.cloud-icon-shouquan{ background-position: 0 -1031px; width: 16px; height: 16px; } 
+.cloud-icon-star{ background-position: 0 -1052px; width: 16px; height: 16px; } 
+.cloud-icon-star1{ background-position: 0 -1073px; width: 16px; height: 16px; } 
+.cloud-icon-table{ background-position: 0 -1094px; width: 16px; height: 16px; } 
+.cloud-icon-table1{ background-position: 0 -1115px; width: 14px; height: 14px; } 
+.cloud-icon-user{ background-position: 0 -1134px; width: 16px; height: 16px; } 
+.cloud-icon-watch{ background-position: 0 -1155px; width: 16px; height: 16px; } 
+.cloud-icon-yes{ background-position: 0 -1176px; width: 16px; height: 16px; }
+.view-1{ background-position: 0 -1197px; width: 14px; height: 14px; } 
+.view-2{ background-position: 0 -1216px; width: 14px; height: 14px; } 
+.view-3{ background-position: 0 -1235px; width: 14px; height: 14px; } 
+.cloud-icon-reset{ background-position: 0 -1252px; width: 16px; height: 16px; } 
+.cloud-panel-header{ background-color: #e5e6e8; line-height: 26px; color: #595959; padding: 0 12px; font-size: 13px; }
+.cloud-icon-logout{ background-position: 0 -1270px; width: 14px; height: 14px; }
+.cloud-icon-copy{ background-position: 0 -1288px; width: 15px; height: 15px; }
+
+.cloud-icon-export{ background-position: 0 -1307px; width: 15px; height: 15px; }
+.cloud-icon-import{ background-position: 0 -1327px; width: 15px; height: 15px; }
+
+.cloud-icon-full{ background-position: 0 -1347px; width: 15px; height: 15px; }
+.cloud-icon-defull{ background-position: 0 -1365px; width: 15px; height: 15px; }
+
+.cloud-icon-remote{ background-position: 0 -1384px; width: 15px; height: 15px; }
+.cloud-icon-stackingOrder{ background-position: 0 -591px; width: 15px; height: 15px; }
+.cloud-icon-stackingup{ background-position: 0 -949px; width: 15px; height: 15px; }
+/* jquery.validationEngine.js */
+html body .qtip{max-width: 500px;}
+div.formError div.formErrorContent { padding: 4px 10px 4px 10px; width: 100%; background: #ffebeb; position:relative; color: #df1a08; min-width: 70px; line-height:12px; font-size: 11px; border: 1px solid #df1a08; box-shadow: 1px 1px 5px #666; border-radius: 3px; -moz-border-radius:3px; /* Old Firefox */}
+div.formError div.formErrorArrow div { border-left: 2px solid #df1a08; border-right: 2px solid #df1a08; box-shadow: 0 2px 3px #666; -moz-box-shadow: 0 2px 3px #666; -webkit-box-shadow: 0 2px 3px #666; -o-box-shadow: 0 2px 3px #666; font-size: 0px; height: 1px; background: #ffebeb; margin: 0 auto; line-height: 0; font-size: 0; display: block;}
+.formError .formErrorArrow .line10 { width: 15px; border: none; }
+.formError .formErrorArrow .line9 { width: 13px; border: none; }
+.formError .formErrorArrow .line8 { width: 11px; }
+.formError .formErrorArrow .line7 { width: 9px; }
+.formError .formErrorArrow .line6 { width: 7px; }
+.formError .formErrorArrow .line5 { width: 5px; }
+.formError .formErrorArrow .line4 { width: 3px; }
+div.formError div.formErrorArrow div.line3 { width: 1px; border-left: 2px solid #df1a08; border-right: 2px solid #df1a08; border-bottom: 0 solid #df1a08; }
+div.formError div.formErrorArrow div.line2 { width: 3px; border: none; background: #df1a08; }
+div.formError div.formErrorArrow div.line1 { width: 1px; border: none; background: #df1a08;}
+
+/*chrome bowser scroll style*/
+/* 滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样） */ 
+::-webkit-scrollbar { width: 6px; height: 6px; }
+/* 滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果 */
+::-webkit-scrollbar-button {}
+/* 外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果  */
+::-webkit-scrollbar-track {}
+/* 内层轨道，滚动条中间部分 （除去） */ 
+::-webkit-scrollbar-track-piece { background: #e9e9e9; }
+/* 滚动条里面可以拖动的那部分 */ 
+::-webkit-scrollbar-thumb { width:8px; cursor :pointer; background: #bcbcbc;  -webkit-border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { width:8px; background: #9d9d9d;  -webkit-border-radius: 8px; }
+/* 边角 */
+::-webkit-scrollbar-corner {}
+/* 定义右下角拖动块的样式 */
+::-webkit-resizer {}
+
+/* .cloud-table-online {width: 14px;height: 14px;background-color: rgb(0, 155, 0);border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;margin-left: 3px;}
+.cloud-table-offline {width: 14px;height: 14px;background-color: rgb(178, 182, 178);border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;margin-left: 3px;} */
+.cloud-table-online  {width: 14px;height: 14px;margin:3px 0 0 3px;background-image: url(../images/cloud-table-online.png);}
+.cloud-table-offline {width: 14px;height: 14px;margin:3px 0 0 3px;background-image: url(../images/cloud-table-offline.png);}
+
+#user-content>div {
+	height : 100%;
+}

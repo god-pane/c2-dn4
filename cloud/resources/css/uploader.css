@@ -1,0 +1,50 @@
+.cloud-uploader-container {
+	display : inline-block;
+}
+.cloud-uploader-queue {
+    background-color: white;
+    padding: 4px;
+    margin: 3px 0px;
+}
+
+.cloud-uploader-queue-item {
+	background-color: #F5F5F5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font: 11px Verdana, Geneva, sans-serif;
+	margin-top: 5px;
+	max-width: 350px;
+	padding: 10px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.cloud-uploader-queue-item p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.cloud-uploader-queue-item span {
+    height: 20px;
+    line-height: 20px;
+    word-break: break-all;
+word-wrap: break-word;
+}
+
+.cloud-uploader-queue-item-progress {
+	background-color: #E5E5E5;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.cloud-uploader-queue-item-cancel a {
+	float : right;
+	height: 16px;
+	width: 16px;
+	margin-right: 0px;
+}

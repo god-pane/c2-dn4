@@ -1,0 +1,215 @@
+/**
+* item component stylesheet.
+*/
+.cloud-item {
+    cursor: pointer;
+    float: left;
+    margin: 10px 0 0 10px;
+    text-align: left;
+    /*border: 1px solid #dde1e4;*/
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body .cloud-item-active{
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 #fff;
+    -moz-box-shadow: 0 0 0 #fff;
+    box-shadow: 0 0 0 #fff;
+}
+
+.cloud-item-body {
+    position: relative;
+    width: 180px;
+    border-left: 1px solid #dde1e4;
+	border-right: 1px solid #dde1e4;
+	border-top: 1px solid #dde1e4;
+}
+
+.cloud-item-status-inherent .cloud-item-widget {
+    display: none;
+}
+
+.cloud-item-clicked .cloud-item-statusbar, .cloud-item-active .cloud-item-statusbar{
+    /*border-bottom: 1px solid #dde1e4;*/
+}
+
+.cloud-item-status-default .cloud-item-statusbar{
+    border-left: 1px solid #dde1e4;
+    border-right: 1px solid #dde1e4;
+}
+
+.cloud-item-status-online .cloud-item-statusbar{
+    background-color: #60803d;
+    border: none;
+}
+
+.cloud-item-status-offline .cloud-item-statusbar{
+    background-color: #b9b9b9;
+    border: none;
+}
+
+.cloud-item-content {
+    padding-left: 20px;
+    width: 145px;
+}
+
+.cloud-item-content div, .cloud-item-content p, .cloud-item-content span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cloud-item-widget-container {
+    height: 24px;
+}
+
+.cloud-item-widget {
+    cursor: pointer;
+    float: right;
+    height: 16px;
+    margin: 4px 5px 0 4px;
+    text-align: center;
+    width: 16px;
+}
+
+.cloud-item-select {
+    border-style: none;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+}
+
+.cloud-item-marker{
+    border: 1px solid #dde1e4;
+}
+
+.cloud-item-marker .cloud-item-body {
+    width: 149px;
+}
+.cloud-item-marker .cloud-item-content {
+    margin: 5px 0 5px 35px;
+    width: 90px;
+    padding-left: 0;
+    border: none;
+}
+.cloud-item-marker .cloud-item-widget {
+    position: absolute;
+}
+.cloud-item-marker .cloud-item-desc {
+    padding: 2px 0;
+}
+.cloud-item-marker .cloud-item-icon {
+    left: 25px;
+}
+.cloud-item-marker .cloud-item-favor {
+    right: 1px;
+    top: 9px;
+}
+.cloud-item-marker .cloud-item-select {
+    margin: 0;
+    left: 6px;
+    top: 3px;
+}
+.cloud-item-marker .cloud-item-shared {
+    left: 6px;
+    bottom: 4px;
+    margin: 0;
+}
+
+.cloud-item-notification {
+    -khtml-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    background-color: #4B7126;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    color: white;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.cloud-item-desc {
+    padding: 8px 0;
+}
+.cloud-item-icon-container {
+    float: left;
+    position: relative;
+    width: 36px;
+}
+
+.cloud-item-statusbar {
+    height: 3px;
+    background-color: transparent;
+}
+
+.cloud-item-statusbar-online {
+    background-color: rgb(33, 196, 33);
+}
+
+.cloud-item-statusbar-offline {
+    background-color: rgb(165, 165, 165);
+}
+
+.cloud-item-entity{
+   /* border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);*/
+}
+
+.cloud-item-icon{
+    background: url("../images/cloud-icons.png") 0 0;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    left: 12px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+}
+
+.cloud-icon-item-marker {
+    background-position: 0 -91px;
+}
+
+.cloud-icon-item-entity {
+    background-position: 0 -70px;
+}
+
+.cloud-icon-businesstate-inuse {
+	background-image : url(/cloud/resources/images/ui-icon-gis-work.png);
+}
+
+.cloud-icon-businesstate-breakdown {
+    background-image : url(/cloud/resources/images/ui-icon-gis-notice.png);
+}
+
+.cloud-icon-businesstate-building {
+    background-image : url(/cloud/resources/images/ui-icon-gis-setting.png);
+}
+
+.cloud-icon-businesstate-repair {
+    background-image : url(/cloud/resources/images/ui-icon-gis-fix.png);
+}
+
+.cloud-item-status-default{
+    background: #999;
+    background: -moz-linear-gradient(bottom, #e4e7ec 0%, #dfe2e7 4%, #f2f3f7 91%, #f4f8fb 100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#e4e7ec), color-stop(4%,#dfe2e7), color-stop(91%,#f2f3f7), color-stop(100%,#f4f8fb));
+    background: -webkit-linear-gradient(bottom, #e4e7ec 0%,#dfe2e7 4%,#f2f3f7 91%,#f4f8fb 100%);
+    background: -o-linear-gradient(bottom, #e4e7ec 0%,#dfe2e7 4%,#f2f3f7 91%,#f4f8fb 100%);
+    background: -ms-linear-gradient(bottom, #e4e7ec 0%,#dfe2e7 4%,#f2f3f7 91%,#f4f8fb 100%);
+    background: linear-gradient(to top, #e4e7ec 0%,#dfe2e7 4%,#f2f3f7 91%,#f4f8fb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e7ec', endColorstr='#f4f8fb',GradientType=0 );
+}
+.cloud-item-status-inherent{
+    border-bottom: 1px solid #DFDFDF;
+    background: #f4f8fb;
+    background: -moz-linear-gradient(top,  #f4f8fb 0%, #edeef2 25%, #d9d9d9 61%, #d0cccd 86%, #cccbc9 91%, #ccc8c9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f8fb), color-stop(25%,#edeef2), color-stop(61%,#d9d9d9), color-stop(86%,#d0cccd), color-stop(91%,#cccbc9), color-stop(100%,#ccc8c9));
+    background: -webkit-linear-gradient(top,  #f4f8fb 0%,#edeef2 25%,#d9d9d9 61%,#d0cccd 86%,#cccbc9 91%,#ccc8c9 100%);
+    background: -o-linear-gradient(top,  #f4f8fb 0%,#edeef2 25%,#d9d9d9 61%,#d0cccd 86%,#cccbc9 91%,#ccc8c9 100%);
+    background: -ms-linear-gradient(top,  #f4f8fb 0%,#edeef2 25%,#d9d9d9 61%,#d0cccd 86%,#cccbc9 91%,#ccc8c9 100%);
+    background: linear-gradient(to bottom,  #f4f8fb 0%,#edeef2 25%,#d9d9d9 61%,#d0cccd 86%,#cccbc9 91%,#ccc8c9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fb', endColorstr='#ccc8c9',GradientType=0 );
+}

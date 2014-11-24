@@ -1,0 +1,167 @@
+<form class="info-wrapper" id="info-wrapper" style="position:relative">
+    <div class="info-header">
+        <div class="info-online-status"></div>
+        <input type="text" id="info-name" class="validate[required,custom[giveName],minSize[0],maxSize[30],funcCall[cloudInput]]">
+        <div class="info-header-btn" style="float:left"></div>
+        <div class="info-plc-favor"></div>
+    </div>
+        <div class="info-buttonset-bottom"></div>
+
+    <div class="info-tag-panel"></div>
+    <div class="info-form" >
+        <div class="info-form-row info-plc-model-row">
+            <label for="info-model" class="info-form-label" lang="text:model+:">é�ˆå“„ç€·:</label>
+            <!-- <input type="text" id="info-model" class="info-form-text"/> -->
+            <select id="info-model" class="validate[required] info-form-select">
+                <!-- <option ></option> -->
+            </select>
+        </div>
+        <div class="info-form-row info-form-network-port">
+            <label for="" class="info-form-label" lang="text:plc_mbAdddress+:">é�ˆå“„æ«’é�¦æ�¿æ½ƒ:</label>
+            <input type="text" id="info-form-deviceconfig-mbaddress" class="info-form-text validate[required,custom[integer],min[0],max[247],funcCall[cloudInput]]" /><!-- value="1" -->
+        </div>
+        <div class="info-form-row info-form-ethernetport-row">
+            <label for="" class="info-form-label" lang="text:plc_ip+:">é�ˆå“„æ«’IP:</label>
+            <input type="text" id="info-form-deviceconfig-mbip" class="info-form-text validate[required,custom[ip],funcCall[cloudInput]]" /><!-- value="127.0.0.1" -->
+        </div>
+        <div class="info-form-row info-form-deviceconfig-mbport-row">
+            <label for="" class="info-form-label" lang="text:port+:"></label>
+            <input type="text" id="info-form-deviceconfig-mbport" class="info-form-text validate[required,custom[integer],min[1],max[65535],funcCall[cloudInput]]" /><!-- value="10000" -->
+        </div>
+        <div class="info-form-row info-form-network-port">
+            <label for="" class="info-form-label" lang="text:baud_rate+:">å¨‰ãˆ¢å£’é�œï¿½</label>
+            <select type="text" id="info-form-deviceconfig-mbBaud" class="info-form-select validate[required]"><!--  value="9600" -->
+                <option value="110" >110</option>
+                <option value="300" >300</option>
+                <option value="600" >600</option>
+                <option value="1200" >1200</option>
+                <option value="2400" >2400</option>
+                <option value="4800" >4800</option>
+                <option value="9600" selected="selected">9600</option>
+                <option value="19200" >19200</option>
+                <option value="38400" >38400</option>
+                <option value="57600" >57600</option>
+                <option value="115200" >115200</option>
+            </select>
+        </div>
+        <div class="info-form-row info-form-network-port">
+            <label for="" class="info-form-label" lang="text:data_bit+:">é��ç‰ˆåµ�æµ£ï¿½</label>
+            <select id="info-form-deviceconfig-mbDataBit" class="info-form-text validate[required]" ><!-- value="8" -->
+                <option value="6" >6</option>
+                <option value="7" >7</option>
+                <option value="8" >8</option>
+            </select>
+        </div>
+        <div class="info-form-row info-form-network-port">
+            <label for="" class="info-form-label" lang="text:stop_bit+:">é�‹æ»„î„›æµ£ï¿½</label>
+            <select type="text" id="info-form-deviceconfig-mbStopBit" class="info-form-text validate[required]" ><!-- value="N" -->
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+            </select>
+        </div>
+        <div class="info-form-row info-form-network-port">
+            <label for="" class="info-form-label" lang="text:parity_check+:">æ¿‚å›§ä¼“é��ï¿ ç�™:</label>
+            <select type="text" id="info-form-deviceconfig-mbParity" class="info-form-text validate[required]"><!--  value="1" --><!-- not validated -->
+                <option value="N" >NONE</option>
+                <option value="O" >ODD</option>
+                <option value="E" >EVEN</option>
+            </select>
+        </div>
+        <div class="info-form-row">
+            <label for="info-serial-number" class="info-form-label" lang="text:serial_number+:">æ�´å¿“åžªé�™ï¿½</label>
+            <input type="text" id="info-serial-number" class="info-form-text validate[minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+        </div>
+        <div class="info-form-row info-plc-site-row">
+            <label for="info-site-name" class="info-form-label" lang="text:install_site+:">ç€¹å¤Žî—–é�œæ�¿æº€:</label>
+            <span>
+            <select id="info-site-name" style="width:90px;" class="info-form-select">
+                <option></option>
+            </select>
+            </span>
+        </div>
+        <div class="info-form-row" id="info-form-row-aliases">
+        	<label for="info-plc-aliases" class="info-form-label" lang="text:plc_aliases+:"></label>
+        	<input type="text" id="info-plc-aliases" class="info-form-text validate[required,custom[alias],maxSize[30]]"/>
+        </div>
+        <div class="info-form-row info-plc-advanced-row">
+            <div class = "info-plc-advances-title">
+                <label for="info-advanced-options" class="info-form-label" style="width : 54px" lang="text:show_advanced_options">æ¥‚æ¨¼éª‡é–«å¤�ã€�</label>
+                <span id="info-plc-button-content" ></span>
+            </div>
+            <div class="info-form-row info-plc-advanced-form" id="info-plc-advanced-form" style="display:none">
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:query_interval+:">é�Œãƒ¨î‡—é�ˆå“„æ«’é�›ã„¦æ¹¡:</label>
+                    <input type="text" id="info-form-deviceconfig-queryInterval" class="info-form-text validate[required,custom[number],min[5],max[3600],funcCall[cloudInput]]" value="60"/>
+                     <span  lang="text:seconds"></span>
+                </div>
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:alarm_trap_interval+:">éŽ¶ãƒ¨î„Ÿé—‚æ’®æ®§:</label>
+                    <input type="text" id="info-form-deviceconfig-alarmTrapInterval" class="info-form-text validate[required,min[3],max[3600],custom[number],funcCall[cloudInput]]" value="120"/>
+                   <span  lang="text:seconds"></span>
+                </div>
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:alarm_trap_timeout+:">éŽ¶ãƒ¨î„Ÿæ¶“å©ƒå§¤ç“’å‘®æ¤‚:</label>
+                    <input type="text" id="info-form-deviceconfig-alarmTrapTimeout" class="info-form-text validate[required,min[5],max[30],custom[number],funcCall[cloudInput]]" value="30"/>
+                    <span  lang="text:seconds"></span>
+                </div>
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:status_trap_interval+:">é�˜èˆµï¿½æ¶“å©ƒå§¤é�›ã„¦æ¹¡:</label>
+                    <input type="text" id="info-form-deviceconfig-statusTrapInterval" class="info-form-text validate[required,min[5],max[86400],custom[number],funcCall[cloudInput]]" value="15"/>
+                    <span lang="text:seconds"></span>
+                </div>
+                
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:status_trap_timeout+:">é�˜èˆµï¿½æ¶“å©ƒå§¤ç“’å‘®æ¤‚:</label>
+                    <input type="text" id="info-form-deviceconfig-statusTrapTimeout" class="info-form-text validate[required,min[5],max[30],custom[number],funcCall[cloudInput]]" value="30"/>
+                    <span  lang="text:seconds"></span>
+                </div>
+                
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:sensor_rw_timeout+:">é�ˆå“„æ«’ç’‡è¯²å•“ç“’å‘®æ¤‚:</label>
+                    <input type="text" id="info-form-deviceconfig-sensorRWtimeout" class="info-form-text validate[required,min[1],max[30],custom[number],funcCall[cloudInput]]" value="10"/>
+                    <span lang="text:seconds"></span>
+                </div>
+                
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:using_status+:">æµ£è·¨æ•¤é�˜èˆµï¿½:</label>
+                    <select id="info-form-deviceconfig-usingStatus" class="validate[required] info-plc-advanced-sync-select">
+                        <option value="1" lang="text:enabled">é�šîˆœæ•¤</option>
+                        <option value="0" lang="text:disabled">é�‹æ»…æ•¤</option>
+                    </select>
+                </div>
+                
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:work_mode+:"></label>
+                    <select id="info-form-deviceconfig-workMode" class=" validate[required] info-plc-advanced-sync-select">
+                        <option value="1" lang="text:postive_mode">æ¶“è¯²å§©å¦¯â€³ç´¡</option>
+                        <option value="0" lang="text:passive_mode">ç�šî‚¢å§©å¦¯â€³ç´¡</option>
+                    </select>
+                </div>
+                
+                <div class="info-form-row "  >
+                    <label for="" class="info-form-label" lang="text:cmd_mode+:">é�›æˆ’æŠ¤å¦¯â€³ç´¡:</label>
+                    <select id="info-form-deviceconfig-cmdMode" class="validate[required] info-plc-advanced-sync-select">
+                        <option value="0" selected="selected" lang="text:no_read_no_write">æ¶“å¶…å½²ç’‡ï¿½æ¶“å¶…å½²é��ï¿½/option>
+                        <option value="1" lang="text:read_only">é�™îˆ�î‡°,æ¶“å¶…å½²é��ï¿½/option>
+                        <option value="2" lang="text:write_only">æ¶“å¶…å½²ç’‡ï¿½é�™îˆšå•“</option>
+                        <option value="3" lang="text:read_and_write">é�™îˆ�î‡°,é�™îˆšå•“</option></select>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+    </div>
+    <div class="info-doc"  style="display:none">
+        <div class="info-doc-row">
+            <select id="info-doc-select" class="info-doc-select">
+            </select>
+        </div>
+    </div>
+    <div class="info-form-row info-plc-pic-row"  style="display:none">
+        <img id="info-plc-pic" ></img>
+    </div>
+    
+</form>

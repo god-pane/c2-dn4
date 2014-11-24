@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height:100%">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+	<script type="text/javascript">
+		/*
+		require(["./config_editor.js"],function(Editor){
+			this.editor = new Editor();
+			updateScheme(default_Scheme);
+		});
+		function savePage(){
+			return this.editor.savePage();
+		}
+		function updateScheme(config){
+			return this.editor.updateScheme(config);
+		}
+		var default_Scheme = {
+			_setup_com_enable: '0',
+			_admin_log_enable: '0',
+			_admin_access_enable: '0'	
+		}*/
+		function savePage(){
+			return document.getElementById("config-text").value;
+		}
+		function updateScheme(config){
+			document.getElementById("config-text").value = config;
+		}
+		var default_Scheme = "!\n"+
+							"#system config\n"+
+							"language  English\n"+
+							"hostname Router\n"+
+							"ip domain-name router.com.cn\n"+
+							"clock timezone  UTC-8\n"+
+							"!\n"+
+							"#log config\n"+
+							"!\n"+
+							"#user config\n"+
+							"username adm privilege 15 password $MD5$m24zq9tS4aRBg\n"+
+							"!\n"+
+							"enable password $MD5$1/VrmRB7L6jg6\n"+
+							"!\n"+
+							"#aaa config\n"+
+							"!\n"+
+							"#cron config\n"+
+							"!\n"+
+							"#alarm config\n"+
+							"!\n"+
+							"#ipsec config\n"+
+							"crypto isakmp nat keepalive 60\n"+
+							"!\n"+
+							"#loopback config\n"+
+							"interface loopback 1\n"+
+							"  ip address 127.0.0.1 255.0.0.0\n"+
+							"!\n"+
+							"!\n"+
+							"#ethernet interface config\n"+
+							"interface fastethernet 0/1\n"+
+							"  ip address 10.5.16.207 255.255.255.0\n"+
+							"!\n"+
+							"interface fastethernet 0/2\n"+
+							"  ip address 192.168.2.1 255.255.255.0\n"+
+							"!\n"+
+							"!\n"+
+							"#Ethernet sub interface config\n"+
+							"!\n"+
+							"#cellular config\n"+
+							"cellular 1 gsm profile 1 3gnet *99***1# auto gprs gprs\n"+
+							"cellular 1 dial interval 10\n"+
+							"cellular 1 signal interval 120\n"+
+							"cellular 1 network auto\n"+
+							"!\n"+
+							"interface cellular 1\n"+
+							"  dialer profile 1\n"+
+							"  dialer timeout 120\n"+
+							"  dialer activate auto\n"+
+							"  ip address negotiated\n"+
+							"  ip mru 1500\n"+
+							"  ip mtu 1500\n"+
+							"  ppp ipcp dns request\n"+
+							"  ppp keepalive 55 5\n"+
+							"!\n"+
+							"!\n"+
+							"#dialer config\n"+
+							"!\n"+
+							"#l2tp config\n"+
+							"#openvpn config\n"+
+							"!\n"+
+							"#web config\n"+
+							"ip http server port 80\n"+
+							"!\n"+
+							"#telnet server config\n"+
+							"ip telnet server port 23\n"+
+							"!\n"+
+							"#ssh server config\n"+
+							"!\n"+
+							"#dhcp-relay config\n"+
+							"!\n"+
+							"#dns-relay config\n"+
+							"ip dns-relay server\n"+
+							"!\n"+
+							"#dhcp server config\n"+
+							"interface fastethernet 0/2\n"+
+							"  ip dhcp-server enable\n"+
+							"  ip dhcp-server range 192.168.2.2 192.168.2.100\n"+
+							"  ip dhcp-server lease 1440\n"+
+							"!\n"+
+							"!\n"+
+							"#dns config\n"+
+							"!\n"+
+							"#ip host config\n"+
+							"!\n"+
+							"#ddns config\n"+
+							"!\n"+
+							"#snmp config\n"+
+							"snmp-server\n"+
+							"snmp-server version 2\n"+
+							"snmp-server contact Beijing_Inhand_Networks_Technology_Co.,Ltd.\n"+
+							"snmp-server location Beijing_China\n"+
+							"snmp-server community public ro\n"+
+							"snmp-server community private rw\n"+
+							"!\n"+
+							"#ovdp config start!\n"+
+							"!\n"+
+							"#ovdp config end!\n"+
+							"!\n"+
+							"#email config\n"+
+							"!\n"+
+							"#sntp client config\n"+
+							"!\n"+
+							"#gre config\n"+
+							"!\n"+
+							"#route module config\n"+
+							"!\n"+
+							"#static route config\n"+
+							"ip route 0.0.0.0 0.0.0.0 cellular 1\n"+
+							"!\n"+
+							"#rip config\n"+
+							"!\n"+
+							"#ospf config\n"+
+							"!\n"+
+							"!\n"+
+							"!\n"+
+							"#firewall config\n"+
+							"access-list 100 permit ip any any\n"+
+							"interface fastethernet 0/1\n"+
+							"  ip nat inside\n"+
+							"!\n"+
+							"interface fastethernet 0/2\n"+
+							"  ip nat inside\n"+
+							"!\n"+
+							"interface cellular 1\n"+
+							"  ip nat outside\n"+
+							"!\n"+
+							"!        \n"+
+							"ip snat inside list 100 interface cellular 1\n"+
+							"!\n"+
+							"!\n"+
+							"!\n"+
+							"#tcp mss config\n"+
+							"ip tcp adjust-mss 1360\n"+
+							"!\n"+
+							"#netwatcher config\n"+
+							"!\n"+
+							"!\n"+
+							"#sla config\n"+
+							"!\n"+
+							"#track config\n"+
+							"!\n"+
+							"#vrrpd config\n"+
+							"!\n"+
+							"#backup config\n"+
+							"!\n"+
+							"#mroute config\n"+
+							"!\n"+
+							"#cert config\n"+
+							"!\n"+
+							"#end of configuration\n";
+
+
+	</script>
+</head>
+<body style="height: 100%;margin:0;" onload="updateScheme(default_Scheme)">
+<div id="config-editor" style="height: 100%;">
+	<textarea id="config-text" style="width: 99%; height: 98%;resize: none;"  ></textarea>
+</div>
+</body>
+</html>

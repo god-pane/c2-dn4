@@ -1,0 +1,71 @@
+<!DOCTYPE HTML >
+<html>
+  <head>
+    <title>window.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://localhost/cloud/base/loader.js"></script>
+  
+	<script type="text/javascript">
+		require(["./window"], function(_Window){
+			$(function(){
+				var win=new _Window({
+					container: "#container",
+					title:"登陆",
+					top:"center",
+					left:"center",
+					height:300,
+					width:455,
+					modal:true,
+					resize:true,
+					drag:true,
+					autoOpen:true,
+					content:"<input type='text' value='test' >",
+					events:{
+						"afterCreated":function(){
+							alert("creat a window");
+						},
+						"onDestroy":function(){
+							alert("destory the window");
+						},
+						"onResize":function(){
+							alert("resize the window");
+						},
+						"onShow":function(){
+							alert("open the window");
+						},
+						"onHiden":function(){
+							alert("close the window");
+						}
+					}
+				});	
+				
+				
+
+				$("<button>").text("toggle win").css({"position":"absolute","left":"200px"}).appendTo("body").toggle(
+                        function(){
+							win.show();	
+							},
+                        function(){
+							win.hiden();
+							}
+					);
+			});
+		});
+		
+	</script>
+  </head>
+  
+  <body>
+   <div id="container">
+   
+   </div>
+   <p id ="xy"></p>
+   <p id ="i"></p>
+   <input type=text value = '1'>
+   <input type=text value = '2'>
+   <input type=text value = '3'>
+  </body>
+</html>

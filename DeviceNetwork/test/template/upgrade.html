@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title lang="text:webindex"></title>
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+<script type="text/javascript">
+	require(["../../applications/device/gateway-manage/upgrade"],function(Table){
+		var Table = Table;
+		var table = new Table({
+			selector:"#template-test",
+			resources: [{"businessState":1,"createTime":1364807759,"deviceConfig":{"heartbeatTimeout":10,"resendLogin":60,"maxheartbeatLost":6,"heartbeatInterval":600,"alarmTrapInterval":60,"alarmTrapTimeout":30,"statusTrapInterval":60,"statusTrapTimeout":30,"eventInterval":60,"workMode":0,"cmdMode":0,"queryInterval":60,"sensorRWTimeout":10,"usingStatus":1,"mbParity":0,"mbStopBit":0,"mbDataBit":0,"mbBaud":9600,"mbAddress":1,"mbPort":10000,"mbIp":"127.0.0.1"},"maxPlcId":0,"maxSensorId":0,"modelId":"512d05ee70e74c0c3a12e37c","name":"aaaa2","oid":"ABCDE","owner":"511E7DDE421AA90D6A00000A","plcId":-1,"serialNumber":"123123123","updateTime":1364898988,"vendorId":3,"_id":"5158dfcf70e7c95200d71675","online":0},{"name":"sdafs","oid":"ABCDE","serialNumber":"123123111","businessState":0,"owner":"511E7DDE421AA90D6A00000A","createTime":1364817927,"updateTime":1364817927,"modelId":"512d05ee70e74c0c3a12e37c","maxPlcId":0,"maxSensorId":0,"plcId":-1,"vendorId":3,"deviceConfig":{"heartbeatTimeout":10,"resendLogin":60,"maxheartbeatLost":6,"heartbeatInterval":600,"alarmTrapInterval":60,"alarmTrapTimeout":30,"statusTrapInterval":60,"statusTrapTimeout":30,"eventInterval":60,"workMode":0,"cmdMode":0,"queryInterval":60,"sensorRWTimeout":10,"usingStatus":1,"mbParity":0,"mbStopBit":0,"mbDataBit":0,"mbBaud":9600,"mbAddress":1,"mbPort":10000,"mbIp":"127.0.0.1"},"_id":"5159078770e7c95200d7167a","online":0}]
+		});
+	});
+</script>
+<style type="text/css">
+	html, body{
+		height: 100%;
+	}	
+</style>
+</head>
+<body>
+	<div id="template-test" style="height:100%;"></div>
+</body>
+</html>

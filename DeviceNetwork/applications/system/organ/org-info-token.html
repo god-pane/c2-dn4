@@ -1,0 +1,137 @@
+<div id="org_info_token_wrapper" class="org_info_token_wrapper">
+	<div id="org_info_wrapper" class="org_info_wrapper  org_info_div">
+		<div class="organ_button_wrapper_top  org_info_div">
+			<span class="organ_button_edit"></span>
+		</div>
+		<form id="organ_info_form">
+			<div class="info_row  org_info_div">
+				<label for="organ_name" class="organ_info_label" lang="text:organization_name+：">机构名称：</label>
+				<input id="organ_name" class="info_form_text validate[required,maxSize[30],funcCall[cloudInput]] " type="text" />
+			</div>
+			<div class="info_row  org_info_div">
+				<label for="organ_address" class="organ_info_label" lang="text:organization_address+：">机构地址：</label>
+				<input id="organ_address" class="info_form_text" type="text" />
+			</div>
+			<div class="info_row  org_info_div">
+				<label for="organ_website" class="organ_info_label" lang="text:website+：">机构网址：</label>
+				<input id="organ_website" class="info_form_text validate[custom[url1],maxSize[50],funcCall[cloudInput]] " type="text" />
+			</div>
+			<div class="info_row  org_info_div">
+				<label for="organ_telephone" class="organ_info_label" lang="text:telephone+：">电话：</label>
+				<input id="organ_telephone" class="info_form_text validate[custom[phone1],minSize[7],maxSize[30],funcCall[cloudInput]] " type="text" />
+			</div>
+			<div class="info_row  org_info_div">
+				<label for="organ_fax" class="organ_info_label" lang="text:fax+：">传真：</label>
+				<input id="organ_fax" class="info_form_text validate[custom[phone],maxSize[30],funcCall[cloudInput]]" type="text" />
+			</div>
+			<div class="info_row  org_info_div">
+				<label for="organ_email" class="organ_info_label" lang="text:email+：">联系人邮箱：</label>
+				<input id="organ_email" class="info_form_text validate[required,custom[email],maxSize[50],funcCall[cloudInput]] rbw-input-sty" type="text"/>
+			</div>
+			<div class="info_row  org_info_div">
+				<label class="organ_info_label" lang="text:creator+：">创建人(管理员)：</label>
+				<span id="organ_creator" class="info_form_text"></span>
+			</div>
+			<div class="info_row  org_info_div">
+				<label class="organ_info_label" lang="text:create_time+：">创建时间：</label>
+				<span id="organ_createtime" class="info_form_text"></span>
+			</div>
+			<div class="info_row  org_info_div">
+				<label class="organ_info_label" lang="text:update_time+：">更新时间：</label>
+				<span id="organ_updatetime" class="info_form_text"></span>
+			</div>
+			<div class="organ_button_wrapper_bottom  org_info_div">
+				<span id="organ_button_submit"></span>
+				<span id="organ_button_cancel"></span>				
+			</div>
+		</form>
+	</div>
+	<div id="token-info-wrapper" class="token-info-wrapper">
+		<div class="info_row  token_info_div">
+				<label for="" class="token_info_label">API KEY 1：</label>
+				<input id="token_code_1" class="token_code_content" readonly="readonly" type="text"/>
+		</div>
+		<div class="info_row  token_info_div">
+				<label for="" class="token_info_label">API KEY 2：</label>
+				<input id="token_code_2" class="token_code_content" readonly="readonly" type="text"/>
+		</div>
+		<div class="info_row  token_info_div">
+				<label for="" class="token_info_label">API KEY 3：</label>
+				<input id="token_code_3" class="token_code_content" readonly="readonly" type="text"/>
+		</div>
+		<div class="info_row  token_info_div">
+				<label for="" class="token_info_label">API KEY 4：</label>
+				<input id="token_code_4" class="token_code_content" readonly="readonly" type="text"/>				
+		</div>
+		<div class="info_row  token_info_div">
+				<label for="" class="token_info_label">API KEY 5：</label>
+				<input id="token_code_5" class="token_code_content" readonly="readonly" type="text"/>
+		</div>
+	</div>
+</div>
+<!-- 
+<style type="text/css">
+	.org_info_token_wrapper{
+		background-color:#FFFFFF;
+		border:2px solid #dddddd;
+		width:1400px;
+		height:450px;
+		position:relative;
+		margin:10px auto;
+		border-radius:1em		
+	}
+	.info_row{
+		margin:8px 0px;
+	}
+	.org_info_wrapper{
+		background-color:#FFFFFF;
+		width:300px;
+		border:2px solid #dddddd;
+		border-radius:1em;
+		padding-left:20px;
+		padding-bottom:20px;
+		position:absolute;
+		top:60px;
+		left:100px
+	}
+	.token-info-wrapper{
+		background-color:#FFFFFF;
+		width:510px;
+		border:2px solid #dddddd;
+		border-radius:1em;
+		padding-left:20px;
+		position:absolute;
+		top:60px;
+		left:500px;
+	}
+	.info_row .info_form_text{
+		text-align:left;
+		margin-left:30px;
+		width:150px
+	}
+	.info_row .token_code_content{
+		text-align:left;
+		margin-left:30px;
+		width:270px
+	}
+	.organ_button_wrapper_bottom{
+		text-align:center;
+		margin-top:10px
+	}
+	.organ_button_wrapper_top{
+		text-align:right
+	}
+	.organ_info_label{
+		display:inline-block;
+		width:110px
+	}
+	.token_info_label{
+		display:inline-block;
+		width:100px
+	}
+	.token_info_div span{
+		display:inline-block;
+		float:right;
+	}
+</style>
+ -->

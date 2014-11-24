@@ -1,0 +1,149 @@
+<!--  <div id='normal-editor-wrapper'>-->
+	<div id='normal-editor-toolbar'>
+		<input type="text" id="varible-search-blanket" />
+	</div>
+	<div id="normal-editor-content">
+		<div id='varible-list-wrapper'>
+			<div id='varible-toolbar'>
+				<label id="total-varible-number"></label>
+			</div>
+			<div id='varible-list'>
+			</div>
+		</div>		
+		<div id='varible-detail-wrapper'>
+		<form id="varible-detail-form">
+			<div class='varible-info-row'>
+				 <label for='group-name' lang="text:group+:"></label>
+				 <input type='text' id='group-name' />
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-name' lang="text:varible_name+:"></label>
+				<input type='text' id='varible-name' class="validate[maxSize[30]]" />
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-id' lang="text:varible_id+:"></label>
+				<input type='text' id='varible-id' class="validate[required,custom[onlyFiveNumber]]"/>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-type' lang="text:varible_type+:"></label>
+				<select id='varible-type'>
+					<option value="0">BIT</option>
+					<option value="1">WORD</option>
+					<option value="2">DWORD</option>
+					<option value="3">FLOAT</option>
+					<option value="4">STRING</option>
+					<option value="5">BYTE</option>
+					<option value="6">BYTE_ARRAY</option>
+				</select>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-stat-type' lang="text:varible_stat_type+:"></label>
+				<select id='varible-stat-type'>
+					<option value="0" lang="text:instantaneous_value">瞬时值</option>
+					<option value="1" lang="text:accumulated_value">累加值</option>
+					<option value="2" lang="text:time_accumulated_value">时段累加值</option>
+				</select>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-precision' lang="text:varible_precision+:"></label>
+				<select id='varible-precision'>
+					<option value="0" lang="text:zero">0</option>
+					<option value="1" lang="text:onenumber">1</option>
+					<option value="2" lang="text:twonumber">2</option>
+				</select>
+			</div>
+			 <div class='varible-info-row'>
+				<label for='varible-param-name' lang="text:varible_param_name+:"></label>
+				<input type="text" id='varible-param-name'/>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-param-value' lang="text:varible_param_value+:"></label>
+				<input type='text' id='varible-param-value'/>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-value-type' lang="text:varible_value_type+:"></label>
+				<select id='varible-value-type'>
+					<option value="0" lang="text:">BIT</option>
+					<option value="1" lang="text:">WORD</option>
+					<option value="2" lang="text:">DWORD</option>
+					<option value="3" lang="text:">FLOAT</option>
+					<option value="4" lang="text:">STRING</option>
+					<option value="5" lang="text:">BYTE</option>
+					<option value="6" lang="text:">BYTE_ARRAY</option>
+					<!-- 
+					<option value="7" lang="text:">IPV4地址类型</option>
+					<option value="8" lang="text:">时间序号(秒)</option>
+					<option value="9" lang="text:">时间序号(毫秒)</option>
+					<option value="10" lang="text:">通用数字类型</option>
+					<option value="11" lang="text:">百分比值</option>
+					<option value="12" lang="text:">时间字符串</option>
+					<option value="13" lang="text:">保留</option>
+					<option value="14" lang="text:">有符号整数</option>
+					<option value="15" lang="text:">无符号整数</option>
+					<option value="16" lang="text:">MAC地址类型</option>
+					<option value="17" lang="text:">ip+port类型</option>
+					<option value="18" lang="text:">URL</option>
+					<option value="19" lang="text:">BA</option>
+					<option value="20" lang="text:">BADC</option>
+					<option value="21" lang="text:">CDBA</option>
+					<option value="22" lang="text:">DCBA</option>
+					<option value="23" lang="text:">BADC</option>
+					<option value="24" lang="text:">CDAB</option>
+					<option value="25" lang="text:">DCBA</option>
+					 -->
+				</select>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-maxvalue' lang="text:varible_limit_maxvalue+:">
+				</label>
+				<input type='text' id='varible-limit-maxvalue' />
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-minvalue' lang="text:varible_limit_minvalue+:">
+				</label>
+				<input type='text' id='varible-limit-minvalue' />
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-maxalert' lang="text:varible_limit_maxalert+:">
+				</label>
+				<div id='varible-limit-maxalert' class="limit-alarm-checkbox">
+					
+				</div>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-minalert' lang="text:varible_limit_minalert+:">
+				</label>
+				<div id='varible-limit-minalert' class="limit-alarm-checkbox">
+				</div>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-maxequal' lang="text:varible_limit_maxequal+:"></label>
+				<div id='varible-limit-maxequal' class="limit-alarm-checkbox">
+				</div>
+			</div>
+			<div class='varible-info-row'>
+				<label for='varible-limit-minequal' lang="text:varible_limit_minequal+:">
+				</label>
+				<div id='varible-limit-minequal' class="limit-alarm-checkbox">
+				</div>
+			</div>
+			<div class="varible-info-row varible-info-leveldesc">
+				<label for='varible-limit-alarmlvl' lang="text:varible_limit_alarmlvl+:">
+				</label>
+				<select id='varible-limit-alarmlvl' class="varible-limit-alarm-leveldesc">
+					<option value="1" lang="text:remind">提醒</option>
+					<option value="2" lang="text:warn">警告</option>
+					<option value="3" lang="text:minor_alarm">次要警告</option>
+					<option value="4" lang="text:important_alarm">重要警告</option>
+					<option value="5" lang="text:severe_alarm">严重警告</option>
+				</select>
+			</div>
+			<div class='varible-info-row varible-info-leveldesc'>
+				<label for='varible-limit-alarmdesc' lang="text:varible_limit_alarmdesc+:">
+				</label>
+				<textarea type='text' id='varible-limit-alarmdesc' class="varible-limit-alarm-leveldesc varible-limit-alarm-desc"></textarea>
+			</div>
+			</form>
+		</div>
+	</div>
+<!--  </div>-->

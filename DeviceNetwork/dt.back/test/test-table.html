@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../resources/css/global.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../library/require.js"></script>
+    <script type="text/javascript">
+    	var table = null;
+    	require(["../controls/table.js"],function(Table){
+			//console.log("Table",Table);
+			var tableData = [
+				{siteName:"asdfasd1asdfasdfasdfadsfasdfasdfasdfasdfasdf", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"小雨点儿 10级 2010-03-26 带小数点的数字转化成百分比时,数字的小数点右移两位加百分号;百分比又转化成小数点时,数字的小数点左移两位后,去掉百分号", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"},
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"},
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"},
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"},
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"}
+			];
+			table = new Table({
+				selector: "#tablebox",
+				data: tableData,
+				checkbox: true,
+				mark: "没有数据",
+				events: {
+					onRowClick: function(o) {
+						alert(o.siteName);
+					}
+				},
+				columns: [
+					{
+                        "title": "现场名称",
+                        "dataIndex": "siteName",
+                        "width": "20%"
+                    },
+                    {
+						"title": "智能网关",
+						"dataIndex": "name",
+						"width": "40%"
+					},
+					{
+						"title": "发送流量",
+						"dataIndex": "send",
+						"width": "40%"
+					}
+					/*{
+						"title": "接收流量",
+						"lang":"text:monthly_rx",
+						"dataIndex": "receive",
+						"cls": "monthSendFlow",
+						"width": "25%"
+					}*/
+				]
+			});
+		});
+		
+		function aclear() {
+			table.clearData();
+		}
+		
+		function load() {
+			var tableData = [
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"},
+				{siteName:"asdfasd2", name:"asdfasdf1", send:"2013-10-23 17:53:22"},
+				{siteName:"asdfasd1", name:"asdfasdf2", send:"2013-10-23 18:41:16"},
+				{siteName:"asdfasd4", name:"asdfasdf5", send:"2013-10-23 16:34:03"},
+				{siteName:"asdfasd3", name:"asdfasdf8", send:"2013-10-23 16:39:33"}
+			];
+			table.loadData([]);
+		}
+		
+		function getData() {
+			table.getSelectedRowsData();
+		}
+    </script>
+  </head>
+  <body>
+  	<input onclick="aclear()" type="button" value="清除" />
+  	<input onclick="load()" type="button" value="加载" />
+  	<input onclick="getData()" type="button" value="获取" />
+  	<div id="tablebox" style="border:1px solid red;width:600px;height:300px;"></div>
+  </body>
+</html>

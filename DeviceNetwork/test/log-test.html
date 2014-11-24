@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/cloud/base/loader.js"></script>
+		<script type="text/javascript">
+			require(["../applications/notice/log/system/table"],function(LogSystemTable){
+				var logSystemTable = new LogSystemTable({
+					selector:"#log-test"
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="log-test"></div>
+	</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+</style>
+<script type="text/javascript">
+	require([ "cloud/components/temp/toolbar","cloud/components/temp/button", "cloud/resources/css/default.css", "cloud/lib/plugin/jquery-ui" ], function(Toolbar, Button) {
+		var status = true;
+		var button = new Button({
+			title : "button",
+			//container : "div.buttonset1",
+			text : "shit",
+			//img : "../../../../www/resources/images/r.png",
+			//checkbox : true,
+			imgCls : "cloud-icon-config",
+			//hoverImgCls : "cloud-icon cloud-icon-unselect",
+			selected : true
+			,
+			//cls : "cloud-button-body1",
+			events: {
+                click : function(event){
+                	// get is button2 enabled
+                	if (button2.isEnable()){
+                		button2.disable();
+                	}else{
+                		button2.enable();
+                	}
+                }
+            }
+		});
+		var button2 = new Button({
+            ///container : "div.buttonset2",
+            title : "button2",
+            text : "s2",
+            //img : "../../../../www/resources/images/r.png",
+            checkbox : true,
+            imgCls : "cloud-icon cloud-icon-config",
+            selected : true
+            ,
+            btnBackgroud : false,
+            events : {
+                click : function(event){
+                	if (button.isEnable()){
+                        button.disable();
+                    }else{
+                        button.enable();
+                    }
+                }
+            }
+        }); 
+		
+		var button3 = new Button({
+            ///container : "div.buttonset2",
+            title : "button3",
+            //text : "s2",
+            //img : "../../../../www/resources/images/r.png",
+            //checkbox : true,
+            imgCls : "cloud-icon cloud-icon-config",
+            selected : true
+            ,
+            btnBackgroud : false,
+            events : {
+                click : function(event){
+                    if (button4.isEnable()){
+                        button4.disable();
+                    }else{
+                        button4.enable();
+                    }
+                }
+            }
+        }); 
+		var button4 = new Button({
+			title : "button4",
+            text : "shit4",
+            //img : "../../../../www/resources/images/r.png",
+            //checkbox : true
+           
+            events : {
+                click : function(event){
+                    if (button3.isEnable()){
+                        button3.disable();
+                    }else{
+                        button3.enable();
+                    }
+                }
+            }
+        }); 
+        var button5 = new Button({
+        	title : "button5",
+            btnBackgroud : false,
+            //text : "shit4"
+            //img : "../../../../www/resources/images/r.png",
+            checkbox : true
+            
+        }); 
+        var button6 = new Button({
+            //text : "shit4"
+            title : "button6",
+            btnBackgroud : false,
+            imgCls : "cloud-icon cloud-icon-config",
+            events : {
+                click : function(event){
+                    console.dir(toolbar.leftDiv);
+                }
+            }
+            
+        }); 
+        var button7 = new Button({
+            title : "button7",
+            checkbox : true,
+            btnBackgroud : false,
+            imgCls : "cloud-icon cloud-icon-config",
+           	events : {
+                click : function(event){
+                    toolbar.deleteLeftItem(0);
+                }
+            }
+        });
+        var button8 = new Button({
+            title : "button8",
+            checkbox : true,
+            btnBackgroud : false,
+            imgCls : "cloud-icon cloud-icon-config",
+            events : {
+                click : function(event){
+                    toolbar.destroy();
+                    console.dir(toolbar);
+                }
+            }
+        });
+		
+		var toolbar = new Toolbar({
+			container : "#toolbar1",
+			leftItems : [button],
+			rightItems : [button3, button4, button6, button7, button8]
+		});
+		
+		//append items after a item already exist specified by index
+		toolbar.appendLeftItems(["<div>|</div>", button5], 0);
+		
+		// append after the last item with out a specified index
+		toolbar.appendLeftItems(["<div>|321</div>"]);
+		
+		
+		toolbar.appendRightItems([$("<div>").text("test right")]);
+		
+		//toolbar.prependLeftItems(["<div>111</div>"])
+		
+		
+		//console.dir($("<div>"));
+		//console.log(($("<div>")) instanceof jQuery)
+		//console.log($(toolbar.element).children());
+	});
+</script>
+<body>
+	<div id = "toolbar1" style = "display: block; width : 500"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿OVDP----IR300 参数规整
+
+<<<<<<<<<<<<<      system     >>>>>>>>>>>>>>>>
+
+setup_system
+                     language             select             切换语言
+                     tzone                   select             时区
+                     hostname            text                主机名 
+fw_acl
+                     telnet_on             radio             允许telnet方式管理
+                     telnet_port           text               telnet 管理端口号
+                     telnet_from_wan  radio             允许telnet WAN 方式管理
+                     web_on                radio             允许telnet  WEB 方式管理
+                     web_port              text               web管理端口
+                     web_from_wan     radio             允许来自外部网络的web方式管理
+admin_log      
+                     log_server_host     text              远程日志服务器地址
+
+
+<<<<<<<<<<<<<      network     >>>>>>>>>>>>>>>>
+
+setup_lan0
+                     local_ip                 text              本地IP地址
+                     local_mask            text              子网掩码
+setup_dns      
+                     dns1                     text              首选域名服务器
+                     dns2                     text              备选域名服务器  
+setup_wan1
+                     modem_phone      text              接入号码
+                     modem_account   text              接入账号
+                     modem_password text              接入密码
+                     modem_APN         text              APN
+                     modem_detect_interval   text    连接检测时间间隔(秒)
+                     modem_max_failure        text    连接检测最大失败次数
+                     modem_max_retry          text     最大重拨次数
+                     heartBeat_host      text               维持链接服务器
+                     heartBeat_interval  text              维持链接间隔（毫秒）
+                     heartBeat_timeout  text             维持链接超时时间（毫秒）
+                     heartBeat_retries    text              维持链接最大失败次数
+
+
+<<<<<<<<<<<<<      fw     >>>>>>>>>>>>>>>>
+
+fw_dmz
+                    fw_vserver              text              服务器地址
+
+
+<<<<<<<<<<<<<      services     >>>>>>>>>>>>>>>>
+    
+service_ovdp
+                    inhand_serialnum   text              序列号
+                    on                          select           是否启用OVDP服务
+                    vendor_id               text              Router厂商编号
+                    device_id                text              设备 ID
+                    center_ip                text              通讯服务器IP地址
+                    center_port            text               通讯服务器端口号
+                    ovdp_trust_list        text              信任手机列表(多个号码用逗号分隔)

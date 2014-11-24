@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>login</title>
+        <script type="text/javascript" src="/cloud/base/loader.js"></script>
+		<script>
+			require(["../www/login_window"],function(Login){
+				var login = new Login({
+					selector:"#test-window",
+				})
+			})
+		</script>
+    </head>
+    <body>
+    	<div id="test-window" style="width:100%;height:800px;"></div>
+    </body>
+</html>

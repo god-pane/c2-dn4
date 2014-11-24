@@ -1,0 +1,133 @@
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+		/*border: 1px solid silver;*/
+	}
+
+	.info-header{
+		margin-top: 10px;
+	}
+
+	.info-header #info-name{
+		margin-left: 30px;
+	}
+
+	.info-header .info-favor{
+		margin-left: 9px;
+	}
+
+	.info-form-row .info-form-label{
+		display: inline-block;
+		width: 79px;
+	}
+
+	.info-form .info-form-text{
+		width: 96px;
+	}
+
+	.info-form .info-form-select{
+		width: 100px;
+	}
+
+	.info-form-row{
+		margin: 8px auto;
+	}
+
+	.info-form-row #info-serial-number{
+		width: 130px;
+	}
+
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+
+	.info-buttonset{
+		margin: 8px 0 0 8px;
+	}
+
+	.info-buttonset .cloud-button-body-main{
+		margin: 1px 2px;
+		padding: 1px 5px;
+	}
+</style>
+<div class="info-wrapper">
+	<form id="tasks-info-form">
+		<div class="info-header">
+			<div class="info-online-status"></div>
+			<input type="text" id="info-name" class="validate[required,funcCall[cloudInput]]  info-form-text"/>
+			<div class="info-favor"></div>
+		</div>
+		<div class="info-buttonset"></div>
+		<div class="info-tag-panel"></div>
+		
+		<div class="info-form">
+			<div class="info-form-row">
+				<label for="info-task-name" class="info-form-label">任务:</label>
+				<input type="text" id="info-task-name" class="info-form-text" value=""/>
+			</div>
+			<!-- 
+			<div class="info-form-row">
+				<label for="info-task-type" class="info-form-label">任务类型:</label>
+				<input type="text" id="info-task-type" class="info-form-text" value=""/>
+			</div>
+			 -->
+			<div class="info-form-row">
+				<label for="info-task-status" class="info-form-label">任务状态:</label>
+				<!-- <input type="text" id="info-task-status" class="info-form-text" value=""/> -->
+				<select id="info-task-status" class="info-form-select">
+					<option value="-1">执行失败</option>
+					<option value="2">已取消</option>
+					<option value="3">已完成</option>
+				</select>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-status" class="info-form-label">任务级别:</label>
+				<!-- <input type="text" id="info-task-status" class="info-form-text" value=""/> -->
+				<select id="info-task-priority" class="info-form-select">
+					<option value="10">定时任务</option>
+					<option value="20">低级</option>
+					<option value="30">普通</option>
+					<option value="40">高级</option>
+				</select>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-progress" class="info-form-label">完成:</label>
+				<input type="text" id="info-task-progress" class="info-form-text" value=""/>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-sitename" class="info-form-label">现场名称:</label>
+				<input type="text" id="info-task-sitename" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-username" class="info-form-label">添加人:</label>
+				<input type="text" id="info-task-username" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-address" class="info-form-label">地址:</label>
+				<input type="text" id="info-task-address" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-customer" class="info-form-label">所属客户:</label>
+				<input type="text" id="info-task-customer" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-starttime" class="info-form-label">启动时间:</label>
+				<input type="text" id="info-task-starttime" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-updatetime" class="info-form-label">状态更新时间:</label>
+				<input type="text" id="info-task-updatetime" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-desc" class="info-form-label">备注:</label>
+				<input type="text" id="info-task-desc" class="info-form-text" value="">
+			</div>
+		</div>
+		
+		<div class="info-map" id="info-map"></div>
+	</form>
+</div>

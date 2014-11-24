@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        <meta http-equiv="description" content="this is my page">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../../../base/loader.js"></script>
+    </head>
+    <script type="text/javascript">
+        
+        require(["../../../components/toolbar"], function(Toolbar){
+            this.toolbar = new cloud.Toolbar({
+                element: "#item",
+                items: [{
+                    type: "checkbox",
+                    id: "overview-select-all",
+                    text: "0/0",
+                    disabled: false
+                }, {
+                    type: "button",
+                    icon: "ui-icon-carat-1-w",
+                    id: "overview-popup-toggle-button",
+                    align: "right",
+                }, {
+                    type: "separator",
+                    align: "right"
+                }, {
+                    type: "button",
+                    icon: "ui-icon-pencil",
+                    id: "overview-popup-edit-button",
+                    align: "right",
+                }, {
+                    type: "button",
+                    icon: "ui-icon-minus",
+                    align: "right",
+                    id: "overview-popup-delete-button",
+                }, {
+                    type: "button",
+                    icon: "ui-icon-plus",
+                    id: "overview-popup-add-button",
+                    align: "right",
+                }]
+            });
+        });
+    </script>
+    <body>
+        <div id="item" style="width:100%; height: 100%;">
+        </div>
+    </body>
+</html>

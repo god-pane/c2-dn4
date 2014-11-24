@@ -1,0 +1,135 @@
+<div id="device-batch-import">
+<div class="batch-import-header">
+    <span id="batch-import-header-tips" lang="text:max_batch_import"></span>
+</div>
+<div id="device-batch-import-form-content">
+<form class="batch-import-wrapper" id="batch-import-wrapper">
+
+	<div class="device-batch-import-left">
+	<div class="batch-import-form" >
+	    <div class="batch-import-form-row batch-import-device-upload-row">
+            <label for="batch-import-upload" class="batch-import-form-label" lang="text:import_sn_file+:"></label>
+            <span id="batch-import-upload-button"></span>
+        </div>
+        <div id="batch-import-upload-tips" class = "batch-import-form-row batch-import-upload-tips">
+        </div>
+        <div class="batch-import-form-row batch-import-device-vendor-row">
+            <label class="batch-import-form-label"></label>
+            <span id="batch-import-download-button"></span>
+        </div>
+		<div class="batch-import-form-row batch-import-device-vendor-row">
+			<label for="batch-import-vendor" class="batch-import-form-label" lang="text:vendor_name+:">é�˜å‚šæ™¢:</label>
+			<select id="batch-import-vendor" class="validate[required] batch-import-form-select">
+				<option value="3" lang="text:inhand">Inhand</option> 
+			</select>
+		</div>
+		
+		<div class="batch-import-form-row batch-import-device-model-row">
+			<label for="batch-import-model" class="batch-import-form-label" lang="text:model+:">é�ˆå“„ç€·:</label>
+			<!-- <input type="text" id="batch-import-model" class="batch-import-form-text"/> -->
+			<select id="batch-import-model" class="validate[required] batch-import-form-select">
+				<!-- <option ></option> -->
+			</select>
+		</div>
+		<div class="batch-import-form-row batch-import-device-customer-row" style="display:none">
+			<span for="4" class="batch-import-form-label" lang="text:belong_customer+:">éŽµï¿½ç�˜ç€¹ãˆ¡åŸ›:</span>
+			<span id="batch-import-device-customers" class="batch-import-form-span"></span>
+		</div>
+		<div class="batch-import-form-row batch-import-device-site-auto-row">
+			<span id="batch-import-site-autocreate" class="batch-import-site-autocreate"></span>
+		</div>
+		
+		<div class="batch-import-form-row batch-import-device-advanced-row">
+			<div class = "batch-import-device-advances-title">
+				<label for="batch-import-advanced-options" class="batch-import-form-label" style="width : 54px" lang="text:show_advanced_options">æ¥‚æ¨¼éª‡é–«å¤�ã€�</label>
+				<span id="batch-import-device-button-content" ></span>
+			</div>
+			<div class="batch-import-form-row batch-import-device-advanced-form" id="batch-import-device-advanced-form" style="display:none">
+			<!--<div class="batch-import-form-row batch-import-advanced-sync-row"  >
+	                <label for="batch-import-device-sync" class="batch-import-form-label" lang="">é–°å¶‡ç–†é��èŒ¬ç�Šç»›æ «æš�:</label>
+					<select id="batch-import-device-sync" class="batch-import-form-select">
+						<option value="0" lang="">è¹‡ç•Œæš�</option>
+		                <option value="1" lang="">æµ ãƒ¥é’©é�™é¢�è´Ÿæ¶“ï¿½/option>
+		                <option value="2" lang="">æµ ãƒ¨î†•æ¾¶å›¦è´Ÿæ¶“ï¿½/option>
+					</select>
+	            </div>-->
+				<div class="batch-import-form-row batch-import-advanced-heartbeattimeout-row"  >
+	                <label for="batch-import-device-heartbeattimeout" class="batch-import-form-label" lang="text:heartbeat_timeout+:">è¹‡å†­çƒ¦ç“’å‘®æ¤‚:</label>
+	                <input type="text" id="batch-import-device-advanced-heartbeattimeout" class="batch-import-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="10"/>
+	               <span lang="text:seconds"></span>
+	            </div>
+				<div class="batch-import-form-row batch-import-advanced-heartbeatinterval-row"  >
+	                <label for="batch-import-device-heartbeatinterval" class="batch-import-form-label" lang="text:heartbeat_interval+:">è¹‡å†­çƒ¦é—‚æ’®æ®§:</label>
+	                <input type="text" id="batch-import-device-advanced-heartbeatinterval" class="batch-import-form-text validate[required,custom[number],min[30],max[600],funcCall[cloudInput]]" value="120"/>
+	               <span lang="text:seconds"></span>
+	            </div>
+				<div class="batch-import-form-row batch-import-advanced-maxheartbeatlost-row"  >
+	                <label for="batch-import-device-maxheartbeatlost" class="batch-import-form-label" lang="text:max_heartbeat_lost+:">é�ˆï¿½ã�‡è¹‡å†­çƒ¦æ¶“ãˆ ã�‘å¨†â„ƒæšŸ:</label>
+	                <input type="text" id="batch-import-device-advanced-maxheartbeatlost" class="batch-import-form-text validate[required,custom[number],min[1],max[20],funcCall[cloudInput]]" value="6"/>
+	            
+	            </div>
+	            
+	            <div class="batch-import-form-row batch-import-advanced-resendlogin-row"  >
+                    <label for="batch-import-device-resendlogin" class="batch-import-form-label" lang="text:resend_login+:">é–²å¶†æŸŠé�§å©šæª°é—‚æ’®æ®§:</label>
+                    <input type="text" id="batch-import-device-advanced-resendlogin" class="batch-import-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="60"/>
+                    <span lang="text:seconds">
+                </div>
+                
+                <div class="batch-import-form-row batch-import-advanced-timeout-row"  >
+                    <label for="batch-import-device-timeout" class="batch-import-form-label" lang="text:connection_timeout+:">æ�©ç‚´å¸´ç“’å‘®æ¤‚é�ƒå •æ£¿:</label>
+                    <input type="text" id="batch-import-device-advanced-timeout" class="batch-import-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="300000"/>
+                    <span lang="text:milliscond"></span>
+                </div>
+                
+                <div class="batch-import-form-row batch-import-advanced-acktimeout-row"  >
+                    <label for="batch-import-device-acktimeout" class="batch-import-form-label" lang="text:ack_timeout+:">ç’�æƒ§î˜¸é��å¶…ç°²ç“’å‘®æ¤‚é�ƒå •æ£¿:</label>
+                    <input type="text" id="batch-import-device-advanced-acktimeout" class="batch-import-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="120000"/>
+                    <span lang="text:milliscond"></span>
+                </div>
+                
+                <div class="batch-import-form-row batch-import-advanced-ackretries-row"  >
+                    <label for="batch-import-device-ackretries" class="batch-import-form-label" lang="text:ack_retries+:">ç’�æƒ§î˜¸é�ˆï¿½ã�‡é–²å¶„ç´¶å¨†â„ƒæšŸ:</label>
+                    <input type="text" id="batch-import-device-advanced-ackretries" class="batch-import-form-text validate[required,custom[number],min[1],maxSize[6],funcCall[cloudInput]]" value="3"/>
+                </div>
+                
+                <div class="batch-import-form-row batch-import-advanced-sync-row"  >
+                    <label for="batch-import-device-sync" class="batch-import-form-label" lang="text:sync_config+:">é–°å¶‡ç–†é�šå±¾î„žé�‘å——åž¯:</label>
+                    <!-- <input type="text" id="batch-import-device-advanced-sync" class="batch-import-form-text validate[required,custom[number],min[1],max[20]]" value="6"/> -->
+                    <select id="batch-import-device-advanced-sync" class="validate[required] batch-import-form-select">
+                        <option value="2" lang="text:keep_device" selected=true>æµ ãƒ¨î†•æ¾¶å›¦è´Ÿæ¶“ï¿½/option>
+                        <option value="1" lang="text:keep_platform">æµ ãƒ¥é’©é�™é¢�è´Ÿæ¶“ï¿½/option>
+                        <option value="0" lang="text:ignore">è¹‡ç•Œæš�</option>
+                    </select>
+                </div>
+				
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	<!-- <div class="device-batch-import-right">
+	    <div class="batch-import-map" id="batch-import-map"></div>
+	</div> -->
+	
+</form>
+</div>
+<div class="batch-import-buttonset-bottom"></div>
+</div>
+
+<div id="batch-import-device-result" style="text-align: center;display : none">
+    <div style="display:inline-block;text-align: left;width: 315px;">
+    <!--<span  class="" style="margin: 3px 0px;" lang="text:import_result+:">ç€µç…Žå�†ç¼�æ’´ç�‰é�?›ï¿½/span>  -->
+    <span  class="batch-import-device-result-sucorfailed" id="batch-import-device-result-sucorfailed" lang=""></span>
+    <br />
+    <span class="failed-details" lang="text:failed-details"></span>
+    <!-- <span  id ="batch-import-device-result-suc" ></span>
+    <span  class="" style="margin: 3px 0px;" lang="text:ge+,">æ¶“ï¿½</span> -->
+    <!-- <span  class="" style="margin: 3px 0px;" lang="text:failed">æ¾¶è¾«è§¦</span> 
+    <span  id ="batch-import-device-result-failed" ></span>
+    <span  class="" style="margin: 3px 0px;" lang="text:ge">æ¶“ï¿½/span>
+    -->
+    <br>
+    <ol id="batch-import-device-result-list" >
+    </ol>
+    </div>
+</div>

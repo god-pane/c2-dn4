@@ -1,0 +1,177 @@
+<form class="info-wrapper" id="info-wrapper" style="position:relative">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-name" class="validate[required,minSize[0],maxSize[30],funcCall[cloudInput]]">
+		<div class="info-header-btn" style="float:left"></div>
+		<div class="info-device-favor"></div>
+	</div>
+		<div class="info-buttonset-bottom"></div>
+
+	<div class="info-tag-panel"></div>
+	<div class="info-form">
+		<div class="info-form-row">
+			<label for="info-customer-address" class="info-form-label">地址:</label>
+			<input type="text" id="info-customer-address" value="" class="info-form-text"/>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">邮箱:</label>
+			<input type="text" id="info-customer-email" value="" class="validate[required,custom[email]] info-form-text"/>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">网址:</label>
+			<input type="text" id="info-customer-website" value="" class="info-form-text"/>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">电话:</label>
+			<input type="text" id="info-customer-phone" value="" class="validate[custom[phone]] info-form-text"/>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">联系人:</label>
+			<input type="text" id="info-customer-contact" value="" class="info-form-text"/>
+		</div>
+		<div class="info-form-row">
+			<label for="info-model" class="info-form-label">手机:</label>
+			<input type="text" id="info-customer-contact-phone" value="" class="validate[custom[phone]] info-form-text"/>
+		</div>
+
+	</div>
+	<div class="info-map" id="info-map"></div>
+	<div class="info-doc"  style="display:none">
+		<div class="info-doc-row">
+			<select id="info-doc-select" class="info-doc-select">
+			</select>
+		</div>
+	</div>
+	<div class="info-form-row info-device-pic-row"  style="display:none">
+		<img id="info-device-pic" ></img>
+	</div>
+	
+</form>
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	.info-header{
+		margin-top: 10px;
+	}
+	
+	.info-header #info-name{
+		margin-left: 19px;
+		float:left;
+	}
+
+	.info-header .info-device-favor{
+		margin-left: 0px;
+	}
+    
+	.info-form-row label.info-form-label{
+		display: inline-block;
+		width: 70px;
+	}
+
+	.info-doc-select{
+		width: 136px;
+	}
+    #info-site-autocreate a {
+        margin-left: 0px;
+    }
+	.info-form-row{
+		margin: 8px 0;
+	}
+
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+    .info-buttonset-bottom a{
+        margin: 8px 10px 0 0;
+    }
+    .info-buttonset-bottom{
+        margin-bottom: 13px;
+    }
+	#module-info-tag-edit{
+		padding: 0px;
+		border: 0px ;
+	}
+	.info-form-span{
+		display: inline-block;
+		width: 81px;
+        margin: 0px 10px;
+	}
+	.info-buttonset .cloud-button{
+		/*margin: 1px 2px;*/
+		/*padding: 1px 6px;*/
+	}
+	.info-device-pic-row {
+	   height: 132px;
+	}
+	
+	.info-device-pic-row a {
+	   margin:3px 0px 0px 0px;
+	   float : right;
+	}
+
+	#info-device-pic {
+	    float: left;
+	    width: 178px;
+        height: 132px;
+	}
+    #device-site-info-qtip .cloud-bubble-hide {
+        display : none;
+    }
+    .info-online-status {
+        float:left;
+    }
+    .info-header-btn{
+        float:left;
+        width:20px;
+        height:17px;
+        margin-top: 3px;
+    }
+	.info-device-advances-title{
+		left: 19px;
+		position: relative;
+		background-color: #F5F6F9;
+		z-index: 1;
+		/* width: 82px; */
+		padding-left: 12px;
+	}
+	.info-device-advanced-form{
+		position: relative;
+		top: -21px;
+		border: 1px solid rgb(204, 204, 204);
+		padding-top: 13px;
+		padding-left: 15px;
+		display: block;
+	}
+    .info-form a.cloud-button {
+        margin-right : 0px;
+    }
+    .info-device-ip-row{
+        height: 18px;
+        line-height: 18px;
+    }
+    #info-device-signal-icon{
+        display:inline-block;
+        margin-bottom : -2px;
+    }
+    
+    .info-device-advanced-row div#info-device-advanced-form input.info-form-text {
+        width : 60px;
+    }
+	
+	.info-device-advanced-sync-select{
+		width:80px;
+	}
+	#module-info-autocreate-site span.cloud-button-text {
+	    width: 150px;
+        height: 40px;
+	}
+	#module-info-autocreate-site span.cloud-button-checkbox-icon {
+        margin-top : -13px;
+    }
+</style>

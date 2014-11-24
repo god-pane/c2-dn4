@@ -1,0 +1,47 @@
+.online-chart-right{
+	width:100%;
+	height:auto;
+}
+.online-chart-right-title{
+	width:100%;
+	height:30px;
+	line-height:24px;
+	text-indent:20px;
+	background:#e5e6e8;
+}
+.online-chart-right-content{
+	width:100%;
+	height:100%;
+}
+.online-chart-right-content-action{
+	overflow:hidden;
+	width:100%;
+	height:auto;
+}
+.online-chart-right-content-action p,.online-chart-right-content-action div{
+	float:right;
+	margin:15px 5px 5px 0;
+	width:auto;
+	height:auto;
+}
+.online-chart-button{
+	margin-right:3px;
+	padding:0 10px;
+	width:auto;
+	height:20px;
+	border:1px solid #dde1e4;
+	color:#5c5d5f;
+	background:#f0f1f5;
+	border:1px solid #dfe0e4;
+	box-shadow: 1px 1px 0px #bbb;
+	border-radius:2px;
+}
+.online-chart-right-content-chart{
+	overflow:hidden;
+	width:100%;
+	height:auto;
+}
+.reports-online-chart{
+	margin:20px 20px 0 20px;
+	width:auto;
+}

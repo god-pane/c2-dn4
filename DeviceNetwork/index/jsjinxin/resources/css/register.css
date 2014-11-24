@@ -1,0 +1,290 @@
+.register{
+	width:930px;
+	min-height:500px;
+	margin:0 auto;
+}
+.register-header{
+	width:100%;
+	height:39px;
+	margin-bottom:10px;
+}
+.rh-ready-items{
+	width:310px;
+	height:39px;
+	float:left;
+	color:white;
+	padding-top:10px;
+	text-align:center;
+	cursor: pointer;
+	background:url(../images/registerS.png) no-repeat -326px -240px;
+}
+.rh-write-information{
+	width:310px;
+	height:39px;
+	float:left;
+	padding-top:10px;
+	text-align:center;
+	background:url(../images/registerS.png) no-repeat 0px -171px;
+}
+.rh-finish{
+	width:310px;
+	height:39px;
+	float:left;
+	text-align:center;
+	padding-top:10px;
+	background:url(../images/registerS.png) no-repeat 0px -171px;
+}
+.register-body{
+	width:100%;
+	height:auto;
+	border:1px solid #fff;
+}
+.rb-ready-items{
+	overflow:hidden;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.rbr-title{
+	float:right;
+	width:100%;
+	height:auto;
+}
+.rbr-title-content{
+	float:right;
+	margin:10px 55px 15px 0;
+	width:auto;
+	height:14px;
+	text-align:right;
+}
+
+.rbr-title-content p{
+	float:left;
+}
+
+.rbrt-img{
+	margin:1px 5px 0 0;
+	width:15px;
+	height:14px;
+	background:url(../images/registerS.png) no-repeat 0px -103px;
+}
+
+.rbrt-text{
+	
+}
+
+.rbr-text{
+	width:770px;
+	height:300px;
+	margin-left:40px;
+	padding:0px 35px;
+	text-align:left;
+	line-height:20px;
+	border:1px solid #ccc;
+	overflow-y: scroll;
+}
+.rb-buts{
+	margin:20px 0 0 40px;
+	width:auto;
+	text-align:left;
+}
+
+.rbb-ok{
+	width:174px; 
+	height:32px; 
+	border:0;
+	font-size:12px;
+	float:left;
+	color:white;
+	background:url(../images/registerS.png) no-repeat -386px 0px;
+}
+
+.rbb-next{
+	font-size:12px;
+	color:#555;
+}
+
+.rbb-no{
+	margin-left:10px;
+	width:80px; 
+	height:32px; 
+	border:0;
+	background:url(../images/registerS.png) no-repeat 0px -44px;
+}
+.rb-point{
+	overflow:hidden;
+	margin:20px 0 0 40px;
+	width:800px;
+	text-align:left;
+}
+.rb-point-icon{
+	float:left;
+	margin:0px 10px 0 0;
+	width:15px; 
+	height:15px;
+	background:url(../images/registerS.png) no-repeat -33px -103px;
+}
+#submit-btn{
+	width:195px;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+	color:#fff;
+	background:#70cb57;
+	border:1px solid #7ebd54;
+	border-radius:1px;
+	box-shadow: 1px 1px 3px #ddd;
+}
+#rbw-security-code{
+	margin-right:5px;
+	width:100px;
+}
+.rbft-img{
+	width:64px; 
+	height:51px; 
+	float:left;
+	background:url(../images/registerS.png) no-repeat -150px -97px;
+}
+.rbft-text{
+	float:left;
+	margin-left:20px;
+	width:430px;
+	text-align:left;
+	font-size:14px;
+	line-height:25px;
+}
+.rb-finish{
+	margin:0 auto;
+	text-align:center;
+	width:100%;
+}
+.rbf-title{
+	margin:0 auto;
+	margin-top:45px;
+	width:530px;
+	height:80px;
+}
+.rbfb-again-send-email{
+	float:left;
+	margin:0 30px 0 285px;
+	width:275px; 
+	height:32px;
+}
+.rbfb-get-mail-login{
+	float:left;
+	width:160px; 
+	height:32px;
+}
+.button-on{
+	cursor: pointer;
+	color:#444;
+	font-size:13px;
+	color:#fff;
+	background:#5ed45a;
+	border:1px solid #52c050;
+	border-radius:1px;
+	box-shadow: 1px 1px 3px #e3e3e3;
+}
+.button-out{
+	color:#444;
+	font-size:13px;
+	color:#5c5d5f;
+	background:#e6e7ec;
+	border:1px solid #cecfd1;
+	border-radius:1px;
+	cursor: pointer;
+	box-shadow: 1px 1px 3px #e3e3e3;
+}
+ul.register-form{
+	width:100%;
+	margin-top:10px;
+}
+
+ul.register-form li{
+	clear:both;
+	margin-bottom:15px;
+	width:100%;
+	height:32px;
+	line-height:32px;
+}
+
+ul.register-form li p{
+	padding-right: 10px;
+	float:left;
+	text-align:left;
+	width:110px;
+	height:100%;
+}
+ul.register-form li input,ul.register-form li select{
+	margin:0px;
+	height:0px;
+	float:left;
+	width:300px;
+	height:26px;
+	line-height:28px;
+	text-align:left;
+}
+ul.register-form li select{
+	height:32px;
+}
+.register-form p .green1{
+	color:rgb(54, 126, 6);
+}
+
+.register-form-notice{
+	float:left;
+	margin-left:10px;
+	width:200px;
+	height:100%;
+}
+
+.register-2-prompt{
+	margin:20px 0 20px 240px;
+	overflow:hidden;
+	width:530px;
+	height:16px;
+}
+.register-2-prompt-icon{
+	float:left;
+	margin-right:5px;
+	width:16px; 
+	height:16px;
+	background:url(../images/registerS.png) no-repeat -33px -103px;
+}
+.register-2-prompt-text{
+	float:left;
+	height:100%;
+}
+
+.rbf-btns{
+	cursor: pointer;
+}
+
+.rbw-advanced-options{
+	display:none;
+}
+/* #rbw-advanced-options input{
+	width: 95px;
+	height: 32px;
+	color: white;
+	background: #87d05b;
+	border: 1px solid #7ebd54;
+	border-radius: 1px;
+	box-shadow: 1px 1px 3px #ddd;
+	margin-left: 70px;
+	width: 136px;
+	cursor: pointer;
+	height: 22px;
+} */
+.rbw-advanced-options .aptionBtn1{
+	display:none;
+}
+
+.register-vercode{
+	width:92px;
+	height:30px;
+}
+.registration-information{
+	word-wrap: break-word;
+	word-break: normal; 
+}

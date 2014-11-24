@@ -1,0 +1,48 @@
+﻿<html>
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+		<meta name='robots' content='noindex,nofollow'/>
+		<script type="text/javascript" src="../import.js"></script>
+		<!-- <script type="text/javascript" src="lang_pack/Chinese.res"></script>
+		<script type="text/javascript" src="js/misc.js"></script>
+		<script type="text/javascript" src="js/mix.js"></script> -->
+		<link type="text/css" rel="stylesheet" href="css/inhand.css" />
+<script type='text/javascript'>
+/*render configurations on the model*/
+function setParams(options){
+	updateScheme(options.currentScheme);
+};
+
+/*get configurations from the model*/
+function getParams(){
+		var scheme = savePage();
+			if(scheme==-1)
+			{
+				alert("At least select one group params,please!");
+				return false;
+			}
+			else if (scheme==0) {				
+				alert("scheme is 0");
+				return false;
+			}
+			else if(scheme==null){
+				alert("scheme is null!");
+				return false;
+			}
+			else{
+				return scheme;
+			}
+};
+</script>
+</head>
+<body>
+<form id='_fom' method='post' action='apply.cgi'>
+<script type='text/javascript'>
+ 	setDeviceType("IR711DM01");
+ 	createPage();
+ 	updateScheme(default_scheme);
+ 	setDeviceNum(1);
+</script>
+</form>
+</body>
+</html>

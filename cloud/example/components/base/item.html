@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>item.html</title>
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        <meta http-equiv="description" content="this is my page">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../../../base/loader.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100% !important;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script type="text/javascript">
+            
+            require(["../../../components/item"], function(Item){
+                $(function(){
+                    var item = new Item({
+                        container: "#container",
+                        icon: null,
+                        name: "All",
+                        description: "show all widgets",
+                        status: null,
+                        notifications: 10,
+                        shared: true,
+                        favor: true,
+                        selected: true,
+                        selectable: true,
+                        signal: null,
+                        width: 170,
+                        height: 60,
+                        role: null,
+                        events: {}
+                    });
+					
+					
+					var item = new Item({
+                        container: "#container",
+                        name: "Select",
+                        description: "selectable and unselect default",
+                        selected: false,
+                        selectable: true
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        name: "Select",
+                        description: "selectable and default select",
+                        selected: true,
+                        selectable: true
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        icon: null,
+                        name: "Notification",
+                        description: "notification <= 0",
+                        notifications: 0
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        icon: null,
+                        name: "Notification",
+                        description: "notification > 0",
+                        notifications: 12
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        name: "Shared and isn't favor",
+                        shared: true,
+						favor: false
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        name: "not shared and is favor",
+                        shared: false,
+						favor: true
+                    });
+					
+					var item = new Item({
+                        container: "#container",
+                        name: "event",
+                        description: "select me or click me",
+                        events: {
+							click: function(data){
+								alert("you click me");
+							},
+							select: function(data){
+								alert("you select me");
+							}
+						}
+                    });
+					
+					$("<button>").text("update item options").button().appendTo("body").click(function(){
+                        item.update({
+                            name: "All",
+                            description: "show all widgets",
+                            notifications: 10,
+                            shared: true,
+                            favor: true,
+                            selected: true,
+                            selectable: true,
+                            events: {}
+                        });
+					});
+					
+					
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container" style="width:100%; height: 100%;"></div>
+    </body>
+</html>

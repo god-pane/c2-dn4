@@ -1,0 +1,40 @@
+.widget-button-16x16{
+	width:auto;
+	height:auto;
+	overflow:hidden;
+	border:0px;
+}
+
+.widget-button-16x16:hover{
+	cursor:pointer;
+	color:green;
+}
+
+.widget-button-16x16-icon-bg{
+	float:left;
+	width: 16px;
+	height: 16px;
+	background-image: url("../resources/images/cloud-icons-default.png");
+	display: block;
+}
+
+.widget-button-16x16-icon-bg:hover{
+	background-image: url("../resources/images/cloud-icons-active.png");
+}
+
+.widget-button-16x16-text{
+	float:left;
+	display: block;
+}
+
+.widget-button-16x16-icon-curve{
+	background-position:0 -1094px;
+}
+
+.widget-button-16x16-icon-download{
+	background-position:0 -509px;
+}
+
+.widget-checkbox{
+	
+}

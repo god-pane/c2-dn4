@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Pragma" CONTENT="no-cache"> 
+	<meta http-equiv="Cache-Control" CONTENT="no-cache"> 
+	<meta http-equiv="Expires" CONTENT="0">
+	<link href="resources/css/global.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/list.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./library/require.js"></script>
+	<script type="text/javascript" src="./library/log4javascript.js"></script>
+	<script type="text/javascript">
+    	require(["./resources/js/list.js"]);
+		var log = log4javascript.getLogger();
+		var appender = new log4javascript.InPageAppender();
+		log.addAppender(appender);
+    </script>
+  </head>
+  <body>
+	<div class="container">
+		<div class="header">
+			<div class="header-title">
+				<!--<img src="resources/images/_logo.png" class="title-logo" />-->
+				<img class="title-logo" />
+				<p class="title-text" lang="text:inhand_networks">Inhand Networks</p>
+				<!--s
+				<P id="connect-client" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">连接客户端</P>
+				<P id="disconnect-client" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">断开客户端</P>
+				<P id="reconnect-client" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">重连客户端</P>
+				<P id="show-client-channel" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">显示客户端通道</P>
+				<P id="connect-site" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">连接现场</P>
+				<P id="disconnect-site" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">断开现场</P>
+				<P id="reconnect-site" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">重连现场</P>
+				<P id="show-site-channel" style="margin:10px 0 0 10px;padding:5px;float:left;border:3px solid #999;background:#fff;cursor:pointer">显示现场通道</P>
+				-->
+				<div class="button-box">
+					
+					
+					<span id="skip-web" class="skip-web" style="display:none">
+						<img src="resources/images/3.png"/> <label lang="text:web"></label>
+					</span>
+					<span id="logout-dt" class="logout-dt">
+						<img src="resources/images/1.png"/> <label lang="text:logout"></label>
+					</span>
+					<span class="user-mark"></span>
+					
+				</div>
+			</div>
+			<div class="header-status">
+				<!--
+				<p class="status-total"><span>total : </span><span id="status-total"></span></p>
+				-->
+				<p class="status-online">
+					<label id="user-name" style="margin-right:20px;"></label>
+					<span lang="text:online_site+:"></span>
+					<span id="status-online"></span>
+				</p>
+				
+			</div>
+		</div>
+		<div class="main">
+			<div class="tag-bar" id="tag-bar-container">
+				
+			</div>
+			<div class="list-bar">
+				<div class="search-bar">
+					<form>
+					<select class="search-select" id="search-select">
+						<option value ="name" lang="text:site_name"></option>
+						<option value ="serial" lang="text:serial_number"></option>
+					</select>
+					<input type="text" class="search-box" id="search-box"/>
+					<input type="button" class="search-submit" id="search-submit" />
+					</form>
+				</div>
+				<div class="table-bar" id="table-bar"></div>
+				<div class="paging-bar" id="paging-bar"></div>
+			</div>
+			<div class="info-bar">
+				
+				<div id="site-info-0" class="site-info-0" style="display:none">
+					<div class="detaile-info-bar">
+						<div class="detaile-info-bar-title">
+							<div class="detaile-info-bar-title-1" id="site-sidebar-sitename"></div>
+							<div class="detaile-info-bar-title-2">
+								<!-- 
+									<p class="site-sidebar-signal" id="site-sidebar-signal"></p>
+								 -->
+								<img class="site-sidebar-signal" id="site-sidebar-signal" />
+								<label class="site-sidebar-ip" id="site-sidebar-ip"></label>
+							</div>
+						</div>
+						<div class="detaile-info-bar-text1">
+							<img class="site-sidebar-status" id="site-sidebar-status" src="" />
+							<p class="site-sidebar-status-text" id="site-sidebar-status-text"></p>
+							<span class="site-sidebar-action" id="site-sidebar-action"></span>
+						</div>
+						<div class="detaile-info-bar-text2">
+							<p id="site-sidebar-connectiontime-tile" lang="text:connection_time"></p>
+							<p id="site-sidebar-connectiontime"></p>
+						</div>
+						<div class="detaile-info-bar-table" id="site-sidebar-devicelist"></div>
+					</div>
+				</div>
+				
+				<div id="channel-info-0" class="channel-info-0">
+					<div class="info-bar-title">
+						<div class="info-bar-title-1" lang="text:channel_status"></div>
+						<div class="info-bar-title-2" id="info-bar-title-2"></div>
+					</div>
+					<div class="info-bar-content">
+						<div class="info-bar-content-left">
+							<div class="ibcl-yline"></div>
+							<div class="ibcl-xline1"></div>
+							<div class="ibcl-xline2"></div>
+							<div class="ibcl-xline3"></div>
+							
+							<div class="ibcl-client"></div>
+							<div class="ibcl-cloud"></div>
+							<div class="ibcl-site"></div>
+							
+							<div class="ibcl-client-cloud" id="ibcl-client-cloud"></div>
+							<div class="ibcl-cloud-site" id="ibcl-cloud-site"></div>
+						</div>
+						<div class="info-bar-content-right">
+							<div class="info-bar-content-right-client">
+								<table>
+									<tr>
+										<td id="ip-fleid" style="width:40%;">IP:</td>
+										<td id="ip-value" style="width:60%;" >&nbsp;---</td>
+									</tr>
+									<tr>
+										<td id="this-fleid" lang="text:the_connection_time+:"></td>
+										<td id="this-value">&nbsp;---</td>
+									</tr>
+									<!--
+									<tr>
+										<td id="back-fleid">上次连接:</td>
+										<td id="back-value">2013-10-23 18:41:16</td>
+									</tr>
+									-->
+									<tr>
+										<td colspan="2">
+											<input id="auto-reconnection" type="checkbox"/><label for="time-out-auto" lang="text:failure_auto_connection"></label><br/>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="info-bar-content-right-cloud">
+								<div class="info-bar-content-right-cloud-table" id="info-bar-content-right-cloud-table"></div>
+								<!--
+								<div ><input style="margin-top:10px;" type="button" value="连接"></div>
+								--> 
+							</div>
+							<div class="info-bar-content-right-sitetext" id="info-bar-content-right-sitetext">
+								<div style="margin-top:15px" id="infobar-site-name"></div>
+								<div style="margin-top:5px"><label/></able><label id="infobar-site-ip"></label></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="footer">
+			<div class="channel-status">
+				<p class="channel-status-client"></p>
+				<p class="channel-status-img" id="channel-status-client-server"></p>
+				<p class="channel-status-server"></p>
+				<p class="channel-status-img" id="channel-status-site-server"></p>
+				<p class="channel-status-site"></p>
+				<p class="currrent-site-name" id="currrent-site-name"></p>
+			</div>
+			<p class="footer-notice" id="footer-notice"></p>
+		</div>
+	</div>
+  </body>
+</html>

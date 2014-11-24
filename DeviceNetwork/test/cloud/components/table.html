@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+
+.cloud-table-row {
+	color: blue;
+}
+table {
+    /* table-layout:fixed;
+    word-wrap:break-word;
+    overflow:hidden;
+    text-overflow: elipsis; */
+     
+}
+table td{
+    /* overflow:hidden; 
+    text-overflow: elipsis; */
+}
+table th{
+    /* overflow:hidden;
+    text-overflow: elipsis !important; */
+}
+</style>
+<script type="text/javascript">
+	require(
+			  [ "cloud/components/table", 
+			    "cloud/lib/plugin/jquery.dataTables",
+				"cloud/components/button",
+				//"cloud/resources/css/default.css",
+				"cloud/lib/plugin/jquery-ui" ],
+			function(Table, dataTable, Button) {
+				var status = true;
+				var button = new Button({
+					container : "#toolbar1",
+					title : "add",
+					text : "add",
+					events : {
+						click : function(event) {
+							table.add({
+								_id : "0000000000000000000000",
+								customerCount : 0,
+								deviceCount : 0,
+								docCount : 0,
+								modelCount : 0,
+								name : "testAdd",
+								oid : "ABCDE",
+								owner : "511E7DDE421AA90D6A00000A",
+								shared : false,
+								siteCount : 0,
+								siteTplCount : 0,
+								updateTime : 1364741795
+							})
+						}
+					}
+				});
+				var button2 = new Button({
+					container : "#toolbar1",
+					title : "delete 'aaa'",
+					text : "delete 'aaa'",
+					events : {
+						click : function(event) {
+							var itemToDel = null;
+							/* $.each($("tr"), function(i, el) {
+								console.log($(el).data("data"))
+								if ($(el).data("data")
+										&& $(el).data("data").name == "aaa") {
+									itemToDel = el
+								}
+								
+							}) */
+							var rows = table.getRowsByProp("name", ["aaa","12345678"]);
+							console.log(rows)
+							table["delete"](rows);
+						}
+					}
+				});
+				var button3 = new Button({
+					container : "#toolbar1",
+					title : "update aaa",
+					text : "update aaa",
+					events : {
+						click : function(event) {
+							var itemToUpdate = table.getRowsByProp("name", "aaa")[0];
+							table["update"]({
+								_id : "51511D29421AA90AF20000EC",
+								customerCount : 0,
+								deviceCount : 0,
+								docCount : 0,
+								modelCount : 0,
+								name : "aaa updated",
+								oid : "ABCDE",
+								owner : "511E7DDE421AA90D6A00000A",
+								shared : false,
+								siteCount : 0,
+								siteTplCount : 0,
+								updateTime : 1364241577
+							}, itemToUpdate);
+							console.log(table.getData(itemToUpdate));
+							console.log($(itemToUpdate).data("data"));
+							
+						}
+					}
+				});
+				var button4 = new Button({
+                    container : "#toolbar1",
+                    title : "getData aaa",
+                    text : "getData aaa",
+                    events : {
+                        click : function(event) {
+                            /* var itemToUpdate = null;
+                            $.each($("tr"), function(i, el) {
+                                //console.log($(el).data("data"))
+                                if ($(el).data("data")
+                                        && $(el).data("data").name == "aaa") {
+                                	table.get
+                                }
+                            }) */
+                            console.dir(table.getRowsByProp("name", "testAdd"));
+                        }
+                    }
+                });
+				var table = new Table(
+						{
+							container : "#table-container",
+							datas : [],
+							columns : [
+									{
+										"title" : "",
+										"dataIndex" : null,
+										"defaultContent" : "<input type='checkbox' class='table-input'/>",
+										"width" : "5%"
+									},
+									{
+										"title" : "标签名",
+										"dataIndex" : "name",
+										"cls" : "cloud-table-row",
+										"width" : "20%",
+										render : function(name, type, data) {
+											var html = data.name;
+											if (data.shared) {
+												html += new Template(
+														"<div  style = \"display : inline-block; margin-left: 4px\" class=\"cloud-icon-active cloud-icon-share\"></div>")
+														.evaluate();
+											}
+											if (data.favored) {
+												html += new Template(
+														"<div  style = \"display : inline-block; margin-left: 4px\" class=\"cloud-icon-active cloud-icon-star\"></div>")
+														.evaluate();
+											}
+											return html;
+										}
+									}, {
+										"title" : "设备数量",
+										"dataIndex" : "deviceCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "机型数量",
+										"dataIndex" : "modelCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "现场数量",
+										"dataIndex" : "siteCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "现场模版数量",
+										"dataIndex" : "siteTplCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "文档数量",
+										"dataIndex" : "docCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "客户数量",
+										"dataIndex" : "customerCount",
+										"cls" : null,
+										"width" : "14%"
+									}, {
+										"title" : "Id",
+										"dataIndex" : "_id",
+										"cls" : "_id" + " " + "hide",
+									} ],//{title : title, dataIndex : dataIndex, defaultContent: defaultContent, cls: cls, width : width, render: render, sortable : sortable, afterCellCreated : afterCellCreated}
+							autoWidth : true,
+							pageToolBar : true,
+							pageSize : 15,
+							events : {
+								"onRowClick" : function(data, row) {
+									alert("row " + data.name + " click! see console for more info");
+									//console.dir(arguments);
+									
+									//get data by method getData
+									console.log(table.getData(row));
+									//or get data by jquery
+									console.log ("or get data by jquery");
+									console.log($(row).data("data"))
+								},
+								"onLoad" : function(datas, settings) {
+									//console.dir(settings);
+									alert(datas.length + " records load !");
+								},
+								"onRowRendered" : function(){
+									//console.dir(arguments);
+								}
+							}
+
+						})
+				cloud.Ajax.request({
+					url : "api/tags",
+					type : "GET",
+					dataType : "JSON",
+					parameters : {
+						verbose : 100
+					},
+					success : function(data) {
+						var dataTemp = data;
+						//allow service do some pre_proccess to data
+						//TODO
+						//deviceCount modelCount siteCount siteTplCount docCount customerCount
+						if (data && data.result) {
+							var result = data.result;
+							for ( var i = 0; i < result.length; i++) {
+								var temp = result[i];
+								temp.deviceCount = 0;
+								temp.modelCount = 0;
+								temp.deviceCount = 0;
+								temp.siteCount = 0;
+								temp.siteTplCount = 0;
+								temp.docCount = 0;
+								temp.customerCount = 0;
+								dataTemp[i] = temp;
+							}
+						}
+						table.render(dataTemp.result);
+						//testTable(dataTemp.result);
+					}
+				});
+			    
+				//验证宽度问题是否是dataTable插件本身问题，结论为是
+				function testTable(datas){
+					var dataTable = $("#test-table").dataTable({
+	                    "aaData": datas,
+	                    "aoColumns":[{
+	                        "sTitle": "",
+	                        "mData": "",
+	                        "sDefaultContent": "<input type='checkbox' class='table-input'/>",
+	                        //"sClass": "text-center",
+	                        "sWidth": "5%"
+	                    }, {
+	                        "sTitle": "标签名",
+	                        "mData": "name",
+	                        "sClass": null,
+	                        "sWidth": "14%"
+	                       /*  mRender: function(name, type, data) {
+	                            var html = data.name;
+	                            if (data.shared) {
+	                                html += new Template("<div  style = \"display : inline-block; margin-left: 4px\" class=\"cloud-icon-active cloud-icon-share\"></div>").evaluate();
+	                            }
+	                            if (data.favored) {
+	                                html += new Template("<div  style = \"display : inline-block; margin-left: 4px\" class=\"cloud-icon-active cloud-icon-star\"></div>").evaluate();
+	                            }
+	                            return html;
+	                        } */
+	                    },
+	                    //                          {"sTitle":"机构","mData":"oid","sClass":null,"sWidth": "20%"},
+	                    //                          {"sTitle":"用户","mData":"owner","sClass":null,"sWidth": "20%"},//
+	                    {
+	                        "sTitle": "设备数量",
+	                        "mData": "deviceCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "机型数量",
+	                        "mData": "modelCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "现场数量",
+	                        "mData": "siteCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "现场模版数量",
+	                        "mData": "siteTplCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "文档数量",
+	                        "mData": "docCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "客户数量",
+	                        "mData": "customerCount",
+	                        "sWidth": "14%"
+	                    }, {
+	                        "sTitle": "Id",
+	                        "mData": "_id",
+	                        "sClass": "_id" + " " + "hide",
+	                    }],
+	                    "bAutoWidth":false,
+	                    "bJQueryUI":false,
+	                    "bPaginate": true,
+	                    "bFilter":false,
+	                    "bInfo": true,
+	                    "bLengthChange":false,
+	                    "iDisplayLength":15,
+	                    /* "fnRowCallback" : function(nRow, aData, iDisplayIndex, iDisplayIndexFull ){
+	                        //console.log(nRow);
+	                        $(nRow).data("data", aData);
+	                        
+	                        if (options.rowCallBack){
+	                            options.rowCallBack(nRow, aData, iDisplayIndex, iDisplayIndexFull);
+	                        }
+	                        
+	                        self.fire("onRowRendered", 
+	                            nRow,
+	                            aData,
+	                            iDisplayIndex,
+	                            iDisplayIndexFull
+	                        );
+	                    }); */
+				});
+			}
+				
+	});
+</script>
+<body>
+	<div id="toolbar1" style="display: block; width : 500"></div>
+	<div id="table-container" style="display: block;"></div>
+	<table id = "test-table" ></table>
+	
+</body>
+</html>

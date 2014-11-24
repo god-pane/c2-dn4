@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<style type="text/css">
+	.dialogborder{
+		border:10px solid red;
+	}
+	</style>
+			<script type="text/javascript" src="/cloud/base/loader.js"></script>
+			<script type="text/javascript">
+				require(["cloud/components/dialog"],function(dialog){
+					dialog.render({
+						lang:10016,
+						buttons:[{lang:"ok",click:function(){alert("ok")}}]
+						});
+					dialog.render({
+						lang:10021,
+						buttons:[{lang:"cancl",click:function(){alert("cancl")}}]
+						});
+				})
+			</script>
+		</head>
+		<body></body>
+	</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="/cloud/base/loader.js"></script>
+</head>
+<style type="text/css">
+.buttonset .cloud-button {
+	margin: 3px;
+}
+</style>
+<script type="text/javascript">
+	require([ "cloud/components/chart","cloud/components/button", "cloud/resources/css/default.css", "cloud/lib/plugin/jquery-ui" ], function(Chart, Button) {
+		var status = true;
+		var button = new Button({
+			title : "render1",
+			text : "render1",
+			events: {
+                click : function(event){
+                	// render data by series id or index
+                	chart.render("test", [{name : "tesxt", y : 100},{name : "15:00", y : 10},{name : "17:00", y : 0}])//
+                	
+                }
+            }
+		});
+		var button2 = new Button({
+            title : "render2",
+            text : "render2",
+            events : {
+                click : function(event){
+                	//render data by not specify a index or id of series, which equals the situation that index = 0
+                	chart.render([129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4]);
+                	var chartObj = chart.getChartObject();
+                	/* chartObj.addSeries({
+                        id : "adfssfdfs",
+                        name : "aaaaaaaaaaa"
+                    });
+                	console.log(chartObj.get("adfssfdfs"), "adfssfdfs") */
+                }
+            }
+        }); 
+		var button3 = new Button({
+		      title : "button2",
+		      text : "s2",
+		      btnBackgroud : false,
+		      events : {
+		          click : function(event){
+		              //render data by not specify a index or id of series, which equals the situation that index = 0
+		              chart.render([129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4]);
+		          }
+		      }
+		});
+		
+		var chart = new Chart({
+            container : "#container",
+            pluginOpts : {//
+            	yAxis: {        
+                    labels: {
+                        format: '{value} km'
+                    }
+                },
+                xAxis: {
+                	/* type有几种类型： "linear", "logarithmic", "datetime" or "category"
+                	   linear 为默认
+                	   datetime 强烈建议在官网上学习相关用法，本系统中与时间相关的图表展示非常多，官方datetime用法足够强大，也易于管理
+                	   category 的本意是分类，使用前提是x轴展示能预先确定，比如从一月到十二月的数据展示，可以指定x轴的categories属性实现
+                	   NOTE ： 当type为 "category"时，若不给定categories属性，则会取第一个series每个数据点的name属性作为categories，这是一种动态改变x轴展示的方式
+                	*/
+                    type: "category" // the point names (see series.data) of the first series are used for categories, if not a categories array is defined
+                    //categories : ["19:00xxxx", "18:00yyyy"]                
+                },
+                series: [{
+                	id : "test",
+                    data: //[29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]        
+                        [{name : "19:00", y : 0},{name : "18:00", y : 10},{name : "10:00", y : 100}]
+                },
+                {
+                    id : "999999999",
+                    name : "666",
+                    data: 
+                    	/*
+                    	* NOTE！：name的本质是以第一个series的name去动态指定xAxis的catigories，这种用法在官网上没有，常规情况下不建议使用，仅在需要“动态改变x轴，而内置的数据类型不能满足，且多个series的x轴参数一定相同”时
+                    	*/
+                        [{name : "10:00", y : 50},{name : "14:00", y : 0},{name : "19:00", y : 100}]
+                }]
+                
+            },
+            overLayerItems:[{
+                element : button,
+                top : "30px",
+                left : "40%"
+            },{
+                element : button2,
+                left : "20%",
+                top : "30px"
+            },{
+            	element : "<button name='aaa'>aaa</button>",
+            	left : 30, //same as "30px"
+                top : 80
+            }]
+        })
+		
+		
+	});
+</script>
+<body>
+	<div id = "container" style = "display: block; width : 500"></div>
+	<div id = "content" style = "display: block; width : 500"></div>
+</body>
+</html>

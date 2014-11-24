@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <link href="../css/default.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../js/base/prototype.lang.js"></script>
+        <script type="text/javascript" src="../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../js/base/jquery.string.js"></script>
+        <script type="text/javascript" src="../js/plugin/openlayers.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.pnotify.js"></script>
+		<script type="text/javascript" src="../js/base/log4javascript.js"></script>
+		<script type="text/javascript" src="../js/base/ih.js"></script>
+		<script type="text/javascript" src="../js/plugin/jquery.data.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.watermark.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+    $(function(){
+        cloud.Ajax.request({
+            url: "api/favorites?verbose=100",
+            type: "POST",
+            data: {
+                id: "50EC66C8421AA97D9000042C",
+				type: 1,
+				name: "硬汉"
+            },
+            success: function(data){
+                log.debug("success");
+                log.debug(data);
+            },
+            
+            error: function(data){
+                log.debug("error");
+                log.debug(data);
+            }
+        });
+        
+		
+    });
+			
+    </script>
+    <body>
+        <input type="text" id="test"/>
+		
+    </body>
+</html>

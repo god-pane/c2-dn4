@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>user</title>
+        <script type="text/javascript" src="http://localhost/cloud/base/loader.js"></script>
+		<script>
+			require(["../applications/system/tag/table"],function(Tag){
+				var tag = new Tag({
+					selector:"#test-tag",
+				})
+				console.log("tag",tag);
+				tag.tableModule.layout.show("east");
+			})
+		</script>
+    </head>
+    <body>
+    	<div id="test-tag" style="width:100%;height:800px;"></div>
+    </body>
+</html>

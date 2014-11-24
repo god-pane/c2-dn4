@@ -1,0 +1,135 @@
+<div id="device-list" class="device-list device-upgrade-column">
+	<!--<div class="device-list-header device-upgrade-header">网关列表</div>-->
+	<div id="device-list-content-upgrade" style="overflow:hidden;width:auto;height:auto;boder:1px solid #000"></div>
+</div>
+<div id="upgrade-info" class="upgrade-info device-upgrade-column">
+	<div class="upgrade-info-header device-upgrade-header" lang="text:upgrade_info">升级信息</div>
+	<form class="upgrade-info-content" id="upgrade-info-content">
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-ip">IP :</label>
+			<input class="upgrade-info-content-text validate[required, custom[ipv4],funcCall[cloudInput]]" type="text" id="upgrade-info-ip"></div>
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-port" lang="text:port+:">端口号 :</label>
+			<input class="upgrade-info-content-text validate[required, custom[integer], min[1],funcCall[cloudInput]]" type="text" id="upgrade-info-port"></div>
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-file" lang="text:import_upgrade_file+:">导入升级文件 :</label>
+			<input class="upgrade-info-content-text"  type="text" id="upgrade-info-name" >
+			<div id="upgrade-info-file"></div>
+		<!--	
+		
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-version">版本 :</label>
+			<input class="upgrade-info-content-text" type="text" id="upgrade-info-version"></div>
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-username">用户名 :</label>
+			<input class="upgrade-info-content-text" type="text" id="upgrade-info-username"></div>
+		<div class="upgrade-info-content-row">
+			<label for="upgrade-info-password">密码 :</label>
+			<input class="upgrade-info-content-text" type="password" id="upgrade-info-password"></div>
+		-->
+		</div>
+		<div class="upgrade-info-content-row upgrade-info-content-buttonset"></div>
+	</form>
+	<div id="write-upgrade-result" style="text-align: center;">
+		  <div style="display:inline-block;text-align: left;">
+			<span>
+			  <span lang="text:upgrade_task_success" ></span><span>&nbsp;</span><span id="write-upgrade-suc">0</span><span lang="text:ge" ></span>
+	          <span lang="text:failed" ></span><span>&nbsp;</span><span id="write-upgrade-fail">0</span><span lang="text:ge"></span>
+			</span>
+		  <br>
+		  <div id="write-upgrade-fail-content">
+		  <span lang="text:upgrade_failed_gateways+:" class="" style=" margin-top: 3px; display: inline-block;">升级任务失败网关：</span>
+		  <br>
+		  <ul id="write-upgrade-fail-list" style=" height: 45px; overflow-y: scroll;border: 1px solid #ddd;">
+		  </ul>
+		  </div>
+		  <span id="write-upgrade-suc-text"  lang="text:taskadded" style=" margin-top: 3px; display: none;">已添加到任务列表，请到任务列表查看</span>
+		  </div>
+		</div>
+</div>
+<style type="text/css">
+	.device-upgrade-layout-resizer{
+		width: 0 !important;
+	}
+
+	.device-upgrade-header{
+		height: 26px;
+		background-color: #e5e6e8;
+		line-height: 26px;
+		color: #595959;
+		padding: 1px 12px;
+		font-size: 13px;
+	}
+
+	.device-upgrade{
+		margin: 0 19px;
+		height: 100%;
+	}
+
+	.device-upgrade-column{
+		border: 1px solid #d8d9db;
+	}
+	#upgrade-info-file{
+		display: inline-block;
+	}
+
+	.upgrade-info{
+	}
+
+	.upgrade-info-content-row{
+		margin: 13px;
+		/*width: 300px;*/
+	}
+
+	.upgrade-info-content-row label{
+		width: 135px;
+		display: inline-block;
+	}
+
+	.upgrade-info-content-text{
+		width: 170px;
+	}
+
+	.upgrade-info-content-select{
+		width: 80px;
+	}
+
+	.upgrade-info-content{
+		margin: 27px 35px;
+	}
+
+	.upgrade-info-content-buttonset{
+		padding-left: 140px;
+		margin-top: 19px;
+	}
+
+	.upgrade-info-content .cloud-button-body-main{
+		margin-right: 24px;
+		padding: 1px 5px;
+		height: 17px;
+	}
+
+	.device-list-content-row{
+		height: 24px;
+		background-color: #f0f1f3;
+	}
+
+	.device-list-content-row {
+		background-color: #f0f1f3;
+	}
+
+	.device-list-content .device-list-content-row:hover{
+		background-color: #56b235;
+	}
+
+	.device-list-content thead{
+		display: none;
+	}
+
+
+
+	.upgrade-info-content .uploadify{
+		display: inline-block;
+		margin-bottom: 0;
+	}
+</style>

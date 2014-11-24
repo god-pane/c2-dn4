@@ -1,0 +1,217 @@
+<div class="info-wrapper"  style="position:relative">
+    <form id="info-form">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-name" style="float:left; " class=" validate[required,custom[giveName],minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+		<span class="site-info-btns "><span class = "info-edit cloud-bubble-hide"></span></span>
+		<span class="info-site-favor"></span>
+	</div>
+	<div class="info-buttonset-site cloud-bubble-hide"></div>
+	<div class="info-tag-panel"></div>
+	<div class="info-form-row" style= "display:none">现场拓扑图 <font color = "red">待定</font></div>
+	<div id="info-site-tuopu" style="width:100%;height=200px;display:none"></div>
+	<div class="info-form">
+		<div class="info-form-row">
+			<label for="info-site-address" class="site-info-form-label" lang="text:address+:"></label>
+			<input type="text" id="info-site-address" value="" class="info-form-text  validate[minSize[0],maxSize[64],funcCall[cloudInput]]"/>
+		</div>
+		<div class="info-form-row info-site-ip-row">
+			<label for="info-model" class="site-info-form-label" lang="text:ip+:">IP地�?�:</label>
+			<label id="info-site-ip" for="info-model" style="width:90px">wait for config</label>
+			<span class="info-site-ip-signal" ></span>
+		</div>
+		<div class="info-form-row info-business-state-row">
+			<label for="info-business-state" class="site-info-form-label" lang="text:business_state+:">业务状�?:</label>
+			<select id="info-business-state" class="validate[required] info-form-select">
+				<option value="0" lang="text:construction">建设</option>
+				<option value="1" lang="text:commissionin">投�?</option>
+				<option value="2" lang="text:fault">故障</option>
+				<option value="3" lang="text:overhaul">检修</option>
+			</select>
+		</div>
+		<div class="info-form-row info-site-customer-row"  style="display:none">
+			<label for="4" class="site-info-form-label" lang="text:customer+:">所属客户:</label>
+			<select id="info-site-customer" class="info-form-select">
+			</select>
+		</div>
+		<div class="info-form-row info-site-contact-row">
+            <label for="info-site-name" class="site-info-form-label" lang="text:contact_info" style="width:100px">�?�系人信�?�</label>
+            <span id="info-site-contact-tips"></span>
+            <span id="info-site-button-content" style="display:none"></span>
+            <br/>
+            <div class="info-form-row info-site-contact-form" id="info-site-contact-form">
+	            <div class="info-form-row info-contact-name-row"  >
+	                <label for="info-site-name" class="site-info-form-label" lang="text:name+:">&nbsp;&nbsp;姓�??:</label>
+	                <input type="text" id="info-device-contact-name" class="info-form-text validate[maxSize[20],funcCall[cloudInput]]"/>
+	            </div>
+	            <div class="info-form-row info-contact-phone-row"  >
+	                <label for="info-site-name" class="site-info-form-label" lang="text:phone+:">&nbsp;&nbsp;电�?:</label>
+	                <input type="text" id="info-device-contact-phone" class="info-form-text validate[custom[phone],maxSize[20],funcCall[cloudInput]]"/>
+	            </div>
+	            <div class="info-form-row info-contact-email-row"  >
+	                <label for="info-site-name" class="site-info-form-label" lang="text:email+:">&nbsp;&nbsp;Email:</label>
+	                <input type="text" id="info-device-contact-email" class="info-form-text validate[custom[email],maxSize[50],funcCall[cloudInput]]"/>
+	            </div>  
+            </div>
+        </div>
+        <div class="info-form-row info-site-automatic-positioning-row">
+        	<span id="info-site-automatic-positioning" class="info-site-automatic-positioning"></span>
+        </div>
+		<div class="info-form-row info-site-event-row" style="display:none">
+			<label for="6" class="site-info-form-label" lang="text:event_or_alarm+:">事件/告警:</label>
+			<label id="info-site-event-alarm" for="7" class="site-info-form-label" style="width:81px;margin:0px 10px;"></label>
+		</div>
+
+	</div>
+	<div class="info-map cloud-bubble-hide" id="info-map"></div>
+	<div class=info-form-row>
+		<div id="info-device-info" class="info-device-info" style="display:none">
+			<div class="info-device-info-title">
+                <span  lang="text:desc+:">说明</span>
+                <span class="info-device-info-close"></span>
+            </div>
+            <div class="info-device-info-content">
+            	<div class="info-device-info-content-row">
+            		<lable for="info-device-info-device-type" class="info-form-lable" lang="text:device_type+:">设备类型</lable>
+            		<span id="info-device-info-device-type"></span>
+            	</div>
+            </div>
+		</div>
+	</div>
+	<div id = "info-devices-table" align = "center" style = "display: inline-block;"></div>	
+    <div class="info-form-row info-site-doc-row"  style="display:none">
+           <label for="4" class="info-doc-label" lang="text:document+:">文档:</label>
+           <select id="info-site-doc" class="info-form-select">
+           </select>
+    </div>
+	<div class="info-form-row info-site-pic-row"  style="display:none">
+	   <!-- <img id ="info-site-pic"> </img> -->
+	</div>
+	<div id="info-site-pic-tips" class = "info-form-row info-site-pic-tips">
+	</div>
+	
+	</form>
+</div>
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+		/*border: 1px solid silver;*/
+	}
+
+	.info-header{
+		margin-top: 10px;
+	}
+
+	.info-header #info-name{
+		margin-left: 30px;
+	}
+
+	.info-form-row .site-info-form-label{
+		text-align:left;
+		display: inline-block;
+		width: 70px;
+	}
+	
+    .info-form-row .info-doc-label{
+        display: inline-block;
+        width: 35px;
+    }
+    
+	.info-form-row{
+		margin: 8px 0;
+	}
+
+	.info-site-ip-row{
+	    height: 18px;
+        line-height: 18px;
+	}
+	
+    .info-site-ip-signal{
+        display:inline-block;
+        margin-bottom : -2px;
+    }
+	
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+
+	.info-buttonset-site{
+	    text-align: left;
+	    margin: 10px 0 0 0;
+	}
+	.info-buttonset-site a{
+		margin: 13px 10px 8px 0;
+	}
+
+	.info-buttonset-site .cloud-button-body-main{
+		margin: 1px 2px;
+		padding: 1px 5px;
+	}
+	
+	.info-site-pic-row {
+	   height: 132px;
+	   border : 1px solid rgb(172,166,168);
+	}
+	
+	.info-site-pic-row a {
+	   margin:3px 0px 0px 0px;
+	   float : right;
+	}
+	#info-site-pic {
+	    float: left;
+	    width: 176px;
+        height: 132px;
+	}
+	#info-devices-table {
+	   border : 1px solid rgb(215,216,218);
+	   /*height:250px;*/
+	   overflow:auto
+	}
+	#site-cus-info-qtip .cloud-bubble-hide {
+	   display : none;
+	}
+	#info-site-contact-form .site-info-form-label {
+		margin-left: 10px;
+	}
+	.site-info-btns{
+		width:22px;
+		height:23px;
+		float:left;
+	}
+	.info-site-favor{
+		float:left;
+	}
+	.info-device-info{
+		border: 1px solid rgb(194, 194, 194);
+	}
+	.info-device-info-title{
+		background-color: rgb(231, 231, 231);
+	   height : 25px;
+	   line-height : 25px;
+	   padding-left: 10px;
+	}
+	.info-device-info-content-row{
+		 margin: 5px 0px 5px 10px;
+	}
+	.info-device-info-content-row span{
+		word-wrap: break-word;
+	  	margin-left : 14px;
+	}
+	.info-device-info-close{
+		float:right
+	}
+	.info-site-automatic-positioning a{
+		margin-left:0px
+	}
+	#info-site-automatic-positioning-site span.cloud-button-text {
+	    width: 150px;
+        height: 40px;
+	}
+	#info-site-automatic-positioning-site span.cloud-button-checkbox-icon {
+        margin-top : -13px;
+    }
+</style>

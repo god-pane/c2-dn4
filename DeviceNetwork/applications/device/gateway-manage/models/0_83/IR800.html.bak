@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height:100%">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+	<script type="text/javascript">
+		/*
+		require(["./config_editor.js"],function(Editor){
+			this.editor = new Editor();
+			updateScheme(default_Scheme);
+		});
+		function savePage(){
+			return this.editor.savePage();
+		}
+		function updateScheme(config){
+			return this.editor.updateScheme(config);
+		}
+		var default_Scheme = {
+			_setup_com_enable: '0',
+			_admin_log_enable: '0',
+			_admin_access_enable: '0'	
+		}*/
+		function savePage(){
+			return document.getElementById("config-text").value;
+		}
+		function updateScheme(config){
+			document.getElementById("config-tesxt").value = config;
+		}
+		var default_Scheme = "";
+		/*var default_Scheme = "#factory config\n"+
+							 "!\n"+
+							 "interface vlan 1\n"+
+							 "ip address 192.168.2.1 255.255.255.0\n"+
+							 "ip dhcp-server range 192.168.2.2 192.168.2.100\n"+
+							 "ip dhcp-server enable\n"+
+							 "ip nat inside\n"+
+							 "!\n"+
+							 "#dot11 SSID config\n"+
+							 "dot11 ssid InPortal800\n"+
+							 "authentication open\n"+
+							 "!\n"+
+							 "#dot11 dot11radio config\n"+
+							 "interface dot11radio 1\n"+
+							 "channel 4\n"+
+							 "radio-type dot11gn\n"+
+							 "ssid InPortal800\n"+
+							 "ip address 192.168.3.1 255.255.255.0\n"+
+							 "ip dhcp-server range 192.168.3.2 192.168.3.100\n"+
+							 "ip dhcp-server enable\n"+
+							 "ip nat inside\n"+
+							 "!\n"+
+							 "#nginx web server config\n"+
+							 "nginx enable\n"+
+							 "!\n"+
+							 "#portal config\n"+
+							 "portal interface dot11radio 1\n"+
+							 "portal homepage http://192.168.3.1\n"+
+							 "portal splash-form splash-noclick.html\n"+
+							 "portal enable\n"+
+						 	 "!\n"+
+							 "interface cellular 1\n"+
+							 "ppp ipcp dns request\n"+
+							 "ip nat outside\n"+
+							 "!\n"+
+							 "#static route config\n"+
+							 "ip route 0.0.0.0 0.0.0.0 cellular 1\n"+
+							 "!\n"+
+							 "#firewall config\n"+
+							 "ip snat inside list 100 interface cellular 1\n"+
+							 "access-list 100 permit ip any any\n"+
+							 "#tcp mss config\n"+
+							 "ip tcp adjust-mss 1360\n"+
+							 "#end of configuration\n";*/
+
+
+	</script>
+</head>
+<body style="height: 100%;margin:0;" onload="updateScheme(default_Scheme)">
+<div id="config-editor" style="height: 100%;">
+	<textarea id="config-text" style="width: 99%; height: 98%;resize: none;"  ></textarea>
+</div>
+</body>
+</html>

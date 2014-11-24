@@ -1,0 +1,217 @@
+<style type="text/css">
+	.info-wrapper{
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	.info-header{
+		margin-top: 10px;
+		/* display: inline-block; */
+	}
+
+	.info-header #info-name{
+		margin: 0px 5px;
+		float: left;
+		width: 110px;
+		/* margin-bottom: 10px; */
+	}
+
+	.info-header .info-favor{
+		margin-left: 9px;
+		float:left;
+		margin-bottom:10px;
+	}
+
+    .info-form-row{
+        margin: 8px 0;
+    }
+	
+	#info-model-form .info-form-label{
+		margin-right: 5px;
+		display: inline-block;
+		width: 73px;/* dec 2px to fit plc_type_id*/
+	}
+	
+	.info-form-input{
+		float:left;
+		width:110px;
+		height:20px;
+	}
+
+	.update-button{
+		float:left;
+		width:50px;
+		height:10px;
+	}
+	
+	.info-form-vars-table{
+		display: inline-block;
+		margin-top:5px;
+		/* width:190px; */
+		height:auto;
+	}
+	
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+
+	.info-buttonset {
+		margin: 10px 0 0px 10px;
+		display: inline-block;
+	}
+	
+	.info-form-document{
+		float:left;
+		margin-right:10px;
+		width:120px;
+	}
+	
+	.info-button{
+		float:left;
+	}
+	
+	.info-form-pic{
+		width:190px;
+		height:70px;
+		border:1px solid #ccc;
+	}
+	.info-model-var-info-title {
+	   background-color: rgb(231, 231, 231);
+	   height : 25px;
+	   line-height : 25px;
+	}
+	.info-model-var-info {
+	   border: 1px solid rgb(194, 194, 194);
+	}
+	.info-model-var-info-content-row {
+	   margin: 5px 0px 5px 10px;
+	}
+	.info-model-var-info-title {
+	   padding-left: 10px;
+	}
+	#info-model-vars-table {
+	   max-height : 300px;
+	   overflow-y: auto;
+	}
+	.info-model-var-info-close{
+	    float: right;
+        margin-top: -2px;
+	}
+	.info-model-var-info-content-row span {
+	   word-wrap: break-word;
+	   margin-left : 14px;
+	}
+	
+</style>
+<div class="info-wrapper">
+	<form id="info-model-form">
+	<div class="info-header">
+		<div class="info-online-status"></div>
+		<input type="text" id="info-name" value="" class="info-form-text validate[required,custom[giveName],minSize[0],maxSize[30],funcCall[cloudInput]]">
+	</div>
+	   <div class="info-buttonset"></div>
+	<div class="info-form">
+		<div class="info-form-ul">
+		
+		<div  class="info-form-row" style="clear:both">
+            <label for="info-device-sensorType" class="info-form-label"  lang="text:model_protocol+:">机型协议:</label>
+            <select id="info-device-sensorType" class="validate[required] info-form-select">
+                            <!-- <option selected="selected" value="">- 请选择 -</option>
+                            <option value="0">- InRouter -</option> -->
+            </select>
+        </div>
+		<!--<div class="info-device-model-user info-form-row" style= "display:none">
+		      <label for="info-serial-number" class="info-form-label" lang="text:model2+:">型号:</label>
+            <input type="text" id="info-device-model" class="info-form-text validate[required,minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+		</div>
+		 		<div class="info-device-model-gateway info-form-row" style="">
+			<label for="info-device-model" class="info-form-label" lang="text:model2+:">型号:</label>
+			<select id="info-device-model-gateway" class="info-form-select">
+	        				<option selected="selected" value="">- 请选择 -</option>				
+							 <option value="1">InDTU</option>
+							<option value="31">IR300</option>
+							<option value="36">IR320</option>
+							<option value="44">IR6XX_EVDO</option>
+							<option value="45">IR6XX_TD</option>
+							<option value="46">IR6XX_WCDMA</option>
+							<option value="63">IR7XX_EVDO/CDMA</option>
+							<option value="51">IR7XX_GPRS/EDGE</option>
+							<option value="60">IR7XX_TD</option>
+							<option value="54">IR7XX_WCDMA</option> 
+			</select>
+		</div> 
+
+		
+		<div class=" info-form-row" style= "">
+            <label for="info-device-plctypeid" class="info-form-label" lang="text:plc_type_id+:">机型ID:</label>
+            <input type="text" id="info-device-plctypeid" class="info-form-text validate[required,custom[integer],minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+        </div>-->
+        <div class="info-form-row" style="">
+            <label for="info-device-iotype" class="info-form-label" lang="text:io_type+:">接口类型:</label>
+            <select id="info-device-iotype" class="validate[required] info-form-select">
+                            <option value="0">GIO</option>
+                            <option value="1" lang="text:serial_port_485">串口(RS485)</option>
+                            <option value="2" lang="text:ethernet_port">网口</option>
+                            <option value="3" lang="text:serial_port_232">串口(RS232)</option>
+            </select>
+        </div>
+		
+		<div class="info-form-row">
+			<span id="info-model-vars-count">共有*个变量:</span>
+			<span class="info-model-edit-var"></span>
+		</div>
+		<div class="info-form-row">
+		  <div id="info-model-vars-table" class="info-form-vars-table"></div>
+		</div>
+		<div class="info-form-row">
+          <div id="info-model-var-info" class="info-model-var-info" style="display:none">
+            <div class="info-model-var-info-title">
+                <span  lang="text:desc+:">说明</span>
+                <span class="info-model-var-info-close"></span>
+            </div>
+            <div class="info-model-var-info-content">
+                <div class="info-model-var-info-content-row">
+                <label for="info-model-var-info-name" class="info-form-label" lang="text:var_name+:">变量名称:</label>
+                <br>
+                <span id="info-model-var-info-name"></span>
+                </div>
+                <div class="info-model-var-info-content-row" style="display:none">
+                <label for="info-model-var-info-unit" class="info-form-label" lang="text:unit+:">单位:</label>
+                <br>
+                <span id="info-model-var-info-unit"></span>
+                </div>
+                <div class="info-model-var-info-content-row" style="">
+                <label for="info-model-var-info-vtype" class="info-form-label" lang="text:type+:">类型:</label>
+                <br>
+                <span id="info-model-var-info-vtype"></span>
+                </div>
+                <div class="info-model-var-info-content-row">
+                <label for="info-model-var-info-desc" class="info-form-label" lang="text:var_desc+:">变量描述:</label>
+                <br>
+                <span id="info-model-var-info-desc"></span>
+                </div>
+            </div>
+          </div>
+        </div>
+		<div class="info-form-row" style= "display:none">
+			<select id="info-document" class="info-form-input" style="width:120px;margin-right:10px">
+			</select>
+			<div id="info-button" class="info-button"></div>
+		</div>
+		<div class="info-form-row" style= "display:none">
+			<p class="info-form-pic"></p>
+		</div>
+		</div>
+		<div id="info-buttonset-2" class="info-buttonset"></div>
+		<div class="download"></div>
+		
+	</div>
+	</form>	
+    <form id="clone-model-form">
+        <label for="clone-model-name" class="info-form-label" lang="text:model_name+:">机型名称:</label>
+        <input type="text" id="clone-model-name" class="info-form-text validate[required,minSize[0],maxSize[30],funcCall[cloudInput]]"/>
+    </form>
+</div>

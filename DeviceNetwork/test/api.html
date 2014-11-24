@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        <script type="text/javascript" src="../js/base/jquery.js"></script>
+        <script type="text/javascript" src="../js/base/prototype.lang.js"></script>
+        <script type="text/javascript" src="../js/base/jquery.string.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.pnotify.js"></script>
+        <script type="text/javascript" src="../js/base/log4javascript.js"></script>
+        <script type="text/javascript" src="../js/base/ih.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.data.js"></script>
+        <script type="text/javascript" src="../js/plugin/jquery.watermark.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+			
+			.content input{
+				width: 300px;
+			}
+			
+			#result{
+				width: 960px;
+				margin: 10px auto;
+			}
+			
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+        $(function(){
+            $("#url").watermark("URL");
+            $("#method").watermark("Method");
+            $("#data").watermark("Data");
+            $("#submit").click(function(){
+                var url = $("#url").val();
+                var method = $("#method").val();
+                var data = $("#data").val();
+				if(url.empty() || method.empty()){
+					log.debug("url or method null");
+					return;
+				}
+				
+                cloud.Ajax.request({
+                    url: url,
+                    type: method,
+                    data: data.empty() ? null: data.evalJSON(),
+                    success: function(data){
+                        log.debug("success");
+                        $("#result").text(Object.toJSON(data));
+						log.debug(data);
+                    },
+                    
+                    error: function(data){
+                        log.debug("error");
+                        log.debug(data);
+                    }
+                });
+            });
+            
+            
+            
+            
+        });
+    </script>
+    <body>
+        <div class="content" style="margin: 20px auto; width: 300px;">
+            <input type="text" id="url"/>
+            <br/>
+            <input type="text" id="method"/>
+            <br/>
+            <input type="text" id="data"/>
+            <br/>
+            <button id="submit">Go</button>
+            <br/>
+           
+        </div>
+		 <div id="result">
+            </div>
+    </body>
+</html>

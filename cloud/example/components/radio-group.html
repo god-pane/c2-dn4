@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>item.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../base/loader.js"></script>
+    <style>
+            html, body {
+                width: 100%;
+                height: 100% !important;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    <script type="text/javascript">
+            
+            require(["../../components/radio-group", "../../components/button"], function(RadioGroup, Button) {
+                $(function() {
+
+                    new Button({
+                        container: ".buttonset",
+                        text: "Disable",
+                        events: {
+                            click: function() {
+                                radioGroup.disable();
+                            }
+                        }
+                    });
+
+                    new Button({
+                        container: ".buttonset",
+                        text: "Enable",
+                        events: {
+                            click: function() {
+                                radioGroup.enable();
+                            }
+                        }
+                    });
+                    var radioGroup = new RadioGroup({
+                        container: "#container",
+                        vertical: true,
+                        items: [{
+                            text: "label1",
+                            value: 1,
+                            // select: true
+                        }, {
+                            text: "label2",
+                            value: 2,
+                            select: true
+                        }, {
+                            text: "label3",
+                            value: 3
+                        }],
+                        events: {
+                            select: function(value){
+                                alert(value + " selected");
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+</head>
+<body>
+    <div class="buttonset"></div>
+    <div id="container" style="width:100%; height: 100%;"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<description version="1.0" type="300"  >
+<group id = "_setup_system_enable">
+	
+</group>
+<group id = "_fw_acl_enable">
+	
+</group>
+<group id = "_admin_log_enable">
+	
+</group>
+<group id = "_setup_lan0_enable">
+	
+</group>
+<group id = "_setup_dns_enable">
+	
+</group>
+<group id = "_setup_wan1_enable">
+	
+</group>
+<group id = "_fw_dmz_enable">
+	
+</group>
+<group id = "_service_ovdp_enable">
+	
+</group>
+</description>

@@ -1,0 +1,59 @@
+
+<div id="user-panel">
+	<div id="user-panel-box" class="user-panel-box c333" style="">
+	    <form id="user-panel-form">
+	        <ul id="user-panel-title" class="user-panel-ul">
+	            <li class="user-panel-title f16 bold"><p id="user-panel-title-userhead" class="user-panel-title-userhead"><img  ></p><p class="user-panel-title-text" lang="text:my_account"></p></li>
+	            <li class="user-panel-handle" style="margin:5px 0; text-align: center;">
+                <ul class="user-panel-handle-ul">
+                </ul>
+	            </li>
+	        </ul>
+	        <ul id="user-panel-info" class="user-panel-ul" style="margin-top: 10px;">
+	            <li class="user-panel-info">
+	                <ul class="user-panel-info-ul">
+	                    <li><p class="user-panel-info-ul-p1"><span lang="text:email"></span>：</p><p id="user-panel-username" class="user-panel-info-ul-p2"></p><span id="nav-main-right-account-emailStr" style="display:none"></span></li>
+	                    <li><p class="user-panel-info-ul-p1"><span lang="text:user_name"></span>：</p><p class="user-panel-info-ul-p2"><input id="user-panel-name" type="text" class="validate[required,custom[giveName],maxSize[30],funcCall[cloudInput]] user-panel-input" disabled="disabled"></p></li>
+						<li><p class="user-panel-info-ul-p1"><span lang="text:telephone"></span>：</p><p class="user-panel-info-ul-p2"><input type="text" id="user-panel-phone" class="validate[maxSize[20],custom[phone1],funcCall[cloudInput]] user-panel-input" disabled="disabled"></p></li>
+						<li><p class="user-panel-info-ul-p1"><span lang="text:role"></span>：</p><p id="user-panel-role" class="user-panel-info-ul-p2"></p></li>
+	                    <li><p class="user-panel-info-ul-p1"><span lang="text:last_login"></span>：</p><p id="user-panel-last-login" class="user-panel-info-ul-p2"></p></li>
+	                    <li><p class="user-panel-info-ul-p1"><span lang="text:last_logout"></span>：</p><p id="user-panel-last-logout" class="user-panel-info-ul-p2"></p></li>
+	                    <li><p class="user-panel-info-ul-p1"><span lang="text:last_login_ip"></span>：</p><p id="user-panel-last-ip" class="user-panel-info-ul-p2"></p></li>
+	                    <li class="user-panel-info-ul-img" id="user-panel-info-ul-img" style="overflow:hidden;float:left;width:100%;"><p></p></li>
+	                    <li style="margin:5px 0;width: 260px;position: relative;top: 9px;"><p class="user-panel-info-ul-p1" id="user-panel-myimage" style="display:none"><span lang="text:my_photo"></span>：</p><p class="user-panel-info-ul-p2" style="width:140px"><input id="user-panel-input-photo" style="display:none;float:left;font-size:12px"  type="text" class="user-panel-input"  disabled="disabled" ></p><a lang="title:only_support_img_format" id="user-panel-upload" class="user-panel-info-ul-p3" style="display: none;float:left"></a></li>
+						<li style="margin-left:35px;margin-top: 9px;display: inline-block;width:220px">
+                        <a id="user-panel-save" class="user-panel-info-ul-p3" style="margin-right: 5px; display: none;">
+                        </a>
+                        <a id="user-panel-cancl" class="user-panel-info-ul-p3" style="display: none;">
+                        </a>
+                        </li>
+                    </ul>
+	            </li>
+	        </ul>
+	        <ul id="user-panel-password" class="user-panel-info-ul-pass" style="display: none; margin-top: 17px;">
+	            <li style="margin-top:5px;">
+	            	<div class="user-panel-password-ul-li-div">
+	            		<p class="user-panel-repassword-title" lang="text:old_pwd+:"></p>
+	            		<input id="user-panel-input-old-password" type="password" class="validate[required,maxSize[16],funcCall[cloudInput]] user-panel-input">
+	            	</div>
+	            </li>
+	            <li style="margin-top:5px;">
+	            	<div class="user-panel-password-ul-li-div">
+	            		<p class="user-panel-repassword-title" lang="text:new_pwd+:"></p>
+	            		<input id="user-panel-input-new-password" type="password" class="validate[required,custom[password],minSize[6],maxSize[16],funcCall[cloudInput]] user-panel-input">
+	            	</div>
+	            </li>
+				<li style="margin-top:5px;">
+					<div class="user-panel-password-ul-li-div">
+						<p class="user-panel-repassword-title" lang="text:repeat_pwd+:"></p>
+						<input id="user-panel-input-new-repassword" type="password" class="validate[required,custom[password],minSize[6],maxSize[16],equals[user-panel-input-new-password],funcCall[cloudInput]] user-panel-input">
+					</div>
+				</li>
+				<li style="position: relative;left: 91px;top: 15px;height: 0px;width: 60%">
+					<a class="user-panel-info-ul-p3" style="margin-right:5px;" id="user-panel-pass-save"></a>
+					<a class="user-panel-info-ul-p3" id="user-panel-pass-cancl"></a>
+				</li>
+	        </ul>
+	    </form>
+	</div>
+</div>

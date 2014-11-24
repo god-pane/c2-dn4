@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>index</title>
+        
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <script type="text/javascript">
+        
+    $(function(){
+		 console.log($.string("123"));
+		 
+		 function search(){
+			 console.log($.string("123"));
+		 	
+		 };
+		 
+		 $("#button").click(search);
+    });
+			
+    </script>
+    <body>
+			This is header.	
+			<button id="button">Hello</button>
+    </body>
+</html>

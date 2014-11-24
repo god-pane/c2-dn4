@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script type="text/javascript" src="/cloud/base/loader.js"></script>
+<script type="text/javascript">
+	require(["/cloud/base/cloud.js"], function(){
+		$(function(){
+			for(var num = 0 ; num < 2000 ; num++){
+				var $tr = $("<tr></tr>");
+				$tr.append($("<td></td>").text("ab" + (1100000000000 + num)));
+				$tr.append($("<td></td>").text("18628210222"));
+				$tr.append($("<td></td>").text("ab" + (1100001 + num)));
+				$tr.append($("<td></td>").text("ab" + (1100001 + num)));
+				$tr.appendTo("#table");
+			}
+		})
+	});
+</script>
+<style type="text/css">
+	.table-box{
+		width:800px;
+		height:100%;
+		margin: 0 auto;
+	}
+	.table{
+		
+	}
+	
+	.table tr td{
+		padding:2px 5px;
+	}
+</style>
+</head>
+<body>
+<div id="table-box" class="table-box">
+	<table id="table" class="table">
+		
+	</table>
+</div>
+</body>
+</html>

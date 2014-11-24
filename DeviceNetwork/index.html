@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta property="qc:admins" content="1375771477160164654772336375" />
+<meta property="wb:webmaster" content="53c71605222fd730" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="/favicon.ico" >
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+			if (!window.console) (function() {
+
+	    var __console, Console;
+
+	    Console = function() {
+	        var check = setInterval(function() {
+	            var f;
+	            if (window.console && console.log && !console.__buffer) {
+	                clearInterval(check);
+	                f = (Function.prototype.bind) ? Function.prototype.bind.call(console.log, console) : console.log;
+	                for (var i = 0; i < __console.__buffer.length; i++) f.apply(console, __console.__buffer[i]);
+	            }
+	        }, 1000); 
+
+	        function log() {
+	            this.__buffer.push(arguments);
+	        }
+
+	        this.log = log;
+	        this.error = log;
+	        this.warn = log;
+	        this.info = log;
+	        this.__buffer = [];
+	    };
+
+	    __console = window.console = new Console();
+	})();
+</script>
+	<script type='text/javascript'>
+	var url={
+		"default":"www/",
+		//"localhost":"www/",
+		"www.itkdn.com":"index/itkdn/",
+		"www.dahongyuan.com":"index/dahongyuan/",
+		"jsjinxin.f3322.org":"index/jsjinxin",
+            "210.51.180.210":"index/whiteboard/"	
+		};
+		document.body.onload=function(){
+			var currentHost=window.location.hostname;	
+						
+			if(url[currentHost]){
+				window.localStorage.setItem("indexURL",url[currentHost]);
+				window.location.href=url[currentHost];								
+			}
+			else{
+				window.localStorage.setItem("indexURL","default");
+				window.location.href=url["default"];
+			}
+		};
+	</script>
+</body>
+</html>

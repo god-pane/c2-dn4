@@ -1,0 +1,138 @@
+<!-- <style>
+	.alarm-info-header i{
+		float:left;
+		margin:auto 15px auto 85px;
+	}
+	.alarm-info-header1{
+		margin-top:15px;
+	}
+ 	#alarm-info-header-Btn{
+		margin-left:15px;
+	} 
+	#alarm-info-header-Btn a+a{
+		margin-left:10px;
+	}
+	#alarm-info-form{
+		margin:auto 10px;
+	}
+	.info-form-row{
+        margin: 8px 0;
+    }
+    
+    #alarm-info-form .info-form-label{
+        margin-right: 5px;
+        display: inline-block;
+        width: 68px;/* dec 2px to fit plc_type_id*/
+    }
+    #alarm-info-form .alarm-info-level{
+    	width:100px;
+    	margin-left:20px
+    }
+    input#alarm-info-site,#alarm-info-confirmuser,#alarm-info-clearuser{
+        width: 92px;
+    } 
+    .alarm-site-info-qtip{
+        height: 350px;
+        width: 210px;
+        overflow: auto;
+    }
+    .alarm-site-info-qtip span.site-info-btns .info-edit {
+        display : none !important; 
+    }
+    .alarm-site-info-qtip .info-map {
+        display : none !important; 
+    }
+	.alarm-user-info-qtip .user-info-title-button{
+	   display : none !important;
+	}
+	.alarm-info-notice{
+		float: left!important;
+		margin-left: 20px!important;
+	}
+</style> -->
+<div id="alarm-info-all">
+	<div id="alarm-info-header" class="alarm-info-header">
+		<div class="alarm-info-header1">
+			<i class="cloud-icon-default cloud-icon-notice alarm-info-notice"></i><label lang="text:alarm_detail">鍛婅璇︽儏</label>
+		</div>
+		</div>
+		<div id="alarm-info-header-Btn" class="alarm-info-header1">
+	</div>
+	<div id="alarm-info-form">
+        <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:alarm_time+:">鍛婅鏃堕棿:</label>
+            <input type="text" id="alarm-info-time" class="info-form-text" disabled="disabled"></input>
+        </div>
+        <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:site_name+:">鐜板満:</label>
+            <input type="text" id="alarm-info-site" class="info-form-text" disabled="disabled"></input>
+            <span id= "site-info-btn"></span>
+        </div>
+        <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:alarm_origin+:">鏉ユ簮:</label>
+            <input type="text" id="alarm-info-sourcename" class="info-form-text" disabled="disabled"></input>
+        </div>
+        <!-- <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:plc_type_id+:">鍦板潃:</label>
+            <span id="alarm-info-address" class="info-form-text"></span>
+        </div> -->
+        <div class=" info-form-row" style= "">        
+            <label for="" id="info-form-label" class="info-form-label" lang="text:alarm_level+:">绾у埆:</label> 
+            <img id="loudspeaker" src="" style="position:absolute;margin-top:5px"/>
+            <input type="text" id="alarm-info-level" lang="" value="" class="alarm-info-level" disabled="disabled"/>
+            <!--                  
+            <select id="alarm-info-level" class="info-form-select" disabled="disabled">
+<<<<<<< .mine
+                <option  value="1" lang="remind">提醒</option>
+                <option  value="2" lang="warn">警告</option>
+                <option  value="3" lang="minor_alarm">次要警告</option>
+                <option  value="4" lang="important_alarm">重要警告</option>
+                <option  value="5" lang="severe_alarm">严重警告</option>
+=======
+                <option value="1" lang="text:remind">提醒</option>
+                <option value="2" lang="text:warn">警告</option>
+                <option value="3" lang="text:minor_alarm">次要告警</option>
+                <option value="4" lang="text:important_alarm">重要告警</option>
+                <option value="5" lang="text:severe_alarm">严重告警</option>
+>>>>>>> .r13669
+            </select>
+			-->
+        </div>
+        <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:state+:">鐘舵�:</label>
+            <input type="text" id="alarm-info-state" class="info-form-text" disabled="disabled"></input>
+        </div>
+        <!-- <div class=" info-form-row" style= "">
+            <label for="" class="info-form-label" lang="text:plc_type_id+:">鍚嶇О:</label>
+            <span id="alarm-info-name" class="info-form-text"></span>
+        </div> -->
+        
+        <div class=" info-form-row alarm-confirminfo-row" >
+            <label for="" class="info-form-label" lang="text:affirm_operator+:">纭浜�</label>
+            <input type="text" id="alarm-info-confirmuser" class="info-form-text" disabled="disabled"></input>
+            <span id= "confirm-user-btn"></span>
+        </div>
+        
+        <div class=" info-form-row alarm-confirminfo-row" >
+            <label for="" class="info-form-label" lang="text:affirm_time+:">纭鏃堕棿:</label>
+            <input type="text" id="alarm-info-confirmtime" class="info-form-text" disabled="disabled"></input>
+        </div>
+        
+        <div class=" info-form-row alarm-clearinfo-row" >
+            <label for="" class="info-form-label" lang="text:clear_operator+:">娓呴櫎浜�</label>
+            <input type="text" id="alarm-info-clearuser" class="info-form-text" disabled="disabled"></input>
+            <span id= "clear-user-btn"></span>
+        </div>
+        
+        <div class=" info-form-row alarm-clearinfo-row" >
+            <label for="" class="info-form-label" lang="text:clear_time+:">娓呴櫎鏃堕棿:</label>
+            <input type="text" id="alarm-info-cleartime" class="info-form-text" disabled="disabled"></input>
+        </div>
+        
+        <div class=" info-form-row" style= "position:absolute">
+            <label for="" class="info-form-label" lang="text:description+:" style="width:46px;position:absolute;left:0px;top:0px">鎻忚堪:</label>
+            <!-- <input type="text" id="alarm-info-desc" class="info-form-text" disabled="disabled"></input> -->
+            <textarea id="alarm-info-desc" class="info-form-text" disabled="disabled" style="height:100px;width:140px;resize:none;position:absolute;left:66px;top:0px"></textarea>
+        </div>
+	</div>
+</div>

@@ -1,0 +1,149 @@
+.user-panel-box{
+	height:520px;
+}
+
+.user-panel-box a{
+	color:#333;
+}
+
+.user-panel-box a:hover{
+	color:#f00;
+}
+
+.user-panel-box ul{
+}
+
+ul.user-panel-ul{
+	margin-top: 8px;
+}
+
+ul.user-panel-ul li{
+	width:100%;
+}
+
+ul.user-panel-handle-ul{
+	display: inline-block;	
+	
+}
+
+ul.user-panel-handle-ul li{
+	float:left;
+	margin-right:2px;
+	width:auto;
+}
+
+.user-panel-title{
+	margin-bottom:10px;
+	width:100%;
+	height:50px;
+}
+
+.user-panel-title p{
+	display:inline;
+	float:left;
+}
+
+.user-panel-title p.user-panel-title-userhead{
+	margin-left:60px;
+	width:50px;
+	height:100%;
+	border:1px solid #ccc;
+}
+#user-panel-title-userhead img{
+	width:50px;
+	height:50px;
+}
+
+.user-panel-title p.user-panel-title-text{
+	width:130px;
+	height:100%;
+	line-height:50px;
+	text-align:left;
+	margin-left: 10px;
+}
+
+.user-panel-buttom{
+	width:60px;
+	height:26px;
+}
+
+.user-panel-input-aa{
+	width:130px;
+	height:20px;
+	border:1px solid red;
+}
+
+ul.user-panel-info-ul{
+	margin-left: 20px;
+	height: 225px;
+}
+
+ul.user-panel-info-ul li{
+	margin-bottom:5px;
+	width:96%;
+}
+
+ul.user-panel-info-ul li p{
+	float:left;
+	height:25px;
+	line-height:25px;
+}
+ul.user-panel-info-ul-pass li p{
+	float:left;
+	height:33px;
+	line-height:25px;
+}
+
+.user-panel-password-ul-li-div{
+	width: 85%;
+	height: 35px;
+	margin: 0 auto;
+}
+
+#user-panel-input-old-password,#user-panel-input-new-password,#user-panel-input-new-repassword{
+	float: left;
+}
+
+.user-panel-info-ul-p1{
+	width:94px;	
+}
+
+.user-panel-info-ul-p2{
+	width:160px;
+}
+
+.user-panel-info-ul-p3{
+	width:auto;
+}
+#user-panel-input-photo{
+	width: 88%
+}
+#user-panel-info-ul-img{
+	margin-left: -10px;
+	margin-bottom:10px;
+	height: 75%;
+	border:1px solid #ccc;
+	position: relative;
+	top: 8px;
+}
+
+.hidden{
+	display:none;
+}
+div.formError div.formErrorContent{
+	width:87%;
+}
+.bgccc{
+	background:#eee;
+}
+#SWFUpload_0{
+	top: 5px;
+	background-position:0 -949px; width: 14px; height: 14px;
+	background-image: url(../images/cloud-icons-default.png);
+}
+.uploadify-button{
+	display:none;
+}
+.user-panel-repassword-title{
+	width:100px;
+}

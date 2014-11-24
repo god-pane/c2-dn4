@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>item.html</title>
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        <meta http-equiv="description" content="this is my page">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../../../base/loader.js"></script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100% !important;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script type="text/javascript">
+            
+            require(["../../../components/itembox"], function(ItemBox){
+                $(function(){
+                    var itembox = new ItemBox({
+                        selector: "#container"
+                    });
+                    
+                    itembox.appendItems({
+                        icon: null,
+                        name: "All",
+                        description: "show all widgets",
+                        status: null,
+                        notifications: 10,
+                        shared: true,
+                        favor: true,
+                        selected: true,
+                        selectable: true,
+                        signal: null,
+                        width: 170,
+                        height: 60,
+                        role: null,
+                        events: {}
+                    });
+                    
+                    itembox.appendItems([{
+						id: "123",
+                        name: "Select",
+                        description: "selectable and unselect default",
+                        selected: false,
+                        selectable: true
+                    }, {
+                        name: "Select",
+                        description: "selectable and default select",
+                        selected: true,
+                        selectable: true
+                    }, {
+                        name: "event",
+                        description: "select me or click me",
+                        events: {
+                            click: function(data){
+                                alert("you click me");
+                            },
+                            select: function(data){
+                                alert("you select me");
+                            }
+                        }
+                    }]);
+					
+					$("<button>").text("append item").button().click(function(){
+						var id = cloud.util.random(1, 100);
+                        itembox.appendItems({
+                            id: id,
+                            name: "new item " + id,
+                            description: "this item is new added",
+                            selected: false,
+                            selectable: true
+                        });
+					}).appendTo("#buttonset");
+					
+					$("<button>").text("select all items").button().click(function(){
+                        itembox.selectAllItems();
+					}).appendTo("#buttonset");
+					
+					$("<button>").text("unselect all items").button().click(function(){
+                        itembox.unselectAllItems();
+					}).appendTo("#buttonset");
+					
+					$("<button>").text("clear").button().click(function(){
+                        itembox.clear();
+					}).appendTo("#buttonset");
+					
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container" style="width:100%; height: 100%;"></div>
+		<div id="buttonset" style="position: fixed; top: 0px; left: 400px;"></div>
+    </body>
+</html>

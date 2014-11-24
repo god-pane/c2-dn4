@@ -1,0 +1,157 @@
+<!-- 
+<style type="text/css">
+	.info-wrapper{
+		/* width: 200px; */
+		margin: 0 auto;
+		/*border: 1px solid silver;*/
+	}
+	textarea{
+		margin-top: 9px;
+		height: 74px;
+		width: 197px;
+		resize: none;
+	}
+
+	.info-header{
+		margin-top: 10px;
+	}
+
+	.info-header #info-name{
+		margin-left: 30px;
+	}
+
+	.info-header .info-favor{
+		margin-left: 9px;
+	}
+
+	.info-form-row .info-form-label{
+		display: inline-block;
+		width: 90px;
+	}
+
+	.info-form .info-form-text{
+		width: 96px;
+	}
+
+	.info-form .info-form-select{
+		width: 100px;
+	}
+	
+	.info-form{
+		margin-left: 15px;
+	}
+	
+	.info-form-row{
+		margin: 8px auto;
+	}
+
+	.info-form-row #info-serial-number{
+		width: 130px;
+	}
+
+	.info-map{
+		width: 100%;
+		height: 120px;
+		margin: 10px 0;
+		border: 1px solid silver;
+	}
+
+	.info-buttonset{
+		overflow:hidden;
+		height:25px;
+		margin: 5px 0 5px 15px;
+	}
+	
+	.info-buttonset a{
+		float:left;
+		margin:0 10px 5px 0;
+	}
+	
+	.info-buttonset .cloud-button-body-main{
+		margin: 1px 2px;
+		padding: 1px 5px;
+	}
+</style> -->
+<div class="info-wrapper">
+	<form id="tasks-info-form">
+		<div class="info-header">
+			<div class="info-online-status"></div>
+				<input type="text" style="font-weight: bold;" id="info-name" class="validate[required,funcCall[cloudInput]]  info-form-text" size="25" />
+			<div class="info-favor"></div>
+		</div>
+		<div class="info-buttonset"></div>
+		<div class="info-tag-panel"></div>
+		
+		<div class="info-form">
+			<div class="info-form-row" style="display: none;">
+				<label for="info-task-name" class="info-form-label" lang="text:task+:">任务:</label>
+				<input type="text" id="info-task-name" class="validate[required,funcCall[cloudInput]] info-form-text" value=""/>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-type" class="info-form-label" lang="text:task_type+:">任务类型:</label>
+				<input type="text" id="info-task-type" class="info-form-text" value=""/>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-status" class="info-form-label" lang="text:task_state+:"></label>
+				<input type="text" id="info-task-status" class="info-form-text" value=""/>
+				<!-- <select id="info-task-status" class="info-form-select">
+					<option value="-1">执行失败</option>
+					<option value="0">等待执行</option>
+					<option value="1">正在执行</option>
+					<option value="2">已�?�消</option>
+					<option value="3">已完�?</option>
+					<option value="4">暂�?�</option>
+					<option value="5">等待�?�布</option>
+				</select>
+				 -->
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-priority" class="info-form-label" lang="text:task_level+:">任务级别:</label>
+				<input type="text" id="info-task-priority" class="info-form-text" value=""/>
+				<!-- <select id="info-task-priority" class="info-form-select">
+					<option value="10">定时任务</option>
+					<option value="20">低级</option>
+					<option value="30">普通</option>
+					<option value="40">高级</option>
+				</select>
+				 -->
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-progress" class="info-form-label" lang="text:complete+:"></label>
+				<input type="text" id="info-task-progress" class="info-form-text" value=""/>
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-sitename" class="info-form-label" lang="text:device_name1+:"></label>
+				<input type="text" id="info-task-sitename" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-username" class="info-form-label" lang="text:creator+:">添加人:</label>
+				<input type="text" id="info-task-username" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row" style="display:none">
+				<label for="info-task-address" class="info-form-label" lang="text:address+:"></label>
+				<input type="text" id="info-task-address" class="info-form-text" value="">
+			</div>
+			<!--  
+			<div class="info-form-row" style="display:none">
+				<label for="info-task-customer" class="info-form-label">所属客户:</label>
+				<input type="text" id="info-task-customer" class="info-form-text" value="">
+			</div>
+			-->
+			<div class="info-form-row">
+				<label for="info-task-starttime" class="info-form-label" lang="text:launch_time+:"></label>
+				<input type="text" id="info-task-starttime" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row">
+				<label for="info-task-updatetime" class="info-form-label" lang="text:update_time+:"></label>
+				<input type="text" id="info-task-updatetime" class="info-form-text" value="">
+			</div>
+			<div class="info-form-row" style="display:none">
+				<label for="info-task-desc" class="info-form-label" lang="text:remark1+:">备注:</label>
+				<textarea  id="info-task-desc" class="" ></textarea>
+			</div>
+		</div>
+		
+		<!-- <div class="info-map" id="info-map"></div> -->
+	</form>
+</div>

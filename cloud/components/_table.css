@@ -1,0 +1,88 @@
+.table-box{
+	overflow: auto;
+}
+.table-table{
+	overflow: auto;
+	clear: both;
+	margin: 0 auto;
+	width:100%!important;;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+.table-thead{
+	background:#e7e7e7;
+}
+.table-thead tr{
+	height:30px;
+	background:#e7e7e7;
+}
+.table-thead tr th{
+	width:110px;
+	height:30px;
+	text-indent:5px;
+}
+.table-tbody{
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+.table-tbody tr{
+	height:28px!important;
+	cursor:pointer;
+}
+.table-tbody tr td{
+	height:28px!important;
+	text-indent:5px;
+}
+.table-page{
+	float:left;
+	width:100%;
+	height:38px;
+	background:#f2f2f2;
+}
+._odd{
+	
+}
+._even{
+	background-color: #f2f2f2;
+}
+.th-checkbox{
+	width:50px!important;
+}
+.th-checkbox input{
+	margin-left:10px;
+}
+.td-checkbox{
+	width:10px;
+}
+.td-checkbox input{
+	margin-left:10px;
+}
+.table-selected-info{
+	position: absolute;
+	width: auto;
+	height: 30px;
+}
+.table-selected-info-title{
+	float:left;
+	text-indent:10px;
+	line-height:30px;
+}
+.table-selected-info-count{
+	float:left;
+	line-height:30px;
+}
+.table-selected-info-invert{
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	height: 16px;
+	margin: 7px 0 0 6px;
+	padding: 0px 4px;
+	cursor: pointer;
+	color: #333;
+	font-weight: bold;
+}
+.table-row-onclick{
+	background-color: rgb(204, 238, 193) !important;
+}

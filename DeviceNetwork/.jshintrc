@@ -1,0 +1,26 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"latedef": true,
+	"noarg": true,
+	"noempty": true,
+	"quotmark": "double",
+	"undef": true,
+	"unused": true,
+	"trailing": true,
+	"forin": true,
+	"browser": true,
+	"devel": true,
+	"jquery": true,
+	"prototypejs": true,
+	"trailing": false,
+
+
+	"camelcase": "camelCase",// force all variable names to use camelCase style
+
+	"globals": {
+		"cloud": false,
+		"define": false,
+		"require": false
+	}
+}

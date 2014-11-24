@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="/cloud/base/loader.js"></script>
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			require(["cloud/base/cloud"],function(){
+				cloud.storage.sessionStorage("accessToken","1d9cf8a986de789923d8653731ed85d");
+				if(cloud.storage.sessionStorage("accessToken")){
+						cloud.Ajax.request({
+							url:"api/tags",
+							type: "post",
+					        data: {
+								name:"heool",
+								shared:false
+//								types:[1001,1002,1003,1004,1005,1006,1007,1201,1202,1203,1204,1205],
+//								levels:[1,2,3,4,5],
+//								duration:10,
+//								count:3,
+//								state:1
+					        },
+							error:function(data){
+								console.log("error",data);
+							},
+							success: function(data) {
+								console.log("data",data);
+					        }
+						});
+//					}
+				}else{
+					alert("no token")
+				}
+			});
+		</script>	
+	</head>
+	<body>
+	</body>
+</html>
