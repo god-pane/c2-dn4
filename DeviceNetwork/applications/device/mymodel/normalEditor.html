@@ -22,7 +22,7 @@
 			</div>
 			<div class='varible-info-row'>
 				<label for='varible-id' lang="text:varible_id+:"></label>
-				<input type='text' id='varible-id' class="validate[required,custom[onlyFiveNumber]]"/>
+				<input type='text' id='varible-id' class="validate[required]"/>
 			</div>
 			<div class='varible-info-row'>
 				<label for='varible-type' lang="text:varible_type+:"></label>
@@ -36,7 +36,7 @@
 					<option value="6">BYTE_ARRAY</option>
 				</select>
 			</div>
-			<div class='varible-info-row'>
+			<div class='varible-info-row' style="display: none">
 				<label for='varible-stat-type' lang="text:varible_stat_type+:"></label>
 				<select id='varible-stat-type'>
 					<option value="0" lang="text:instantaneous_value">瞬时值</option>
@@ -98,6 +98,7 @@
 				</label>
 				<input type='text' id='varible-limit-maxvalue' />
 			</div>
+
 			<div class='varible-info-row'>
 				<label for='varible-limit-minvalue' lang="text:varible_limit_minvalue+:">
 				</label>
@@ -107,26 +108,25 @@
 				<label for='varible-limit-maxalert' lang="text:varible_limit_maxalert+:">
 				</label>
 				<div id='varible-limit-maxalert' class="limit-alarm-checkbox">
-					
 				</div>
 			</div>
+            <div class='varible-info-row' id="maxequal_row">
+                <label for='varible-limit-maxequal' lang="text:varible_limit_maxequal+:"></label>
+                <div id='varible-limit-maxequal' class="limit-alarm-checkbox">
+                </div>
+            </div>
 			<div class='varible-info-row'>
 				<label for='varible-limit-minalert' lang="text:varible_limit_minalert+:">
 				</label>
 				<div id='varible-limit-minalert' class="limit-alarm-checkbox">
 				</div>
 			</div>
-			<div class='varible-info-row'>
-				<label for='varible-limit-maxequal' lang="text:varible_limit_maxequal+:"></label>
-				<div id='varible-limit-maxequal' class="limit-alarm-checkbox">
-				</div>
-			</div>
-			<div class='varible-info-row'>
-				<label for='varible-limit-minequal' lang="text:varible_limit_minequal+:">
-				</label>
-				<div id='varible-limit-minequal' class="limit-alarm-checkbox">
-				</div>
-			</div>
+            <div class='varible-info-row' id="miniequal_row">
+                <label for='varible-limit-minequal' lang="text:varible_limit_minequal+:">
+                </label>
+                <div id='varible-limit-minequal' class="limit-alarm-checkbox">
+                </div>
+            </div>
 			<div class="varible-info-row varible-info-leveldesc">
 				<label for='varible-limit-alarmlvl' lang="text:varible_limit_alarmlvl+:">
 				</label>

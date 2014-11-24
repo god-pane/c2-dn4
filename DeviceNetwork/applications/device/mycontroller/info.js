@@ -472,7 +472,8 @@ define(function(require) {
                     this.element.find(".info-form-serialport-row").hide();
                     this.element.find(".info-form-network-port").hide();
                     if(model.sensorType=="61446"){
-                    	this.element.find(".info-form-deviceconfig-mbport-row").show();
+                        this.element.find(".info-form-network-port").show();
+                        this.element.find(".info-form-deviceconfig-mbport-row").show();
                     }else{
                     	this.element.find(".info-form-deviceconfig-mbport-row").hide();
                     };                   

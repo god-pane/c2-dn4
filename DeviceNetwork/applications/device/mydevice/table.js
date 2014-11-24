@@ -426,7 +426,18 @@ define(function(require) {
 				}
 			});
 			this.importBtn = importBtn;
-			
+            var exportBtn = new Button({
+                imgCls: "cloud-icon-daochu",
+                title: locale.get("export_devices"),
+                lang: "{title:export_devices}",
+                events: {
+                    click: function() {
+                        this.exportDevices();
+                    },
+                    scope: this
+                }
+            });
+            this.exportBtn = exportBtn;
 			var IMSIBtn=new Button({
 				imgCls:"cloud-icon-shouquan",
 				title:locale.get("imsi_mobilenumber"),
@@ -455,10 +466,17 @@ define(function(require) {
 //				}
 //			});
 			
-			toolbar.appendRightItems([IMSIBtn,labelBtn, importBtn, configBtn], -1);
+			toolbar.appendRightItems([IMSIBtn,labelBtn, importBtn,exportBtn, configBtn], -1);
 			this.toolbar = toolbar;
 		},
-		
+        exportDevices: function() {
+        var selectedResouces = this.tableTemplate.modules.content.getSelectedResources();
+        service.exportDevices(selectedResouces, function(data){
+            var url = cloud.config.FILE_SERVER_URL + "/api/file/" + data.result._id + "?access_token=";
+            cloud.util.ensureToken(function(){window.open(url + cloud.Ajax.getAccessToken());});
+        });
+    },
+
 //		renderRemoteControl:function(gatewayId){
 //			
 //			var self = this;

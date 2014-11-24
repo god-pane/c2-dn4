@@ -349,7 +349,7 @@ define(function(require){
 					if(!one._id&&one.bakId){
 						self.boxCollection[count].find("input#varible-id").val(one.bakId);
 					}else{
-						self.boxCollection[count].find("input#varible-id").val(self.dealWithOurId(one._id));
+						self.boxCollection[count].find("input#varible-id").val(one._id);
 					}					
 					if(one.limit){
 						self.boxCollection[count].varibleDetail=one;
@@ -377,18 +377,20 @@ define(function(require){
 			return newIdString;
 		},
 		varDetailSetBean:function(box){
+            var self=this;
 			var detail=box.varibleDetail;
 			//var element=box.varibleDetailElement;	
 			this.groupNameEle.val(box.groupName).text(box.groupName);
 			//console.log(this.varibleDetailElement.find("input#group-name"));
 			this.varibleNameEle.val(detail.name).text(detail.name);
 			var idString=detail._id;
-			if(idString.length!=6&&detail.bakId){
-				this.varibleIdEle.val(detail.bakId).text(detail.bakId);
-			}else{
-				idString=this.dealWithOurId(idString);
-				this.varibleIdEle.val(idString).text(idString);
-			};
+//			if(idString.length!=6&&detail.bakId){
+//				this.varibleIdEle.val(detail.bakId).text(detail.bakId);
+//			}else{
+//				idString=this.dealWithOurId(idString);
+//				this.varibleIdEle.val(idString).text(idString);
+//			};
+            this.varibleIdEle.val(idString).text(idString);
 			var optionElements=this.varibleDetailElement.find("#varible-type option");
 			optionElements.each(function(){
 				var option=$(this);
@@ -453,48 +455,63 @@ define(function(require){
 				if(detail.limit.maxAlert===true){
 					this.maxalertButtonYes.setSelect(true);
 					this.maxalertButtonNo.setSelect(false);
+                    $("#maxequal_row").show();
+                    maxEqualFnc();
 				}else if(detail.limit.maxAlert===false){
 					this.maxalertButtonYes.setSelect(false);
 					this.maxalertButtonNo.setSelect(true);
-				}else{
+                    $("#maxequal_row").hide();
+                }else{
 					this.maxalertButtonYes.setSelect(true);
 					this.maxalertButtonNo.setSelect(false);
-				}
+                    $("#maxequal_row").show();
+                    maxEqualFnc();
+                }
 				
 				//this.container.find("#varible-limit-minalert").val(detail.limit.minAlert);
 				if(detail.limit.minAlert===true){
 					this.minalertButtonYes.setSelect(true);
 					this.minalertButtonNo.setSelect(false);
+                    $("#minequal_row").show();
+                    minEqualFnc();
 				}else if(detail.limit.minAlert===false){
 					this.minalertButtonYes.setSelect(false);
 					this.minalertButtonNo.setSelect(true);
+                    $("#minequal_row").hide();
 				}else{
 					this.minalertButtonYes.setSelect(true);
 					this.minalertButtonNo.setSelect(false);
+                    $("#minequal_row").show();
+                    minEqualFnc();
 				}
 				
 				//this.container.find("#varible-limit-maxequal").val(detail.limit.maxEqual);
-				if(detail.limit.maxEqual===true){
-					this.maxeuqualButtonYes.setSelect(true);
-					this.maxeuqualButtonNo.setSelect(false);
-				}else if(detail.limit.maxEqual===false){
-					this.maxeuqualButtonYes.setSelect(false);
-					this.maxeuqualButtonNo.setSelect(true);
-				}else{
-					this.maxeuqualButtonYes.setSelect(true);
-					this.maxeuqualButtonNo.setSelect(false);
-				}
+            function maxEqualFnc(){
+                if(detail.limit.maxEqual===true){
+                    self.maxeuqualButtonYes.setSelect(true);
+                    self.maxeuqualButtonNo.setSelect(false);
+                }else if(detail.limit.maxEqual===false){
+                    self.maxeuqualButtonYes.setSelect(false);
+                    self.maxeuqualButtonNo.setSelect(true);
+                }else{
+                    self.maxeuqualButtonYes.setSelect(true);
+                    self.maxeuqualButtonNo.setSelect(false);
+                }
+            }
 				//this.container.find("#varible-limit-minequal").val(detail.limit.minEqual);
-				if(detail.limit.minEqual===true){
-					this.mineuqualButtonYes.setSelect(true);
-					this.mineuqualButtonNo.setSelect(false);
-				}else if(detail.limit.minEqual===false){
-					this.mineuqualButtonYes.setSelect(false);
-					this.mineuqualButtonNo.setSelect(true);
-				}else{
-					this.mineuqualButtonYes.setSelect(true);
-					this.mineuqualButtonNo.setSelect(false);
-				};
+            function minEqualFnc(){
+                if(detail.limit.minEqual===true){
+                    self.mineuqualButtonYes.setSelect(true);
+                    self.mineuqualButtonNo.setSelect(false);
+                }else if(detail.limit.minEqual===false){
+                    self.mineuqualButtonYes.setSelect(false);
+                    self.mineuqualButtonNo.setSelect(true);
+                }else{
+                    self.mineuqualButtonYes.setSelect(true);
+                    self.mineuqualButtonNo.setSelect(false);
+                };
+            }
+
 				this.alarmLvlEle.val(detail.limit.alarmLvl);
 				this.alarmDescEle.val(detail.limit.alarmDesc);
 //			}else{
@@ -510,51 +527,52 @@ define(function(require){
 //				this.varibleDetailElement.find("#varible-limit-alarmdesc").val("默认");
 //			}		
 		},
-		dealWithIdReal:function(realId){			
-			var preNum=realId.slice(0,1);
-			var lastNum=realId.slice(1);
-			var newIdString=preNum+"0"+lastNum;
+		dealWithIdReal:function(realId){
+            var newIdString="";
+            if(realId.length==5){
+                var preNum=realId.slice(0,1);
+                var lastNum=realId.slice(1);
+                newIdString=preNum+"0"+lastNum;
+            }
+            else if(realId.length<5){
+                var length=realId.length;
+                var normalRule=6;
+                var iteratorString="";
+                for(var i=0;i<(normalRule-length);i++){
+                    iteratorString=iteratorString+0;
+                }
+                newIdString=iteratorString+realId;
+            }
 			return newIdString;
 		},
 		varDetailGetBean:function(){
 			var tempObject={};
-			//tempObject={};this.alarmDescEle=this.varibleDetailElement.find("#varible-limit-alarmdesc");
-//			var detail=box.varibleDetail;
-			//var element=box.varibleDetailElement;
-			//this.varibleDetailElement.attr("tabIndex","1");
 			tempObject.groupName=this.groupNameEle.val();
-			//tempObject.groupNativeName=tempObject.groupName;
 			tempObject.name=this.varibleNameEle.val();
-			//tempObject.nativeName=tempObject.name;
 			var realId=this.varibleIdEle.val();
-			if(realId&&realId.length==5){
+			if(realId&&(realId.length<=5)){
 				tempObject._id=this.dealWithIdReal(realId);
 			}
 			else{
-				tempObject._id=""/*realId*/;
+				tempObject._id=realId/*realId*/;
 				tempObject.bakId=realId;
 			}
 			tempObject.type=parseInt(this.varibleDetailElement.find("#varible-type").val());
 			tempObject.storeType=tempObject.type;
 			tempObject.statType=parseInt(this.varibleDetailElement.find("#varible-stat-type").val());
-			//this.container.find("#varible-stat-type").val(detail.statType);
-			//this.container.find("#varible-precision").val(detail.precision);
 			tempObject.precision=parseInt(this.varibleDetailElement.find("#varible-precision").val());
 			tempObject.paramName=this.paramNameEle.val();
 			tempObject.paramValue=this.paramValueEle.val();
-			//this.container.find("#varible-value-type").val(detail.vType);
 			tempObject.vType=parseInt(this.varibleDetailElement.find("#varible-value-type").val());
 				tempObject.limit={};
 				tempObject.limit.maxValue=parseInt(this.maxValueEle.val());
 				tempObject.limit.minValue=parseInt(this.minValueEle.val());
-				//this.container.find("#varible-limit-maxalert").val(detail.limit.maxAlert);
 				var judge=this.maxalertButtonYes.isSelected();
 				if(judge){
 					tempObject.limit.maxAlert=true;
 				}else{
 					tempObject.limit.maxAlert=false;
 				}				
-				//this.container.find("#varible-limit-minalert").val(detail.limit.minAlert);
 				judge=this.minalertButtonYes.isSelected();
 				if(judge){
 					tempObject.limit.minAlert=true;
@@ -900,7 +918,7 @@ define(function(require){
 					groupName=one.groupName;
 					groupNativeName=one.groupNativeName;
 					varGroup.vars.push(one.varibleDetail);
-					self.idCollection.push(self.dealWithOurId(one.varibleDetail._id));
+					self.idCollection.push(one.varibleDetail._id);
 				});
 				varGroup.name=groupName;
 				varGroup.nativeName=groupNativeName;
@@ -910,6 +928,17 @@ define(function(require){
 			});
 			self.varInfo=varInfo;
 		},
+        //
+        showOrHideAlertRow:function(bool,row,buttonGroup){
+            var self=this;
+            if(bool){
+                row.show();
+            }else{
+                row.hide();
+            }
+            buttonGroup["yes"].setSelect(false);
+            buttonGroup["no"].setSelect(false);
+        },
 		renderVaribleCheckBox:function(){
 			var self=this;
 			self.maxalertButtonYes=new Button({
@@ -921,6 +950,7 @@ define(function(require){
 				events:{
 					click:function(){
 						self.maxalertButtonCollection.no.setSelect(false);
+                        self.showOrHideAlertRow(self.maxalertButtonYes.isSelected(),$("#maxequal_row"),self.maxeuqualButtonCollection);
 					}
 				}
 			});
@@ -934,7 +964,8 @@ define(function(require){
 				events:{
 					click:function(){
 						self.maxalertButtonCollection.yes.setSelect(false);
-					}
+                        self.showOrHideAlertRow(self.maxalertButtonYes.isSelected(),$("#maxequal_row"),self.maxeuqualButtonCollection);
+                    }
 				}
 			});
 			self.maxalertButtonCollection={"yes":self.maxalertButtonYes,"no":self.maxalertButtonNo};
@@ -947,6 +978,7 @@ define(function(require){
 				events:{
 					click:function(){
 						self.minalertButtonCollection.no.setSelect(false);
+                        self.showOrHideAlertRow(self.minalertButtonYes.isSelected(),$("#miniequal_row"),self.mineuqualButtonCollection);
 					}
 				}
 			});
@@ -959,7 +991,8 @@ define(function(require){
 				events:{
 					click:function(){
 						self.minalertButtonCollection.yes.setSelect(false);
-					}
+                        self.showOrHideAlertRow(self.minalertButtonYes.isSelected(),$("#miniequal_row"),self.mineuqualButtonCollection);
+                    }
 				}
 			});
 			self.minalertButtonCollection={"yes":self.minalertButtonYes,"no":self.minalertButtonNo};
@@ -1049,7 +1082,7 @@ define(function(require){
 				var trueId=newVaribleDetail._id;
 //				delete newVaribleDetail.bakId;
 				if(newVaribleDetail._id){
-					self.iterateBox.varibleId.find("input").val(self.dealWithOurId(newVaribleDetail._id));
+					self.iterateBox.varibleId.find("input").val(newVaribleDetail._id);
 				}else{
 					self.iterateBox.varibleId.find("input").val(newVaribleDetail.bakId);	
 				}
