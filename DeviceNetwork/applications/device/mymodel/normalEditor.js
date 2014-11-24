@@ -38,10 +38,10 @@ define(function(require){
 			this.minValueEle=this.varibleDetailElement.find("#varible-limit-minvalue");
 			this.maxValueEle=this.varibleDetailElement.find("#varible-limit-maxvalue");
 			this.paramValueEle=this.varibleDetailElement.find("#varible-param-value");
-			this.paramNameEle=this.varibleDetailElement.find("#varible-param-name");
+//			this.paramNameEle=this.varibleDetailElement.find("#varible-param-name");
 			this.varibleIdEle=this.varibleDetailElement.find("input#varible-id");
 			this.varibleNameEle=this.varibleDetailElement.find("input#varible-name");
-			this.groupNameEle=this.varibleDetailElement.find("input#group-name");
+//			this.groupNameEle=this.varibleDetailElement.find("input#group-name");
 		},
 		set:function(json){
 			var self=this;
@@ -323,12 +323,12 @@ define(function(require){
 				prio:1,
 				value:0,
 				limit:{
-					maxAlert:true,
-					minAlert:true,
+					maxAlert:false,
+					minAlert:false,
 					maxValue:0,
 					minValue:0,
-					maxEqual:true,
-					minEqual:true,
+					maxEqual:false,
+					minEqual:false,
 					alarmDesc:"",
 					nativeAlarmDesc:"",
 					alarmType:1,
@@ -380,7 +380,7 @@ define(function(require){
             var self=this;
 			var detail=box.varibleDetail;
 			//var element=box.varibleDetailElement;	
-			this.groupNameEle.val(box.groupName).text(box.groupName);
+//			this.groupNameEle.val(box.groupName).text(box.groupName);
 			//console.log(this.varibleDetailElement.find("input#group-name"));
 			this.varibleNameEle.val(detail.name).text(detail.name);
 			var idString=detail._id;
@@ -425,7 +425,7 @@ define(function(require){
 					}
 				});
 			};
-			this.paramNameEle.val(detail.paramName);
+//			this.paramNameEle.val(detail.paramName);
 			this.paramValueEle.val(detail.paramValue);
 			//this.container.find("#varible-value-type").val(detail.vType);
 			optionElements=this.varibleDetailElement.find("#varible-value-type option");
@@ -547,7 +547,7 @@ define(function(require){
 		},
 		varDetailGetBean:function(){
 			var tempObject={};
-			tempObject.groupName=this.groupNameEle.val();
+//			tempObject.groupName=this.groupNameEle.val();
 			tempObject.name=this.varibleNameEle.val();
 			var realId=this.varibleIdEle.val();
 			if(realId&&(realId.length<=5)){
@@ -561,7 +561,7 @@ define(function(require){
 			tempObject.storeType=tempObject.type;
 			tempObject.statType=parseInt(this.varibleDetailElement.find("#varible-stat-type").val());
 			tempObject.precision=parseInt(this.varibleDetailElement.find("#varible-precision").val());
-			tempObject.paramName=this.paramNameEle.val();
+			tempObject.paramName=tempObject.name;
 			tempObject.paramValue=this.paramValueEle.val();
 			tempObject.vType=parseInt(this.varibleDetailElement.find("#varible-value-type").val());
 				tempObject.limit={};
