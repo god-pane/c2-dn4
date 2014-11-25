@@ -432,7 +432,7 @@ define(function(require) {
                 lang: "{title:export_devices}",
                 events: {
                     click: function() {
-                        this.exportDevices();
+                        self.exportDevices();
                     },
                     scope: this
                 }
@@ -471,6 +471,7 @@ define(function(require) {
 		},
         exportDevices: function() {
         var selectedResouces = this.tableTemplate.modules.content.getSelectedResources();
+            selectedResouces=selectedResouces.pluck("_id");
         service.exportDevices(selectedResouces, function(data){
             var url = cloud.config.FILE_SERVER_URL + "/api/file/" + data.result._id + "?access_token=";
             cloud.util.ensureToken(function(){window.open(url + cloud.Ajax.getAccessToken());});
