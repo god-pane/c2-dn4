@@ -477,7 +477,7 @@ define(function(require){
 				}else if(detail.limit.minAlert===false){
 					this.minalertButtonYes.setSelect(false);
 					this.minalertButtonNo.setSelect(true);
-                    $("#minequal_row").hide();
+                    $("#miniequal_row").hide();
 				}else{
 					this.minalertButtonYes.setSelect(true);
 					this.minalertButtonNo.setSelect(false);
@@ -498,20 +498,6 @@ define(function(require){
                     self.maxeuqualButtonNo.setSelect(false);
                 }
             }
-				//this.container.find("#varible-limit-minequal").val(detail.limit.minEqual);
-            function minEqualFnc(){
-                if(detail.limit.minEqual===true){
-                    self.mineuqualButtonYes.setSelect(true);
-                    self.mineuqualButtonNo.setSelect(false);
-                }else if(detail.limit.minEqual===false){
-                    self.mineuqualButtonYes.setSelect(false);
-                    self.mineuqualButtonNo.setSelect(true);
-                }else{
-                    self.mineuqualButtonYes.setSelect(true);
-                    self.mineuqualButtonNo.setSelect(false);
-                };
-            }
-
 				this.alarmLvlEle.val(detail.limit.alarmLvl);
 				this.alarmDescEle.val(detail.limit.alarmDesc);
 //			}else{

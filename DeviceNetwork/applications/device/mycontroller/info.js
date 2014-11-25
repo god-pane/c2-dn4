@@ -230,7 +230,7 @@ define(function(require) {
                         $getter : this.getSiteName
                     },
                     model : {
-                        $getter : this.getDeviceModelName,
+                        $getter : this.getDeviceModelName
                     },
                     modelId : {
                         $setter : this.setDeviceModel,
@@ -463,6 +463,8 @@ define(function(require) {
         swapByModelIOType : function(modelId){
             var model = this.modelsMap.get(modelId);
             if (model){
+                this.element.find("#info-form-deviceconfig-mbaddress").val("");
+                this.element.find("#info-form-deviceconfig-mbport").val("");
                 if (model.ioType == "1" || model.ioType == "3"){//serial_port
                     this.element.find(".info-form-serialport-row").show();
                     this.element.find(".info-form-network-port").show();
@@ -473,6 +475,8 @@ define(function(require) {
                     this.element.find(".info-form-network-port").hide();
                     if(model.sensorType=="61446"){
                         this.element.find("#modbus_tcp_net").show();
+                        this.element.find("#info-form-deviceconfig-mbaddress").val("255");
+                        this.element.find("#info-form-deviceconfig-mbport").val("502");
                         this.element.find(".info-form-deviceconfig-mbport-row").show();
                     }else{
                     	this.element.find(".info-form-deviceconfig-mbport-row").hide();
